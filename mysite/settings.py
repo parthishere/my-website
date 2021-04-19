@@ -26,7 +26,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 SECRET_KEY = 'a_^ix3psyy%wwv1-7nk33%worht5$oq&agf=e65^3js@nq*9&i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['stormy-hamlet-70851.herokuapp.com', '127.0.0.1']
 
