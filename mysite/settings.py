@@ -26,7 +26,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 SECRET_KEY = 'a_^ix3psyy%wwv1-7nk33%worht5$oq&agf=e65^3js@nq*9&i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['stormy-hamlet-70851.herokuapp.com', '127.0.0.1']
 
@@ -129,8 +129,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
