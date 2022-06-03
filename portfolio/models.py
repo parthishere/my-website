@@ -6,15 +6,16 @@ from django.shortcuts import reverse
 
 #-----------------------------------------------------------------------
     
-# class Tag(models.Model):
-#     tag = models.CharField(max_length=50)
+class Tag(models.Model):
+    tag = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='/tag_images')
     
-#     class Meta():
-#         app_label = 'portfoilo'
-#         ordering = ['-id']
+    class Meta():
+        app_label = 'portfoilo'
+        ordering = ['-id']
         
-#     def __str__(self):
-#         return self.tag
+    def __str__(self):
+        return self.tag
     
 # #-----------------------------------------------------------------------
     
@@ -30,17 +31,17 @@ from django.shortcuts import reverse
     
 # #-----------------------------------------------------------------------
     
-# class ContactModel(models.Model):
-#     email = models.EmailField()
-#     title = models.CharField(max_length=100)
-#     text = models.TextField()
+class ContactModel(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    title = models.CharField(max_length=100)
+    text = models.TextField()
     
-#     class Meta():
-#         app_label = 'portfoilo'
-#         ordering = [ '-id' ]
+    class Meta():
+        ordering = [ '-id' ]
         
-#     def __str__(self):
-#         return self.email
+    def __str__(self):
+        return self.email
 
 # #-----------------------------------------------------------------------
 
@@ -55,21 +56,21 @@ from django.shortcuts import reverse
 #     def __str__(self):
 #         return self.softwear
 
-# #-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
 
-# class Projects(models.Model):
-#     name = models.CharField(max_length=50)
-#     link = models.URLField()
-#     img = models.ImageField(upload_to='projects')
-#     description = models.TextField()
-#     tools = models.ForeignKey(Tag, on_delete=models.CASCADE)
+class Projects(models.Model):
+    name = models.CharField(max_length=50)
+    link = models.URLField()
+    img = models.ImageField(upload_to='projects')
+    description = models.TextField()
+    tools = models.ForeignKey(Tag, on_delete=models.CASCADE)
     
-#     class Meta():
-#         app_label = 'portfoilo'
-#         ordering = ['-id']
+    class Meta():
+        app_label = 'portfoilo'
+        ordering = ['-id']
     
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
     
 #-----------------------------------------------------------------------
 

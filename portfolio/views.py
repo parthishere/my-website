@@ -1,24 +1,37 @@
-from django.shortcuts import render
-from django.core.mail import mail_admins, send_mail
+from django.shortcuts import render, redirect, reverse
+from portfolio.models import ContactModel
+from portfolio.forms import ContactForm
+from django.contrib import messages
+
 from django.conf import settings
-from django.views.generic import TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
+from django.template.loader import render_to_string
+
+from django.core.mail import EmailMessage
+
 
 # from .forms import ContactForm
 
 
-
-class HomeView(TemplateView):
-    template_name = 'home.html'
-    
-    def get_context_data(self, *args, **kwargs):
-        context =  super(HomeView, self).get_context_data(*args, **kwargs)
-        context['sit'] = 'sit'
-        return context
-    
-    
+def home_view(request):
+    context = {}
+    title = None
+    contact_form = ContactForm(request.POST or None)
+    context['form'] = contact_form
+    if request.POST and contact_form.is_valid():
+        print("nothing")
+        contact = contact_form.save()
+        if title:
+            title = contact.title
+        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':title})
+        subject = f"{contact.name} Contacted you for Query !"
+        message = template
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['parthishere1234@gmail.com',]
+        mail = EmailMessage(subject, message, email_from, recipient_list)
+        mail.send()
+        messages.success(request, "Sent Successfully")
+        return redirect('profile:home')
+    return render(request, "home.html", context)
     
 # @login_required(login_url='accounts:login')
 # def contact_us_view(request):

@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive Resume/CV／Portfolio Template">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <meta name="author" content="Parth Thakkar">
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{% static 'css/styles-14.css' %}">
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/styles-11.css' %}">
     <link id="theme-style" rel="stylesheet" href="{% static 'css/custom.css' %}">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,25 +35,30 @@
 
     <header class="header">
         <div class="top-bar container-fluid">
-            <!--<div class="actions">
-                <a class="btn hidden-xs" href="mailto:someone@example.com"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hire Me</a>
-                <a class="btn" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download My Resume</a>
-            </div>--><!--//actions-->
+           <div class="actions">
+                {% comment %} <a class="btn hidden-xs" href="mailto:someone@example.com"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hire Me</a> {% endcomment %}
+                <a class="btn" href="#"><i class="fa fa-download" aria-hidden="true"></i>Download Resume</a>
+            </div>
+            
             <ul class="social list-inline">
                 <li><a href="https://www.linkedin.com/in/parth-thakkar-819616197/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 <li><a href="https://twitter.com/ParthThakkar74"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.quora.com/profile/Creative-Stuffs"><i class="fa fa-quora" aria-hidden="true"></i></a></li>
                 <li><a href="https://github.com/parthishere"><i class="fa fa-github-alt" aria-hidden="true"></i></a></li>
+                <li><a href="https://parththakkar.herokuapp.com/" class="website"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
             </ul><!--//social-->
         </div><!--//top-bar-->
 
         <div class="intro">
             <div class="container text-center">
-                <img class="profile-image" src="{% static 'images/profile2.png' %}" alt="Parth's profile image">
+                <img class="profile-image" src="{% static 'images/profile1.jpg' %}" alt="Parth's profile image">
                 <h1 class="name">Parth Thakkar</h1>
-                <div class="title">Back-End Developer </div>
+                <div class="title">Back-End and Embedded Developer &nbsp<sup> &lt nerd &gt </sup></div>
+                
                 <div class="profile">
-                    <p>Lover of innovation and everything related to generate new knowledge, and not only that, but share it with the community. Face problems with a smile and solve them as soon as possible. Excellent interpersonal relationships. Believer that when problems arise the team should focus on finding a solution, instead of blame someone.</p>
+                    <p>Lover of innovation and everything related to generate new knowledge, and not only that, but share it with the community. Face problems with a smile and solve them as soon as possible. Excellent interpersonal relationships. Believer that when problems arise the team should focus on finding a solution.</p>
+                    <p>My objective is to learn new things and apply to real world</p>
+                    
                 </div><!--//profile-->
             </div><!--//container-->
         </div><!--//intro-->
@@ -62,8 +67,8 @@
             <div class="container text-center">
                 <ul class="list-inline">
                     <li class="email"><i class="fa fa-envelope"></i><a href="mailto:parthishere1234@gmail.com">parthishere1234@gmail.com</a></li>
-                    <li><i class="fa fa-phone"></i> <a href="tel: +919408970311">+919408970311</a></li>
-                    <li class="website"><i class="fa fa-globe"></i><a href="#">thakkarparth.com</a></li>
+                    <li><i class="fa fa-phone"></i> <a href="tel: +919408970311">+91 9408970311</a></li>
+                    <li class="website"><i class="fa fa-globe"></i><a href="https://parththakkar.herokuapp.com/">parththakkar.herokuapp.com</a></li>
                 </ul>
             </div><!--//container-->
         </div><!--//contact-info-->
@@ -107,6 +112,89 @@
                         </ul>
                     </div><!--//job-desc-->
                 </div><!--//item-->
+
+                <div class="item">
+                    <div class="work-place">
+                        <h3 class="place"><b>Lakshya Fest Website, LDCE</b></h3>
+                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="title">Backend Developer </div>
+                        <div class="time">2020</div>
+                    </div><!--//job-meta-->
+                    <div class="job-desc">
+                        <p>I've made fast API routes for Laksya Techfest 2020</p>
+                        <ul>
+                          <li>Backend development.</li>
+                          <li>Website Testing. The objective of testing is to Find Bugs and Security. </li>
+                          <li>Web Development and Deployment </li>
+                          <li>Project Management </li>
+                        </ul>
+                    </div><!--//job-desc-->
+                </div><!--//item-->
+
+
+                <div class="item">
+                    <div class="work-place">
+                        <h3 class="place"><b>Crypto Bot , Citrus</b></h3>
+                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="title">Python Developer </div>
+                        <div class="time">2021</div>
+                    </div><!--//job-meta-->
+                    <div class="job-desc">
+                        <p>I've created Crypto market making bot which helps in stabalizing coin</p>
+                        <ul>
+                          <li>Backend development. The main objective is to develop website using Django and Python  .</li>
+                          <li>Website Testing. The objective of testing is to Find Bugs and Security. </li>
+                          <li>Web Development. The main objective is to develop websites using Django </li>
+                        </ul>
+                    </div><!--//job-desc-->
+                </div><!--//item-->
+
+
+                <div class="item">
+                    <div class="work-place">
+                        <h3 class="place"><b>IoT Home Automation , IBotics</b></h3>
+                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="title">Iot Developer </div>
+                        <div class="time">2021</div>
+                    </div><!--//job-meta-->
+                    <div class="job-desc">
+                        <p>I've used ESP8266 for home automation and django website for controlling application</p>
+                        <ul>
+                          <li>Circuit Designing / Debugging</li>
+                          <li>Website Testing. The objective of testing is to Find Bugs and Security. </li>
+                          <li>Web Development. The main objective is to develop websites using Django </li>
+                        </ul>
+                    </div><!--//job-desc-->
+                </div><!--//item-->
+
+
+                <div class="item">
+                    <div class="work-place">
+                        <h3 class="place"><b>Embedded System, Upeya Electronics</b></h3>
+                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Gandhinagar, Gujrat</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="title">Embedded Developer </div>
+                        <div class="time">2022 (present)</div>
+                    </div><!--//job-meta-->
+                    <div class="job-desc">
+                        <p></p>
+                        <ul>
+                          <li>Circuit Designing / Debugging</li>
+                          <li>Website Testing. The objective of testing is to Find Bugs and Security. </li>
+                          <li>Web Development. The main objective is to develop websites using Django </li>
+                        </ul>
+                    </div><!--//job-desc-->
+                </div><!--//item-->
+
+
+            
 
                 {% comment %} <div class="item">
                     <div class="work-place">
@@ -198,7 +286,7 @@
                     <div class="item col-xs-12 col-sm-4">
                         <div class="item-inner">
                             <h4 class="skill-name">Python &amp; Django</h4>
-                            <div class="level">Intermideate, 2 years</div>
+                            <div class="level">Advance, 3 years</div>
                             <div class="desc">
                                 I've been working with django and python from 1st year, developing technologies from standalone application.Also coompleted project on python and IOT using some automation
                             </div>
@@ -206,8 +294,8 @@
                     </div><!--//item-->
                     <div class="item col-xs-12 col-sm-4">
                         <div class="item-inner">
-                            <h4 class="skill-name">Embedded C</h4>
-                            <div class="level">Intermideate, 2 years</div>
+                            <h4 class="skill-name">Embedded System</h4>
+                            <div class="level">Advance, 3 years</div>
                             <div class="desc">
                                 Started as a hobbie,Then it was a mandatory course in B.E sem 5 .Then comleted various projects in academics and some projects as assignment on online platforms.
                             </div>
@@ -215,10 +303,10 @@
                     </div><!--//item-->
                     <div class="item col-xs-12 col-sm-4">
                         <div class="item-inner">
-                            <h4 class="skill-name">OpenCV, Tensorflow, Deep Learning</h4>
-                            <div class="level">Intermideate, 1 years</div>
+                            <h4 class="skill-name">OpenCV, Tensorflow/Keras, Deep Learning</h4>
+                            <div class="level">Intermideate, 2 years</div>
                             <div class="desc">
-                                I've been working with these technologies since a year, when I got my first live project to make face detection website.
+                                I've been working with these technologies since 2 year, when I got my first live project to make face detection website.
                             </div>
                         </div><!--//item-inner-->
                     </div><!--//item-->
@@ -228,21 +316,36 @@
             <div class="other-skills">
                 <h3 class="subtitle">Other Skills</h3>
                 <div class="misc-skills">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">AWS, Heroku</span>
+                    <span class="skill-tag">HTML5/CSS3</span>
                     <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">SQL, MongoDB</span>
+                    <span class="skill-tag">Django-Rest-Framework</span>
+                    <span class="skill-tag">Celery / Celery-Beat</span>
+                    <span class="skill-tag">Websockets / WebRTC</span>
+                    <span class="skill-tag">Graphene</span>
+                    <span class="skill-tag">GraphQL</span>
                     <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">VHDL, VERILOG</span>
+                    <span class="skill-tag">Matlab</span>
                   
                     <br>
+                    <br>
+                    <h3 class="subtitle">Foreign Language Skills</h3>
                     
-                    <span class="skill-tag">MYSQL</span>
-                    <span class="skill-tag">Electronics</span>
-                    <span class="skill-tag">Django rest framework</span>
-                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">English</span>
+                    <span class="skill-tag">Hindi</span>
+                    <span class="skill-tag">Gujrati (native)</span>
+
+                    <br>
+                    <br>
+                    <h3 class="subtitle">Soft Skills</h3>
+
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Problem-solving</span>
+                    <span class="skill-tag">Time management</span>
+                    <span class="skill-tag">Critical thinking</span>
                    
-                    
-                    <span class="skill-tag">AWS</span>
                 </div>
             </div><!--//other-skills-->
 
@@ -272,21 +375,23 @@
                             <div class="name">Makadia Deep</div>
                             <div class="position">Electronics and Communication Engineer , L.D. Collage of Engineering</div>
                         </div><!--//source-->
-
-                    {% comment %} </div><!--//item-->
+                    </div><!--//item-->
+                </div><!--//carousel-inner-->
+                
+                <div class="carousel-inner">
                     <div class="item">
                         <blockquote class="quote">
                             <p><i class="fa fa-quote-left"></i>
-                              Mehul is a really good working partner with high knowledge on backend development, he is always concerned with going forward never afraid of improving or making use of new technologies, helping his peers whenever he is able to and solving problems in a quick and efficient manner with his typical optimism</p>.<p>Saying from personal Experience when we worked on project togather for 2 years.</p>
+                              Parth is a really good working partner with high knowledge on backend development, he is always concerned with going forward never afraid of improving or making use of new technologies, helping his peers whenever he is able to and solving problems in a quick and efficient manner with his typical optimism</p>.<p>Saying from personal Experience when we worked on project togather for 2 years.</p>
                         </blockquote>
                         <div class="source">
-                            <div class="name">Hetal Nathvani</div>
+                            <div class="name">Raman Raghav</div>
                             <div class="position">position , Company</div>
                         </div><!--//source-->
 
-                    </div><!--//item--> {% endcomment %}
-
-                </div><!--//carousel-inner-->
+                    </div><!--//item-->
+                </div>
+                
             </div><!--//testimonials-carousel-->
 
         </section><!--//section-->
@@ -425,17 +530,19 @@ doctors and lab technician and buy medicine online.<br>
         <section id="contact-section" class="contact-section section">
             <h2 class="section-title">Get in Touch</h2>
             <div class="intro">
-                <img class="profile-image" src="{% static 'images/profile1.png' %}" alt="Parth's profile image">
+                <img class="profile-image" src="{% static 'images/profile1.jpg' %}" alt="Parth's profile image">
                 <div class="dialog">
                     <p>I'm currently persuing my B.E. degree at <a href="http://ldce.ac.in" target='_blank'>L.D. Collage of Engineering</a>, but I'm always open to new opportunities that let me help as much as I can on other projects.</p>
                     <p><strong>I can help with the following:</strong></p>
                     <ul class="list-unstyled service-list">
                         <li><i class="fa fa-check" aria-hidden="true"></i> Back-end development with Django/Python</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> OpenCV Projects, and Machine Learning</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Arduino and Raaspberry PI</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Arduino, IoT, Raaspberry PI</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Embedded Development</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> MATLAB, VHDL ,VERILOG, FPGA development</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Web applications</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Publishing Webites on Servers </li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Uploading Your Code To GIthub</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Uploading Your Code To GitHub</li>
                     </ul>
                     <p>Drop me a line at <a href="mailto:parthishere1234@gmail.com">parthishere1234@gmail.com</a> or call me at <a href="tel:+919408970364">+919408970364</a></p>
                     <ul class="social list-inline">
@@ -443,17 +550,76 @@ doctors and lab technician and buy medicine online.<br>
                             <li><a href="https://twitter.com/ParthThakkar74"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.quora.com/profile/Creative-Stuffs"><i class="fa fa-quora" aria-hidden="true"></i></a></li>
                             <li><a href="https://github.com/parthishere"><i class="fa fa-github-alt" aria-hidden="true"></i></a></li>
+                            <li><a href="https://parththakkar.herokuapp.com/"><i class="fa fa-globe"></i></a></li>
                     </ul><!--//social-->
                 </div><!--//diaplog-->
             </div><!--//intro-->
 
         </section><!--//section-->
 
+
+
+
+
+        <section id="contact-section" class="contact-section section mb-4">
+
+            <!--Section heading-->
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Me !</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact me directly.</p>
+        <br>
+            <div class="row">
+        
+                <!--Grid column-->
+                <div class="col-md-9 mb-md-0 mb-5">
+                    <form id="contact-form" name="contact-form" action="{% url 'profile:home' %}" method="POST">
+                        {% csrf_token %}
+                        <th>
+                        {{ form.as_p }}
+                        </th>
+                        <div class="text-center text-md-left">
+                        <button type="submit" class="btn btn-primary"> Send </button>
+                        </div>
+                    </form>
+        
+                    
+                        
+                    
+                    <div class="status"></div>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+                        <li><i class="fa fa-map-marker fa-2x"></i>
+                            <p>Ahmedabad, India</p>
+                        </li>
+        
+                        <li><i class="fa fa-phone mt-4 fa-2x"></i>
+                            <p>+91 9408970364</p>
+                        </li>
+        
+                        <li><i class="fa fa-envelope mt-4 fa-2x"></i>
+                            <p>parthishere1234@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+        
+            </div>
+        
+        </section>
+
+
+
+
+
     </div><!--//wrapper-->
 
     <footer class="footer text-center">
         <div class="container">
-            <small class="copyright">Copyright @ <a href="#">Thakkar Parth </a></small>
+            <small class="copyright">Copyright @ <a href="https://parththakkar.herokuapp.com/">Thakkar Parth </a></small>
         </div><!--//container-->
     </footer>
 
