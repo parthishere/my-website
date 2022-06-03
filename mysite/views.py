@@ -25,4 +25,5 @@ def contact_form(request):
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
         messages.success(request, "Sent Successfully")
+        return redirect('')
     return render(request, "home.html", context)

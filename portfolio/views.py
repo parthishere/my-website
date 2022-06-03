@@ -17,6 +17,7 @@ def home_view(request):
     title = None
     contact_form = ContactForm(request.POST or None)
     context['form'] = contact_form
+
     if request.POST and contact_form.is_valid():
         print("nothing")
         contact = contact_form.save()
@@ -29,7 +30,7 @@ def home_view(request):
         recipient_list = ['parthishere1234@gmail.com',]
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
-        messages.success(request, "Sent Successfully")
+        messages.success(request, "Mail Sent Successfully")
         return redirect('profile:home')
     return render(request, "home.html", context)
     
