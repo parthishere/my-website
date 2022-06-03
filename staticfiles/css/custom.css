@@ -1,5 +1,5 @@
 .profile-image {
-  border-radius: 100px;
+  border-radius: 400px;
   border:5px solid #FFF;
 }
 
@@ -7,7 +7,7 @@
  position: relative;
 }
 
-@media all and (min-width: 768px){
+@media all and (min-width: 800px){
  .location{
   position: absolute;
   right: 0;
