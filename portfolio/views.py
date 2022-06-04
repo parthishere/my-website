@@ -34,6 +34,20 @@ def home_view(request):
         return redirect('profile:home')
     return render(request, "home.html", context)
     
+from django.http import HttpResponse
+from wsgiref.util import FileWrapper
+import os    
+import mimetypes
+
+def download_pdf(request):
+    filename = 'portfolio/parth_thakkar_cv.pdf'
+    wrapper = FileWrapper(open(filename,'rb'))
+    response = HttpResponse(wrapper, content_type=mimetypes.guess_type(filename)[0])
+    response['Content-Length'] = os.path.getsize(filename)
+    response['Content-Disposition'] = "attachment; filename=" + filename
+    return response
+
+
 # @login_required(login_url='accounts:login')
 # def contact_us_view(request):
 #     context = {}

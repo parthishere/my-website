@@ -41,7 +41,7 @@
         {% for message in messages %}
         <div class="alert alert-success alert-dismissible">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <h3><strong>Success!</strong> {{ message }}</h3>
+            <center><h3><strong>Success!</strong> {{ message }}</h3></center>
           </div>
         {% endfor %}
     
@@ -54,7 +54,7 @@
         <div class="top-bar container-fluid">
            <div class="actions">
                 {% comment %} <a class="btn hidden-xs" href="mailto:someone@example.com"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hire Me</a> {% endcomment %}
-                <a class="btn" href="#"><i class="fa fa-download" aria-hidden="true"></i>Download Resume</a>
+                <a class="btn" href="{% url 'profile:pdf' %}"><i class="fa fa-download" aria-hidden="true"></i>Download Resume</a>
             </div>
             
             <ul class="social list-inline">
@@ -70,7 +70,7 @@
             <div class="container text-center">
                 <img class="profile-image" src="{% static 'images/profile1.jpg' %}" alt="Parth's profile image">
                 <h1 class="name">Parth Thakkar</h1>
-                <div class="title">Back-End and Embedded Developer &nbsp<sup> &lt nerd &gt </sup></div>
+                <div class="title">Back-End and Embedded Developer <sup>&ltnerd&gt </sup></div>
                 
                 <div class="profile">
                     <p>Lover of innovation and everything related to generate new knowledge, and not only that, but share it with the community. Face problems with a smile and solve them as soon as possible. Excellent interpersonal relationships. Believer that when problems arise the team should focus on finding a solution.</p>
@@ -114,7 +114,7 @@
                 <div class="item">
                     <div class="work-place">
                         <h3 class="place"><b>Back-end Developer, Studio Garage</b></h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                        {% comment %} <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div> {% endcomment %}
                     </div>
                     <div class="job-meta">
                         <div class="title">BackEnd Developer </div>
@@ -133,7 +133,7 @@
                 <div class="item">
                     <div class="work-place">
                         <h3 class="place"><b>Lakshya Fest Website, LDCE</b></h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                        {% comment %} <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div> {% endcomment %}
                     </div>
                     <div class="job-meta">
                         <div class="title">Backend Developer </div>
@@ -154,7 +154,7 @@
                 <div class="item">
                     <div class="work-place">
                         <h3 class="place"><b>Crypto Bot , Citrus</b></h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                        {% comment %} <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div> {% endcomment %}
                     </div>
                     <div class="job-meta">
                         <div class="title">Python Developer </div>
@@ -174,7 +174,7 @@
                 <div class="item">
                     <div class="work-place">
                         <h3 class="place"><b>IoT Home Automation , IBotics</b></h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div>
+                        {% comment %} <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Ahmedabad, Gujrat</div> {% endcomment %}
                     </div>
                     <div class="job-meta">
                         <div class="title">Iot Developer </div>
@@ -194,7 +194,7 @@
                 <div class="item">
                     <div class="work-place">
                         <h3 class="place"><b>Embedded System, Upeya Electronics</b></h3>
-                        <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Gandhinagar, Gujrat</div>
+                        {% comment %} <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>Gandhinagar, Gujrat</div> {% endcomment %}
                     </div>
                     <div class="job-meta">
                         <div class="title">Embedded Developer </div>
