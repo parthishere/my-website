@@ -24,6 +24,18 @@ h5,
 h6 {
   font-weight: 500;
 }
+p{
+  font-size: 14px;
+}
+
+.desc{
+  font-size:12px;
+}
+
+li{
+  font-size: 14px;
+}
+
 a {
   color: #607D8B;
   -webkit-transition: all 0.4s ease-in-out;
