@@ -49,6 +49,12 @@ def home_view(request):
         return redirect('profile:home')
     return render(request, "home.html", context)
     
+def change_theme(request):
+    return redirect('profile:home')
+
+def change_another(request):
+    return redirect('profile:a-home')
+
 from django.http import HttpResponse
 from wsgiref.util import FileWrapper
 import os    

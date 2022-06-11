@@ -99,9 +99,9 @@
    
 
       #themeChange {
-        display: none; /* Hidden by default */
+        display: block; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
-        bottom: 49px; /* Place the button at the bottom of the page */
+        bottom: 55px; /* Place the button at the bottom of the page */
         left: 30px; /* Place the button 30px from the right */
         z-index: 99; /* Make sure it does not overlap */
         border: 0px solid black;* Remove borders */
@@ -110,7 +110,7 @@
         color: white; /* Text color */
         cursor: pointer; /* Add a mouse pointer on hover */
         padding: 10px; /* Some padding */
-        border-radius-top: 20px; /* Rounded corners */
+        border-top-left-radius: 20px; /* Rounded corners */
         font-size: 12px; /* Increase font size */
         transform: rotate(90deg);
         transform-origin: top left;
@@ -121,7 +121,7 @@
       }
     </style>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up fa-lg"></i></button>
-    <button id="themeChange">change theme</button>
+    <a href="{% url 'profile:change-theme' %}"><button id="themeChange">Change Theme</button></a>
 
     <div class="container sections-wrapper py-5">
         <div class="row">
