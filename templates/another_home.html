@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{% static "assets/plugins/github-calendar/dist/github-calendar-responsive.css" %}">
     <!-- github activity css -->  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">  
-    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
+    <link rel="stylesheet" href="{% static 'assets/plugins/github-activity/src/github-activity.css' %}">
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="{% static "assets/css/styles.css" %}">
@@ -418,8 +418,8 @@
 
                         </div><!--//github-graph-->
                         <!--//Usage: https://caseyscarborough.com/projects/github-activity/ -->                       
-                        {% comment %} <div id="ghfeed" class="ghfeed"> {% endcomment %}
-                        {% comment %} </div><!--//ghfeed--> {% endcomment %}
+                        <div id="ghfeed" class="ghfeed">
+                         </div><!--//ghfeed--> 
                         
                     </div><!--//secton-inner-->
                 </section><!--//section-->
