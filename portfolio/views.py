@@ -10,20 +10,35 @@ from django.core.mail import EmailMessage
 
 
 # from .forms import ContactForm
-
-
-def home_view(request):
+def another_home(request):
     context = {}
-    title = None
     contact_form = ContactForm(request.POST or None)
     context['form'] = contact_form
 
     if request.POST and contact_form.is_valid():
         print("nothing")
         contact = contact_form.save()
-        if title:
-            title = contact.title
-        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':title})
+        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':contact.title if contact.title else None})
+        subject = f"{contact.name} Contacted you for Query !"
+        message = template
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['parthishere1234@gmail.com',]
+        mail = EmailMessage(subject, message, email_from, recipient_list)
+        mail.send()
+        messages.success(request, "Mail Sent Successfully")
+        return redirect('profile:home')
+    return render(request, 'another_home.html', context)
+
+
+def home_view(request):
+    context = {}
+    contact_form = ContactForm(request.POST or None)
+    context['form'] = contact_form
+
+    if request.POST and contact_form.is_valid():
+        print("nothing")
+        contact = contact_form.save()
+        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':contact.title if contact.title else None})
         subject = f"{contact.name} Contacted you for Query !"
         message = template
         email_from = settings.EMAIL_HOST_USER
