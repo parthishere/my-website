@@ -61,7 +61,7 @@ import os
 import mimetypes
 
 def download_pdf(request):
-    filename = 'portfolio/parth_thakkar_cv.pdf'
+    filename = 'portfolio/parth_thakkar_c_v.pdf'
     wrapper = FileWrapper(open(filename,'rb'))
     response = HttpResponse(wrapper, content_type=mimetypes.guess_type(filename)[0])
     response['Content-Length'] = os.path.getsize(filename)
