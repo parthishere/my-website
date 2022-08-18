@@ -58,31 +58,31 @@ class ContactModel(models.Model):
 
 #-----------------------------------------------------------------------
 
-class Project(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-    img = models.ImageField(upload_to='projects')
-    hosted_link = models.URLField()
-    extra_description_link = models.URLField()
-    github_link = models.URLField()
+# class Project(models.Model):
+#     name = models.CharField(max_length=50)
+#     description = models.TextField()
+#     img = models.ImageField(upload_to='projects')
+#     hosted_link = models.URLField()
+#     extra_description_link = models.URLField()
+#     github_link = models.URLField()
     
-    tools = models.ForeignKey(Tag, on_delete=models.CASCADE, reated_name='projects')
+#     tools = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='projects')
     
-    class Meta():
-        app_label = 'portfoilo'
-        ordering = ['-id']
+#     class Meta():
+#         app_label = 'portfoilo'
+#         ordering = ['-id']
     
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
     
 #-----------------------------------------------------------------------
 
-class Image(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    img = models.ImageField(upload_to='/projects')
+# class Image(models.Model):
+#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+#     img = models.ImageField(upload_to='/projects')
     
-    def __str__(self):
-        return self.project
+#     def __str__(self):
+#         return self.project
     
 # class UserProfileModel(models.Model):
 #     """ User Profile Model """
