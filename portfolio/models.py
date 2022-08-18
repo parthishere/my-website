@@ -58,12 +58,15 @@ class ContactModel(models.Model):
 
 #-----------------------------------------------------------------------
 
-class Projects(models.Model):
+class Project(models.Model):
     name = models.CharField(max_length=50)
-    link = models.URLField()
-    img = models.ImageField(upload_to='projects')
     description = models.TextField()
-    tools = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='projects')
+    hosted_link = models.URLField()
+    extra_description_link = models.URLField()
+    github_link = models.URLField()
+    
+    tools = models.ForeignKey(Tag, on_delete=models.CASCADE, reated_name='projects')
     
     class Meta():
         app_label = 'portfoilo'
@@ -74,6 +77,13 @@ class Projects(models.Model):
     
 #-----------------------------------------------------------------------
 
+class Image(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='/projects')
+    
+    def __str__(self):
+        return self.project
+    
 # class UserProfileModel(models.Model):
 #     """ User Profile Model """
 #     user            = models.ForeignKey(User, on_delete=models.CASCADE)
