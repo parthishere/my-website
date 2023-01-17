@@ -34,7 +34,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = ['django-server-production-417d.up.railway.app',
-                 '127.0.0.1', 'parththakkar.herokuapp.com']
+                 '127.0.0.1', 'parththakkar.herokuapp.com', "parththakkar.studio"]
 
 # 123pih
 # Application definition
