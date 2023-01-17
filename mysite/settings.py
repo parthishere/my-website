@@ -33,7 +33,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['stormy-hamlet-70851.herokuapp.com',
+ALLOWED_HOSTS = ['django-server-production-417d.up.railway.app',
                  '127.0.0.1', 'parththakkar.herokuapp.com']
 
 # 123pih

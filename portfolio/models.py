@@ -48,6 +48,7 @@ class Softwear(models.Model):
     progress = models.ForeignKey(
         Progress, on_delete=models.SET_NULL, null=True)
     img = models.ForeignKey(Image, on_delete=models.CASCADE)
+    small_skill = models.BooleanField(default=True)
 
     class Meta():
         ordering = ['-id']
@@ -62,7 +63,10 @@ class Project(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField()
     date = models.DateField(auto_now=True)
-    imges = models.ManyToManyField(Image, null=True, blank=True)
+    thumbnail = models.ForeignKey(
+        Image, on_delete=models.SET_NULL, null=True, blank=True, related_name="projects_tumb")
+    more_imges = models.ManyToManyField(
+        Image, null=True, blank=True, related_name="projects_sub_img")
     hosted_link = models.URLField()
     extra_description_link = models.URLField()
     github_link = models.URLField()
@@ -70,6 +74,7 @@ class Project(models.Model):
         Progress, on_delete=models.SET_NULL, null=True)
     tools = models.ManyToManyField(
         Softwear, related_name='sw_projects', blank=True)
+    small_project = models.BooleanField(default=False)
 
     class Meta():
         ordering = ['-id']
@@ -77,6 +82,17 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+
+class WorkExperiance(models.Model):
+    position = models.CharField(max_length=50, blank=True, null=True)
+    company = models.CharField(max_length=100)
+    company_type = models.CharField(max_length=100)
+    date_of_join = models.DateField(null=True)
+    date_on_finish = models.DateField(null=True, blank=True)
+
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=100)
 # -----------------------------------------------------------------------
 
 

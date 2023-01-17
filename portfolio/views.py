@@ -12,10 +12,14 @@ from django.template.loader import render_to_string
 
 from django.core.mail import EmailMessage
 
+from .models import *
+
 
 # from .forms import ContactForm
 def another_home(request):
     context = {}
+    projects = Project.objects.all()
+    Softwear.objects.all()
     contact_form = ContactForm(request.POST or None)
     context['form'] = contact_form
 
@@ -31,7 +35,7 @@ def another_home(request):
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
         messages.success(request, "Mail Sent Successfully")
-        return redirect('portfolio:home')
+        return redirect('portfolio:a-home')
     return render(request, 'another_home.html', context)
 
 
@@ -52,7 +56,7 @@ def home_view(request):
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
         messages.success(request, "Mail Sent Successfully")
-        return redirect('profile:home')
+        return redirect('portfolio:home')
     return render(request, "home.html", context)
 
 
