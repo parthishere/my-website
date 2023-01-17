@@ -1,3 +1,7 @@
+import os
+from django.http import HttpResponse
+import mimetypes
+from wsgiref.util import FileWrapper
 from django.shortcuts import render, redirect, reverse
 from portfolio.models import ContactModel
 from portfolio.forms import ContactForm
@@ -18,7 +22,8 @@ def another_home(request):
     if request.POST and contact_form.is_valid():
         print("nothing")
         contact = contact_form.save()
-        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':contact.title if contact.title else None})
+        template = render_to_string('email_template.html', {
+                                    'name': contact.name, 'email': contact.email, "message": contact.text, 'title': contact.title if contact.title else None})
         subject = f"{contact.name} Contacted you for Query !"
         message = template
         email_from = settings.EMAIL_HOST_USER
@@ -26,7 +31,7 @@ def another_home(request):
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
         messages.success(request, "Mail Sent Successfully")
-        return redirect('profile:home')
+        return redirect('portfolio:home')
     return render(request, 'another_home.html', context)
 
 
@@ -38,7 +43,8 @@ def home_view(request):
     if request.POST and contact_form.is_valid():
         print("nothing")
         contact = contact_form.save()
-        template = render_to_string('email_template.html', {'name': contact.name, 'email':contact.email, "message": contact.text, 'title':contact.title if contact.title else None})
+        template = render_to_string('email_template.html', {
+                                    'name': contact.name, 'email': contact.email, "message": contact.text, 'title': contact.title if contact.title else None})
         subject = f"{contact.name} Contacted you for Query !"
         message = template
         email_from = settings.EMAIL_HOST_USER
@@ -48,22 +54,21 @@ def home_view(request):
         messages.success(request, "Mail Sent Successfully")
         return redirect('profile:home')
     return render(request, "home.html", context)
-    
+
+
 def change_theme(request):
-    return redirect('profile:home')
+    return redirect('portfolio:home')
+
 
 def change_another(request):
-    return redirect('profile:a-home')
+    return redirect('portfolio:a-home')
 
-from django.http import HttpResponse
-from wsgiref.util import FileWrapper
-import os    
-import mimetypes
 
 def download_pdf(request):
     filename = 'portfolio/parth_thakkar_c_v.pdf'
-    wrapper = FileWrapper(open(filename,'rb'))
-    response = HttpResponse(wrapper, content_type=mimetypes.guess_type(filename)[0])
+    wrapper = FileWrapper(open(filename, 'rb'))
+    response = HttpResponse(
+        wrapper, content_type=mimetypes.guess_type(filename)[0])
     response['Content-Length'] = os.path.getsize(filename)
     response['Content-Disposition'] = "attachment; filename=" + filename
     return response
@@ -79,9 +84,9 @@ def download_pdf(request):
 #         print(request.user.email)
 #         instance = contact_form.save()
 #         instance.email = email
-        
+
 #         instance.save()
-        
+
 #         send_mail(
 #         instance.title,
 #         instance.text,
@@ -89,8 +94,8 @@ def download_pdf(request):
 #         ['parthishere1234@gmail.com'],
 #         fail_silently=False,
 #         )
-        
+
 #         return redirect('contact_us_congo')
-        
+
 #     context['form'] = contact_form
 #     return render(request, 'contact-us.htm', context=context)
