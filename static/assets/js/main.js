@@ -7,13 +7,36 @@ console.log(themebutton);
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
+var $container = $('.isotope');
+    
+    $container.imagesLoaded(function () {
+        $('.isotope').isotope({
+            itemSelector: '.item'
+        });
+    });
+    
+    // filter items on click
+    $('#filters').on( 'click', '.type', function() {
+      var filterValue = $(this).attr('data-filter');
+      $container.isotope({ filter: filterValue });
+    });
+    
+    // change is-checked class on buttons
+    $('.filters').each( function( i, typeGroup ) {
+        var $typeGroup = $( typeGroup );
+        $typeGroup.on( 'click', '.type', function() {
+          $typeGroup.find('.active').removeClass('active');
+          $( this ).addClass('active');
+        });
+    });
+
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
-	themebutton.style.display = "block";
+	// themebutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
-	themebutton.style.display = "none";
+	// themebutton.style.display = "none";
   }
 }
 
