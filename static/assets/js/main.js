@@ -9,26 +9,53 @@ window.onscroll = function() {scrollFunction()};
 
 var $container = $('.isotope');
     
-    $container.imagesLoaded(function () {
-        $('.isotope').isotope({
-            itemSelector: '.item'
-        });
-    });
-    
-    // filter items on click
-    $('#filters').on( 'click', '.type', function() {
-      var filterValue = $(this).attr('data-filter');
-      $container.isotope({ filter: filterValue });
-    });
-    
-    // change is-checked class on buttons
-    $('.filters').each( function( i, typeGroup ) {
-        var $typeGroup = $( typeGroup );
-        $typeGroup.on( 'click', '.type', function() {
-          $typeGroup.find('.active').removeClass('active');
-          $( this ).addClass('active');
-        });
-    });
+$container.imagesLoaded(function () {
+	$('.isotope').isotope({
+		itemSelector: '.item'
+	});
+});
+
+// filter items on click
+$('.filters').on( 'click', '.type', function() {
+	var filterValue = $(this).attr('data-filter');
+	console.log(filterValue);
+	$container.isotope({ filter: filterValue });
+});
+
+// change is-checked class on buttons
+$('.filters').each( function( i, typeGroup ) {
+	var $typeGroup = $( typeGroup );
+	$typeGroup.on( 'click', '.type', function() {
+		$typeGroup.find('.active').removeClass('active');
+		$( this ).addClass('active');
+	});
+});
+
+
+
+var $container2 = $('.isotope2');
+
+$container2.imagesLoaded(function () {
+	$('.isotope2').isotope({
+		itemSelector: '.item'
+	});
+});
+
+// filter items on click
+$('.filters2').on( 'click', '.type', function() {
+var filterValue = $(this).attr('data-filter');
+console.log(filterValue);
+$container2.isotope({ filter: filterValue });
+});
+
+// change is-checked class on buttons
+$('.filters2').each( function( i, typeGroup ) {
+	var $typeGroup = $( typeGroup );
+	$typeGroup.on( 'click', '.type', function() {
+	$typeGroup.find('.active').removeClass('active');
+	$( this ).addClass('active');
+	});
+});
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
