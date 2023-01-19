@@ -246,7 +246,7 @@
         -moz-box-shadow: 0 1px 1px 0 #54ba4e;
         box-shadow: 0 1px 1px 0 #54ba4e;
         padding: 1px;
-        background: rgba(84, 186, 78, 0.14);
+        background: rgba(84, 186, 78, 0.24);
         margin-bottom: 45px;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
@@ -268,7 +268,24 @@
       }
 
       
-
+      @media (max-width: 767px) {
+        
+          .section-title {
+            font-size: 20px;
+          }
+          .filters {
+            display: flex;
+            font-size: 12px;
+            margin-right: 5px;
+            padding: 8px 5px;
+          }
+          .filters2 {
+            display: flex;
+            font-size: 12px;
+            margin-right: 5px;
+            padding: 8px 5px;
+          }
+        }
 
     </style>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up fa-lg"></i></button>
