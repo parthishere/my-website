@@ -36,6 +36,216 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="{% static "assets/css/styles.css" %}">
     
+    <style>
+        #myBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 20px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: 0px solid black;* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #3AAA64; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 20px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+          }
+    
+       
+    
+          #themeChange {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 55px; /* Place the button at the bottom of the page */
+            left: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: 0px solid black;* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #3AAA64; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 10px; /* Some padding */
+            border-top-left-radius: 20px; /* Rounded corners */
+            font-size: 12px; /* Increase font size */
+            transform: rotate(90deg);
+            transform-origin: top left;
+          }
+          
+          #myBtn:hover {
+            background-color: #555; /* Add a dark-grey background on hover */
+          }
+    
+          .filters  {
+            list-style: none;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            text-align: center;
+            border-bottom: 1px solid #54ba4e;
+          }
+          .filters2 {
+            list-style: none;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            text-align: center;
+            border-bottom: 1px solid #54ba4e;
+          }
+    
+          .filters .type {
+            margin-right: 30px;
+            list-style: none;
+            display: inline-block;
+            padding: 8px 15px;
+            color: #8a8a8a;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+    
+          .filters2 .type {
+            margin-right: 30px;
+            list-style: none;
+            display: inline-block;
+            padding: 8px 15px;
+            color: #8a8a8a;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+    
+          .filters .type:last-child {
+            margin-right: 0;
+          }
+          .filters2 .type:last-child {
+            margin-right: 0;
+          }
+    
+          .filters .type.active {
+            color: #54ba4e;
+            {% comment %} border-bottom: 2px solid #54ba4e; {% endcomment %}
+          }
+          .filters2 .type.active {
+            color: #54ba4e;
+            {% comment %} border-bottom: 2px solid #54ba4e; {% endcomment %}
+          }
+    
+          .timeline {
+            border-left: 3px solid  #54ba4e;
+            border-bottom-right-radius: 2px;
+            border-top-right-radius: 2px;
+            position: relative;
+            padding: 0 30px;
+            margin-left: 280px;
+          }
+          .timeline .item {
+            position: relative;
+            margin-bottom: 45px;
+          }
+          .timeline .item:last-child {
+            margin-bottom: 0;
+          }
+          .timeline .item:before {
+            content: "";
+            position: absolute;
+            left: -43px;
+            top: 0;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            background: #fff;
+            border: 3px solid  #54ba4e;
+          }
+          .timeline .item:after {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 6px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            background:  #54ba4e;
+            z-index: 10;
+          }
+     
+          .timeline {
+            margin-left: 0;
+            padding-right: 0;
+          } 
+    
+    
+          .section {
+            -webkit-box-shadow: 0 1px 1px 0 #54ba4e;
+            -moz-box-shadow: 0 1px 1px 0 #54ba4e;
+            box-shadow: 0 1px 1px 0 #54ba4e;
+            padding: 1px;
+            background: rgba(84, 186, 78, 0.24);
+            margin-bottom: 45px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 1px;
+            border-radius: 1px;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+          }
+          .section:last-child {
+            margin-bottom: 0;
+          }
+          .section-title {
+            margin-top: 0;
+            margin-bottom: 45px;
+            font-size: 24px;
+            text-align: center;
+          }
+    
+          
+          @media (max-width: 767px) {
+            
+              .section-title {
+                font-size: 20px;
+              }
+              .filters {
+                display: flex;
+                font-size: 12px;
+                margin-right: 5px;
+                padding: 8px 5px;
+              }
+              .filters2 {
+                display: flex;
+                font-size: 12px;
+                margin-right: 5px;
+                padding: 8px 5px;
+              }
+    
+              .desc{
+                color:red;
+              }
+            }
+
+
+    
+        </style>
+       
 </head> 
 
 <body>
@@ -59,7 +269,8 @@
 		            <img class="profile-image img-fluid float-start rounded-circle" src="{% static 'images/profile-another-new.webp' %}" alt="profile image" />
 		            <div class="profile-content">
 		                <h1 class="name">Parth Thakkar</h1>
-		                <h2 class="desc">BackEnd & Embedded Developer <sup>&ltngl&gt </sup></h2>   
+                        {% comment %} <sup>&ltngl&gt </sup> {% endcomment %}
+		                <h2 class="desc">BackEnd & Embedded Dev \n; </h2>   
 		                <ul class="social list-inline">
 		                    <li class="list-inline-item"><a href="https://twitter.com/ParthThakkar74"><i class="fab fa-twitter"></i></a></li>
 		                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/parth-thakkar-819616197/"><i class="fab fa-linkedin-in"></i></a></li>
@@ -85,210 +296,7 @@
 	        </div><!--//row-->         
         </div><!--//container-->
     </header><!--//header-->
-    <style>
-    #myBtn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 20px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: 0px solid black;* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: #3AAA64; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 20px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-      }
-
-   
-
-      #themeChange {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 55px; /* Place the button at the bottom of the page */
-        left: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: 0px solid black;* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: #3AAA64; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 10px; /* Some padding */
-        border-top-left-radius: 20px; /* Rounded corners */
-        font-size: 12px; /* Increase font size */
-        transform: rotate(90deg);
-        transform-origin: top left;
-      }
-      
-      #myBtn:hover {
-        background-color: #555; /* Add a dark-grey background on hover */
-      }
-
-      .filters  {
-        list-style: none;
-        margin: 0 auto;
-        margin-bottom: 60px;
-        text-align: center;
-        border-bottom: 1px solid #54ba4e;
-      }
-      .filters2 {
-        list-style: none;
-        margin: 0 auto;
-        margin-bottom: 60px;
-        text-align: center;
-        border-bottom: 1px solid #54ba4e;
-      }
-
-      .filters .type {
-        margin-right: 30px;
-        list-style: none;
-        display: inline-block;
-        padding: 8px 15px;
-        color: #8a8a8a;
-        cursor: pointer;
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-
-      .filters2 .type {
-        margin-right: 30px;
-        list-style: none;
-        display: inline-block;
-        padding: 8px 15px;
-        color: #8a8a8a;
-        cursor: pointer;
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-
-      .filters .type:last-child {
-        margin-right: 0;
-      }
-      .filters2 .type:last-child {
-        margin-right: 0;
-      }
-
-      .filters .type.active {
-        color: #54ba4e;
-        border-bottom: 2px solid #54ba4e;
-      }
-      .filters2 .type.active {
-        color: #54ba4e;
-        border-bottom: 2px solid #54ba4e;
-      }
-
-      .timeline {
-        border-left: 3px solid  #54ba4e;
-        border-bottom-right-radius: 2px;
-        border-top-right-radius: 2px;
-        position: relative;
-        padding: 0 30px;
-        margin-left: 280px;
-      }
-      .timeline .item {
-        position: relative;
-        margin-bottom: 45px;
-      }
-      .timeline .item:last-child {
-        margin-bottom: 0;
-      }
-      .timeline .item:before {
-        content: "";
-        position: absolute;
-        left: -43px;
-        top: 0;
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        background: #fff;
-        border: 3px solid  #54ba4e;
-      }
-      .timeline .item:after {
-        content: "";
-        position: absolute;
-        left: -37px;
-        top: 6px;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        background:  #54ba4e;
-        z-index: 10;
-      }
- 
-      .timeline {
-        margin-left: 0;
-        padding-right: 0;
-      } 
-
-
-      .section {
-        -webkit-box-shadow: 0 1px 1px 0 #54ba4e;
-        -moz-box-shadow: 0 1px 1px 0 #54ba4e;
-        box-shadow: 0 1px 1px 0 #54ba4e;
-        padding: 1px;
-        background: rgba(84, 186, 78, 0.24);
-        margin-bottom: 45px;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        -ms-border-radius: 0px;
-        -o-border-radius: 1px;
-        border-radius: 1px;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-      }
-      .section:last-child {
-        margin-bottom: 0;
-      }
-      .section-title {
-        margin-top: 0;
-        margin-bottom: 45px;
-        font-size: 24px;
-        text-align: center;
-      }
-
-      
-      @media (max-width: 767px) {
-        
-          .section-title {
-            font-size: 20px;
-          }
-          .filters {
-            display: flex;
-            font-size: 12px;
-            margin-right: 5px;
-            padding: 8px 5px;
-          }
-          .filters2 {
-            display: flex;
-            font-size: 12px;
-            margin-right: 5px;
-            padding: 8px 5px;
-          }
-        }
-
-    </style>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up fa-lg"></i></button>
+     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up fa-lg"></i></button>
     {% comment %} <a href="{% url 'portfolio:change-theme' %}"><button id="themeChange">Change Theme</button></a> {% endcomment %}
 
     <div class="container sections-wrapper py-5">
@@ -321,8 +329,8 @@
                             <div class="timeline">
                             <div class="isotope">
                             <div class="item hardware">
-                                <h3 class="title">Embedded Developer - <span class="place"><a href="#">Griden Power - EV Charger Company</a></span> <span class="year">(Sept 2022 - present)</span></h3>
-                                <p>As a firmware developer, I learned many things like PCB desgning and advance c++</p>
+                                <h3 class="title">Embedded Developer - <span class="place"><a href="https://www.gridenpower.com">Griden Power - An EV Charger Company</a></span> <span class="year">(Sept 2022 - present)</span></h3>
+                                <p>As a firmware developer, I learned many things like PCB designing and advance C++</p>
                                 <ul>
                                     <li>Worked on MQTT protocols, designed PCBs for EV chargers</li>
                                     <li>Worked on IoT and Arduino OCPP </li>
@@ -332,32 +340,32 @@
 
                             <div class="item hardware">
                                 <h3 class="title">Firmware Developer - <span class="place"><a href="#">Scan point geomatics - Indian Geomatics Comapy</a></span> <span class="year">(Oct 2022 - present)</span></h3>
-                                <p>UHF reader and ESP32 for detaction of determining range/distance of RFID tags</p>
+                                <p>UHF reader and ESP32 for detection of determining range/distance of RFID tags</p>
                                 <ul>
                                     <li>Created Product for Long range RFID detaction</li>
-                                    <li>Designed and Mnufactured full fledge product </li>
-                                    <li>wokred on UHF reader, ESP32, Touch screen </li>
+                                    <li>Designed and Manufactured full fledge product </li>
+                                    <li>Worked on UHF reader, ESP32, Touch screen </li>
                                   </ul>
                             </div><!--//item-->
 
 
                             <div class="item hardware software">
-                                <h3 class="title">Iot Developer - <span class="place"><a href="#">IoT Home Automation , IBotics</a></span> <span class="year">(2021)</span></h3>
+                                <h3 class="title">Iot Developer - <span class="place"><a href="https://www.sensital.com/platform">IoT Home Automation , IBotics</a></span> <span class="year">(2021)</span></h3>
                                 <p>I've used ESP8266 for home automation and django website for controlling application</p>
                                 <ul>
                                 <li>Circuit Designing / Debugging</li>
                                 <li>Created product for IoT automation </li>
-                                <li>Web Development. The main objective is to develop websites using Django </li>
+                                <li>Web Development. Main purpose was to develop website using Django </li>
                                 </ul>
                             </div><!--//item-->
 
                             <div class="item software">
-                                <h3 class="title">Python Developer - <span class="place"><a href="#">Crypto Bot, Citrus</a></span> <span class="year">(2021)</span></h3>
-                                <p>I've created Crypto market making bot which helps in stabalizing coin, (market making)</p>
+                                <h3 class="title">Python Developer - <span class="place"><a href="#"></a></span> <span class="year">(2021)</span></h3>
+                                <p>I've created Crypto market making bot which helps in stabalizing coin (market making)</p>
                                 <ul>
-                                <li>Algorithm and Flow control. The main objective is to develop bot using Python  .</li>
-                                <li>Bot Testing. The objective of testing is to Find Bugs and Security. </li>
-                                <li>Bot UI. The main objective is to develop Frontend using Django </li>
+                                <li>Algorithm and Flow control.</li>
+                                <li>Bot Testing. </li>
+                                <li>Bot UI. The main objective is to develop Frontend using Django.</li>
                                 </ul>
                             </div><!--//item-->
                             
@@ -374,9 +382,9 @@
 
                             <div class="item software">
                                 <h3 class="title">Back-end Developer - <span class="place"><a href="#">Purple & Cream</a></span> <span class="year">(2019)</span></h3>
-                                <p>As an Backend Developer I've been given training on Python ,Django and SQL:</p>
+                                <p>As an Backend Developer, I've been given training on Python ,Django and SQL:</p>
                                 <ul>
-                                <li>Created stackover flow like website for film industries as a free lancer and as a intern.</li>
+                                <li>Created a website like stackoverflow for film Industries as an intern</li>
                                 
                             </div><!--//item-->
                         </div>
@@ -413,7 +421,7 @@
                                 <h3 class="title mb-3"><a href="" target="_blank">8-bit CPU</a></h3>
                                     
                                 <div class="desc text-start">                                    
-                                    <p>This CPU is made from basic transistor-transistror-logic, and it can run basic programs like fibonacci series, addition, substraction. As an embedded system it has all core blocks like:
+                                    <p>This CPU is composed from basic transistor-transistror-logic, and is capable of executing basic programs such as fibonacci series, addition, substraction. As an embedded system it is equipped with all necessary core blocks:
                                         <table>
                                             <tr>
                                                 <td>
@@ -440,19 +448,19 @@
                                     </p>
                                 </div><!--//desc-->         
                                 <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1S6bwNuWNf4YbxAcU_iDN9Tjcg6A7jNhM" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a>       
-                            </br>          
+                            </br>  
+                            <hr class="divider" />        
                             </div><!--//item-->
 
 
-                            <hr class="divider" />
+                            
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://facelogup.herokuapp.com" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/facelogup.webp' %}" alt="Login With Face" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://facelogup.herokuapp.com" target="_blank">LogUp - Attendance System with Decentralized Face Recognition</a></h3>
-                                    <p class="mb-2">This website is designed for offline attendance system, and it has saveral features like sessions, surveillance, working hour. </p>
-                                    <p> It uses Machine learning to build perticular student model and uses Webcam for attendance</p>
+                                    <p class="mb-2">This website has been created for an offline attendance system, it includes features such as sessions, surveillance and working hour tracking. Utilizing machine learning, it builds a unique student model and uses webcams for attendance.</p>
                                     <p> Tech stack: Django, Tensorflow, OpenCV, AWS, Heroku, AJAX, JS, Redis,PostgreSQL, Celery, Channels </p>
                                     <p><a class="more-link" href="https://facelogup.herokuapp.com" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/Login-With-Face-Recognition" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
@@ -466,9 +474,7 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
-                                    <p class="mb-2">In this project I created Django website for server side rendering and ESP32/ESP8266 for client side rendering of IoT project</p>
-                                    <p>I cretaed IoT platform cloud API, cloud app that connects with server, and ESP32 library that communicate with all of above</p>
-                                    <p>Tech stack:Django, PostgreSQL, Django-Rest-Framework, ESP32, C++, React</p>
+                                    <p class="mb-2"><p>In this project, an IoT platform was developed comprising a website for server-side rendering utilizing the Django framework and an ESP32/ESP8266 for client-side rendering. Additionally, a cloud API and app were created to facilitate communication with the server and an ESP32 library was developed to enable communication between all aforementioned components. The technical stack employed in the realization of this project included Django, PostgreSQL, Django-Rest-Framework, ESP32, C++ and React.</p>
                                     <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/HomeAutomation" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc--> 
@@ -476,14 +482,13 @@
                             </div><!--//item-->
                            
                             
-                            <div class="item row softproj">
+                            <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="#" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/crypto-frontend.png' %}" alt="Smart glasses" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>AI smart spectacles</a></h3>
-                                    <p class="mb-2">Created smart goggles for blind people that can help defrentiate between people, objects </p>
-                                    <p>It can also identy fy objects and environment, which can be heard by speakers integrated into it</p>
+                                    <p class="mb-2">I have developed smart goggles for visually impaired individuals that can distinguish between people and objects. It can also identify objects and the surrounding environment, which can be relayed to the user through speakers integrated into the goggles.</p>
                                     <p>Tech stack:Tnesorflow, OpenCV, Raspberry-PI </p>
                                     <p>
                                     <p><a class="more-link" href="https://github.com/parthishere/crypto-frontend" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
@@ -498,16 +503,28 @@
                                 </div>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">Atonomus Car</h3>
-                                    <p class="mb-2">Technology used :Embedded C, Machine Learning, IOT, OpenCV, Deep Learning
-                                        The car can automaticly detect lanes objects and obstacles.</p></br>
-                                        <ul>
-                                        <li> Also can take possible action to avoid obstacles and objects.</li>
-                                        <li> Provided sensors can track all information about weather and surroundings</li>
-                                        </ul>
+                                    <p class="mb-2">The vehicle is equipped with the ability to automatically detect lane markings, objects, and obstacles. Furthermore, it is capable of taking appropriate actions to circumvent any detected obstacles and objects.</p>
+                                    <p> Sensors are also installed to provide information pertaining to the weather conditions and the surrounding environment.</p>
+                                        
                                     <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
 
+                            <div class="item row hardproj">
+                                <div class="col-md-4 col-12">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/project2.webp' %}" alt="" />
+                                </div>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"> Soldier Starp</h3>
+                                    <p class="mb-2">Technology used :Embedded C, Arduino, Neo6 GPS, GPRS/GSM
+                                        This strap can deliver GPS coordinates and some body parameters to predefined mobile phone</p></br>
+                                        <ul>
+                                        <li> This can help soldiers to send emergency mesasge and ring headquater when needed.</li>
+                                        <li> Sensors can sense and send the data like heartbeat, temprature and coordinates of strap.</li>
+                                        </ul>
+                                    <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
                             
                             <br>
 
@@ -517,8 +534,7 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Webmeetup: Online Video Chat App</a></h3>
-                                    <p class="mb-2">This project is Video call app with all the basic features like, Share screen, Share files, Chat</p>
-                                    <p> Further I will integrate this video chat app in LogUP webiste for attandace as well as taking online lectures</p>
+                                    <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
                                     <p> Tech stack: Django, Redis, Digital Ocean, Channels, WebRTC, Daphene, JS </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/videochat" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc-->                          
@@ -532,10 +548,8 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://devmediaonapi.herokuapp.com" target="_blank">DevMedia - Social Media Platform for Developers (Backend)</a></h3>
-                                    <p class="mb-2"> DevMedia is Social Media website developed for developes</p>
-                                    <p> You can share your projects, images, and threds with user</p>
-                                    <p> Basic features like post, share, like, comment, follow, followers and all the basic nessesity are iplemented </p>
-                                    <p> And advance featutres like Chat , Video Call, Interation Resume is also implemented<p>
+                                    <p class="mb-2">DevMedia is a social media platform specifically designed for developers. Users can share their projects, images and threads with others.</p>
+                                    <p> It includes basic features such as posting, sharing, liking, commenting, following and followers, as well as advanced features like chat, video call, and interaction resume.</p>
                                         <p> TechStack: Django-Rest-Framework, Channels, GraphQL, Celery, Celery-beat </p>
                                         <p><a class="more-link" href="https://devmediaonapi.herokuapp.com" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                         <p><a class="more-link" href="https://github.com/parthishere/Social-Media-Clone" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
