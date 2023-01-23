@@ -36,6 +36,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['django-server-production-417d.up.railway.app',
                  '127.0.0.1', 'parththakkar.herokuapp.com', "parththakkar.studio",]
 
+CSRF_TRUSTED_ORIGINS = ['https://parththakkar.studio']
 # 123pih
 # Application definition
 
