@@ -56,7 +56,7 @@ def home_view(request):
         mail = EmailMessage(subject, message, email_from, recipient_list)
         mail.send()
         messages.success(request, "Mail Sent Successfully")
-        return redirect('portfolio:home')
+        return redirect('portfolio:a-home')
     return render(request, "home.html", context)
 
 

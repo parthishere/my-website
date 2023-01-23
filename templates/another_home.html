@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Boootstrap Portfolio/Resume Theme for Developers">
     <meta name="author" content="Parth Thakkar">   
-    <link rel="shortcut icon" href="favicon.ico"> 
-    <link rel="shortcut icon" href="{% static "favicon.ico" %}">  
+    
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">  
     
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
@@ -226,12 +226,16 @@
               }
               .filters {
                 display: flex;
+                align-items: center;
+                justify-content: center;
                 font-size: 12px;
                 margin-right: 5px;
                 padding: 8px 5px;
               }
               .filters2 {
                 display: flex;
+                align-items: center;
+                justify-content: center;
                 font-size: 12px;
                 margin-right: 5px;
                 padding: 8px 5px;
@@ -247,7 +251,7 @@
 </head> 
 
 <body>
-
+{% comment %} logo, typo, add logo, add image, chnage image {% endcomment %}
     {% if messages %}
     
         {% for message in messages %}
@@ -468,11 +472,12 @@
                             
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/crypto-frontend.png' %}" alt="Smart IoT system" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/esp-react.webp' %}" alt="Smart IoT system" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
-                                    <p class="mb-2"><p>In this project, an IoT platform was developed comprising a website for server-side rendering utilizing the Django framework and an ESP32/ESP8266 for client-side rendering. Additionally, a cloud API and app were created to facilitate communication with the server and an ESP32 library was developed to enable communication between all aforementioned components. The technical stack employed in the realization of this project included Django, PostgreSQL, Django-Rest-Framework, ESP32, C++ and React.</p>
+                                    <p class="mb-2"><p>In this project, an IoT platform was developed comprising a website for server-side rendering utilizing the Django framework and an ESP32/ESP8266 for client-side rendering. Additionally, a cloud API and app were created to facilitate communication with the server and an ESP32 library was developed to enable communication between all aforementioned components. </p>
+                                        <p>The technical stack employed in the realization of this project included Django, PostgreSQL, Django-Rest-Framework, ESP32, C++ and React.</p>
                                     <p><a class="more-link" href="" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/HomeAutomation" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc--> 
@@ -482,7 +487,7 @@
                             
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/crypto-frontend.png' %}" alt="Smart glasses" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/download.webp' %}" alt="Smart glasses" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>AI smart spectacles</a></h3>
@@ -503,6 +508,7 @@
                                     <h3 class="title">Atonomus Car</h3>
                                     <p class="mb-2">The vehicle is equipped with the ability to automatically detect lane markings, objects, and obstacles. Furthermore, it is capable of taking appropriate actions to circumvent any detected obstacles and objects.</p>
                                     <p> Sensors are also installed to provide information pertaining to the weather conditions and the surrounding environment.</p>
+                                    <p>Tech stack:Tensorflow, OpenCV, Raspberry-PI, Arduino, Motor Drivers</p>
                                         
                                     <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
                                 </div><!--//desc-->                          
@@ -510,15 +516,16 @@
 
                             <div class="item row hardproj">
                                 <div class="col-md-4 col-12">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/project2.webp' %}" alt="" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/soldier_strap.webp' %}" alt="" />
                                 </div>
-                                <div class="desc col-md-8 col-12">
+                                <div class="desc col-md-8 col-12">  
                                     <h3 class="title"> Soldier Starp</h3>
                                     <p class="mb-2">Technology used :Embedded C, Arduino, Neo6 GPS, GPRS/GSM
                                         This strap can deliver GPS coordinates and some body parameters to predefined mobile phone</p></br>
                                         <ul>
                                         <li> This can help soldiers to send emergency mesasge and ring headquater when needed.</li>
                                         <li> Sensors can sense and send the data like heartbeat, temprature and coordinates of strap.</li>
+                                        <p>Tech Stack: Ardino, Neo6m GPS, GPRS, LCD, Other sensors like accelerometer, gyro.</p>
                                         </ul>
                                     <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
                                 </div><!--//desc-->                          
@@ -531,7 +538,7 @@
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/vidchat.webp' %}" alt="video call app" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Webmeetup: Online Video Chat App</a></h3>
+                                    <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Web-meetup: Online Video Chat App</a></h3>
                                     <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
                                     <p> Tech stack: Django, Redis, Digital Ocean, Channels, WebRTC, Daphene, JS </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/videochat" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
@@ -542,7 +549,7 @@
 
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://devmediaonapi.herokuapp.com" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/devmedia.png' %}" alt="social media for programmers" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/devmedia.webp' %}" alt="social media for programmers" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://devmediaonapi.herokuapp.com" target="_blank">DevMedia - Social Media Platform for Developers (Backend)</a></h3>
@@ -563,9 +570,9 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://notesonhand.netlify.app" target="_blank">KeeponNote - Notes Websites</a></h3>
-                                    <p class="mb-2"> Basic Notes websites for taking notes and setting remainder using React</p>
+                                    <p class="mb-2"> Basic Notes websites for taking notes and setting remainder using React, and Django</p>
                                     <p> I've integrated google and github profile passing </p>
-                                    <p> Tech stack: React, SASS </p>
+                                    <p> Tech stack: React, SASS, Django </p>
                                     <p><a class="more-link" href="https://notesonhand.netlify.app" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/todo-app" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc-->                          
@@ -577,14 +584,12 @@
                             <div class="item row softwproj">
                                 
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/qrcode" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/download.png' %}" alt="" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/download.webp' %}" alt="" />
                                 </a>
                                 
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title">Event QR code genrator</h3>
-                                    <p class="mb-2"> It genrates Event passes according to event data of user, and send mail to each of them</p>
-                                    <p> This is useful for online pass system and can be furthur optimized </p>
-                                    <p> You can put your pass imgage and you can scan the pass also in the website </p>
+                                    <h3 class="title">Event QR code generator</h3>
+                                    <p class="mb-2"> This system generates event passes based on the event data of the users, and sends an email to each of them. It is useful for an online pass system and can be further optimized. Users can upload a pass image and can also scan the pass on the website. </p>
                                     <p> Tech stack: Django, Ajax, Sockets, WebRTC </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/qrcode" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc-->                          
@@ -604,8 +609,8 @@
                         <div class="content">
                             
                             <div class="item hardproj">
-                                <h3 class="title"><a href="https://github.com/parthishere/ESP8266" target="_blank">IoT Home Automation</a></h3>
-                                <p class="summary">In this project i've integrated django backend and ESP8266 board, For real time operation i've automated home lights and fans. This website is scalable</p>
+                                <h3 class="title"><a href="https://github.com/parthishere/ESP8266" target="_blank">IoT Home Automation with telegram</a></h3>
+                                <p class="summary">In this project i've integrated telegram website and ESP8266 board, For real time operation i've automated home lights and fans. This telegram bot is scalable</p>
                                 <p><a class="more-link" href="https://github.com/parthishere/ESP8266" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                             </div><!--//item-->
 
@@ -614,12 +619,14 @@
                                 <p class="summary">Created Simple notpad like text editor using C++</p>
                                 <p><a class="more-link" href="https://github.com/parthishere/textedito" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                             </div><!--//item-->
-
+                            <hr>
                             <div class="item">
                             <p><b>Small Projects</b></p>
+                            <p>
                                 > E-commerce using Django<br>
                                 > Chat app using django and Channels<br>
                                 > Created All the basic Machin learning models from scratch in python (NN, Dicision Tree, Naive Bays, Regression, K means, KNN and more.)<br>
+                            </p>
                             
                         </div>
                             
