@@ -10,6 +10,7 @@ dj-database-url
 Django
 django-heroku
 django-storages
+psycopg2-binary
 gunicorn
 idna
 jmespath
