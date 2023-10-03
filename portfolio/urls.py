@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('h', home_view, name='home'),
     path('', another_home, name='a-home'),
-    path('c', cmd_home, name='a-home'),
+    path('c', cmd_home, name='c-home'),
     path('download-pdf', download_pdf, name='pdf'),
     path('change/', change_theme, name='change-theme'),
     path('change-another/', change_another, name='change-another'),
