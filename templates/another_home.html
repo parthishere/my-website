@@ -413,15 +413,19 @@
                                     <a href="" target="_blank">
                                     <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/cpu.webp' %}" alt="CPU from logic gate" />
                                     </a>
-                                    {% comment %} <div class="ribbon">
-                                        <div class="text">on going</div>
-                                    </div> {% endcomment %}
                                 </div>
                                 
                                 <h3 class="title mb-3"><a href="" target="_blank">8-bit CPU</a></h3>
                                     
-                                <div class="desc text-start">                                    
+                                  
+                                    <button id="showDialogBtn1" class="btn btn-cta-secondary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog1">
+                                        <form method="dialog"> 
+                                            <div class="desc text-start">                             
                                     <p>This CPU is composed from basic transistor-transistror-logic, and is capable of executing basic programs such as fibonacci series, addition, substraction. As an embedded system it is equipped with all necessary core blocks: 
+                                    </p>
                                         <table>
                                             <tr>
                                                 <td>
@@ -453,10 +457,19 @@
                                             
                                         </p>
                                         <p>Also I have created EEPROM programmer with Arduino-nano for proggramming EEPROMs
-                                    </p>
-                                </div><!--//desc-->         
-                                <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1S6bwNuWNf4YbxAcU_iDN9Tjcg6A7jNhM" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
-                                <a href="https://github.com/parthishere/optimized-eeprom"> EEPROM programmer code</a>      
+                                        </p>
+
+                                        <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                        <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1S6bwNuWNf4YbxAcU_iDN9Tjcg6A7jNhM" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
+                                    <a href="https://github.com/parthishere/optimized-eeprom"> EEPROM programmer code</a>  
+                                </div><!--//desc-->
+                                    </form>
+                                
+                                    </dialog> 
+                                        
+                                
+
+                                   
                             </br>  
                             <hr class="divider" />        
                             </div><!--//item-->

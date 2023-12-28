@@ -847,3 +847,14 @@ body[data-theme="dark"] .text-muted {
     max-width: inherit;
   }
 }
+
+/* Model */
+body[data-theme="dark"] dialog::backdrop {
+  opacity: 0.9;
+  background: #434343;
+}
+
+form > p {
+  border-radius:  5px;
+  font-size: 24px;
+}

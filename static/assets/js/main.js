@@ -2,8 +2,46 @@
 mybutton = document.getElementById("myBtn");
 themebutton = document.getElementById("themeChange");
 
-console.log(mybutton);
-console.log(themebutton);
+const favDialog1 = document.getElementById("favDialog1")
+const showDialogBtn1 = document.getElementById("showDialogBtn1")
+
+const favDialog2 = document.getElementById("favDialog2")
+const showDialogBtn = document.getElementById("showDialogBtn2")
+
+const favDialog3 = document.getElementById("favDialog3")
+const showDialogBtn3 = document.getElementById("showDialogBtn3")
+
+const favDialog4 = document.getElementById("favDialog4")
+const showDialogBtn4 = document.getElementById("showDialogBtn4")
+
+const favDialog5 = document.getElementById("favDialog5")
+const showDialogBtn5 = document.getElementById("showDialogBtn5")
+
+const favDialog6 = document.getElementById("favDialog6")
+const showDialogBtn6 = document.getElementById("showDialogBtn6")
+
+const favDialog7 = document.getElementById("favDialog7")
+const showDialogBtn7 = document.getElementById("showDialogBtn7")
+
+const favDialog8 = document.getElementById("favDialog8")
+const showDialogBtn8 = document.getElementById("showDialogBtn8")
+
+const favDialog9 = document.getElementById("favDialog9")
+const showDialogBtn9 = document.getElementById("showDialogBtn9")
+
+
+showDialogBtn1.addEventListener("click", () => favDialog1.showModal())
+showDialogBtn2.addEventListener("click", () => favDialog2.showModal())
+showDialogBtn3.addEventListener("click", () => favDialog3.showModal())
+showDialogBtn4.addEventListener("click", () => favDialog4.showModal())
+showDialogBtn5.addEventListener("click", () => favDialog5.showModal())
+showDialogBtn6.addEventListener("click", () => favDialog6.showModal())
+showDialogBtn7.addEventListener("click", () => favDialog7.showModal())
+showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
+showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
+
+
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
