@@ -418,7 +418,7 @@
                                 <h3 class="title mb-3"><a href="" target="_blank">8-bit CPU</a></h3>
                                     
                                   
-                                    <button id="showDialogBtn1" class="btn btn-cta-secondary">
+                                    <button id="showDialogBtn1" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
                                       <dialog id="favDialog1">
@@ -456,6 +456,13 @@
                                             The LCD provides a output for the bus's state, and the Register/Instruction Register holds the instructions and data currently being processed. The Control Unit, along with the Clock, ensures synchronized operations within the CPU. Lastly, the RAM offers memory storage, and the Address Decoder is used for data addressing and retrieval.
                                             
                                         </p>
+                                        <p>
+                                            The clock can get upto 300Hz and there are two modes to this clock unit one in which cpu runs automatically on clock other is single stepping for debugging the CPU. There are two modes to RAM: Running mode and Programming mode. The program sits on 16 bytes of RAM which can be manually written by the custom instructions made specifically for this CPU. 
+                                        </p>
+
+                                        <p>
+                                            Control unit is made up of EEPROMs (softcontrol unit) so we can add instruction modify instructions and also change the logic of the control signal, and there are 16 control signals which controls loading in register or storage, passing to bus, reset, and other control lines. There is also reset circuit to reset the CPU
+                                        </p>
                                         <p>Also I have created EEPROM programmer with Arduino-nano for proggramming EEPROMs
                                         </p>
 
@@ -465,11 +472,7 @@
                                 </div><!--//desc-->
                                     </form>
                                 
-                                    </dialog> 
-                                        
-                                
-
-                                   
+                                    </dialog>      
                             </br>  
                             <hr class="divider" />        
                             </div><!--//item-->
@@ -479,7 +482,13 @@
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Pong game with 8051 in Asseembly </a></h3>
+                                    <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Pong game with 8051 in Asseembly </a></h3>
+
+                                    <button id="showDialogBtn2" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog2">
+                                        <form method="dialog"> 
                                     <p class="mb-2">Designed and implemented paddle controll with PS2 Keyboard, used 8 individual Dotmatrix display to show </p>
                                     <p> 
                                         implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
@@ -487,8 +496,12 @@
                                         <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
                                 
                                     <p> Tech stack: C++, GTest </p>
-                                    
+
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="github.com/parthishere/" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                                </dialog>
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
@@ -498,7 +511,7 @@
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
+                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded systems Design LAB</a></h3>
                                     <p class="mb-2">Simulated 6052 computer in the C++ that can run programs which sits in to virtual memory.</p>
                                     <p> 
                                         implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
@@ -518,18 +531,52 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="github.com/parthishere/" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
+                                    <button id="showDialogBtn3" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog3">
+                                        <form method="dialog"> 
                                     <p class="mb-2">Simulated 6052 computer in the C++ that can run programs which sits in to virtual memory.</p>
-                                    <p> 
+                                     
+                                        <p>
                                         implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
                                     
-                                        <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
+                                        <p>
+                                        One of the key features of this simulator is the implementation of the 6052 instruction set. I have programmed a range of instructions with the same opcodes as the actual 6052 assembly language. These instructions include:
+                                        </p>
+                                        <ul>
+                                            <li> LDA, LDX/Y: Load Accumulator, Load X/Y Register </li>
+                                            <li>STA, STX/Y: Store Accumulator, Store X/Y Register</li>
+                                            <li>JMP: Jump to another location</li>
+                                            <li>RTS: Return from Subroutine</li>
+                                            <li>JSR: Jump to Subroutine</li>
+                                            <li>BEQ: Branch if Equal</li>
+                                            <li>CMP: Compare Accumulator</li>
+                                            <li>TAX, TAY: Transfer Accumulator to X, Transfer Accumulator to Y</li>
+                                            <li>NOP: No Operation</li>
+                                        </ul>
+                                        <p>
+                                        Each instruction was implemented as 6502 instruction set, ensuring that the simulator could execute a given set of assembly instructions. This included handling various addressing modes and correctly modifying processor status flags as per the operation's result.
+                                        </p>
+                                        <p>
+                                        The virtual memory structure made with c union is the main thing in the simulation, storing the program code and data. This structure was designed to reflect the memory model of a 6052 computer. 
+                                        </p>
+
+                                        <p>
+                                            Tested all the Instructions, ALU and memory map with google test suit for C++ to ensure all the the instructions and programs are working perfectly
+                                        </p>
                                 
                                     <p> Tech stack: C++, GTest </p>
-                                    
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="github.com/parthishere/" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                            </dialog>
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
+
+                            
 
 
 

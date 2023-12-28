@@ -854,7 +854,14 @@ body[data-theme="dark"] dialog::backdrop {
   background: #434343;
 }
 
+dialog{
+  background-color: #1e2124;
+  color: white;
+  border-width: 1px;
+  border-color: #3AAA64;
+  border-radius: 5px;
+}
+
 form > p {
-  border-radius:  5px;
-  font-size: 24px;
+  border-radius:  5px;  
 }
