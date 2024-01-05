@@ -491,9 +491,32 @@
                                         <form method="dialog"> 
                                     <p class="mb-2">Designed and implemented paddle controll with PS2 Keyboard, used 8 individual Dotmatrix display to show </p>
                                     <p> 
-                                        implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
-                                    
-                                        <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
+                                        This project presents the design and implementation of an interactive game system based on the
+                                        versatile 8051 microcontroller, demonstrating a blend of classic gaming concepts with modern embedded
+                                        system technologies. Central to the system is a high-resolution dot matrix display, constructed from eight
+                                        individual 8x32 dot matrix units to form a cohesive 16x32 pixel display area. This display serves as the
+                                        primary interface for the game, showcasing dynamic visual elements and game interactions.
+                                        <p>
+                                        In a nod to classic arcade games, the system incorporates a PS2 controller with a custom-designed
+                                        hardware interface. This interface leverages the interrupt capabilities of the 8051 microcontroller, ensuring
+                                        real-time responsiveness and accurate input recognition. The interface efficiently handles data latching
+                                        from the controller, translating player actions into on-screen movements seamlessly.
+                                        <p>
+                                        A critical aspect of the game system is the scoring mechanism, realized through the use of shift
+                                        registers. These registers drive an LED-based scoreboard, providing players with a clear and immediate
+                                        visual feedback of their performance in the game. This feature adds a competitive edge and enhances
+                                        player engagement.
+                                        <p>
+                                        The game logic, developed primarily assembly language, includes sophisticated algorithms for paddle
+                                        movement and ball dynamics. It ensures that the gameplay is challenging yet intuitive, adhering to the
+                                        physical constraints of the dot matrix display. Collision detection algorithms are implemented to facilitate
+                                        interactions between the ball and paddles, forming the core of the game’s mechanics.
+                                        <p>
+                                        This project exemplifies the use of embedded systems in creating an engaging interactive experience. It
+                                        combines hardware proficiency, software innovation, and game design principles, resulting in a system that
+                                        is not only functionally robust but also entertaining. The development process highlighted the intricacies
+                                        of low-level programming and the effective management of hardware resources, offering valuable insights
+                                        into embedded system design and real-time control.
                                 
                                     <p> Tech stack: C++, GTest </p>
 
@@ -511,8 +534,8 @@
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded systems Design LAB</a></h3>
-                                    <p class="mb-2">Simulated 6052 computer in the C++ that can run programs which sits in to virtual memory.</p>
+                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
+                                    <p class="mb-2">Implemented 8051 based board with lots of functionality.</p>
                                     <p> 
                                         implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
                                     
@@ -589,7 +612,28 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://facelogup.herokuapp.com" target="_blank">LogUp - Attendance System with Decentralized Face Recognition</a></h3>
-                                    <p class="mb-2">This website has been created for an offline attendance system, it includes features such as sessions, surveillance and working hour tracking, downloaing attendence, chatting with student, managing dashboard. Utilizing machine learning, it builds a unique student model and uses webcams for attendance.</p>
+                                    <p class="mb-2">
+                                    this decentralized attendance system uses facial recognition technology and Django framework. It's easy to use, accurate, and can be used in schools and industries. You only need a camera and internet connection to use it. The interface is customizable and provides real-time tracking, reporting, and analytics. It's scalable and easy to add new users, devices, and locations. It's a modern solution for attendance tracking!
+
+
+                                    Features
+local ip and gps detaction for the physical attendance
+Mass User creation with excel sheet
+Fully working teacher dashboard
+Lecture and session Management, Sessions can be seen from dashboard
+Download overall attendace, session attendance, lecture attendance
+User profile page
+user can search the lectures send request to teache for joining the lecture
+teacher can enable and disable the lecture according to need and that will create another session for the lecture
+lectue,session management tools
+search teacher and lecture in the same college
+(working) send message to contact the student or teacher
+teacher can take attendance and also change the attendance
+Why it is full (fool) proof
+it uses local ip and gps to determine the location of the student
+Teacher can randomly start the session and take attendace, also this session will automaticaly stop after some predefined time
+uses face recognition to check the student's avability
+student can't change the profile photo after updating it once / only teacher can change the photo
                                     <p> 
                                         During my time in college(LD College of engineering), I used this website to mark attendance two to three times.</p>
                                     <p> Tech stack: Django, Tensorflow, OpenCV, AWS EC2, AWS S3, AJAX, JS, Redis,PostgreSQL, Celery, Channels </p>
@@ -606,6 +650,25 @@
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
                                     <p class="mb-2"><p>In this project, an IoT platform was developed comprising a website for server-side rendering utilizing the Django framework and an ESP32/ESP8266 for client-side rendering. Additionally, this cloud API and an app  for communication with the server and an ESP32 was created in the python, Additionally I developed an library to enable communication between all aforementioned components. </p>
+
+                                    In this innovative project, I have developed a comprehensive Internet of Things (IoT) ecosystem using Django and the Django REST framework. This ecosystem is designed to be seamlessly integrated with ESP32 microcontrollers, leveraging a custom library written in C++ for communication and data handling.
+
+                                    Custom ESP32 Library in C++: The core of the system's hardware interaction lies in the custom C++ library developed for the ESP32. This library is engineered to efficiently manage data communication between the ESP32 and the server. It makes use of the EEPROM (Electrically Erasable Programmable Read-Only Memory) to intelligently filter and eliminate redundant data received from the server. Furthermore, it is programmed to send data back to the server only when necessary, optimizing network traffic and system performance.
+
+                                    HTTPS and WebSocket Communication: The IoT ecosystem utilizes HTTPS for secure data transmission, ensuring that all communication between the ESP32 devices and the server is encrypted and safe from potential intrusions. Additionally, WebSocket technology is employed for real-time data exchange, enhancing the responsiveness and interactivity of the system.
+
+                                    Customizable Data Handling: One of the key features of this ecosystem is its flexibility in data handling. Users have the capability to customize the type of data sent from the ESP32, ranging from digital and analog signals to GPS coordinates. This versatility allows the system to be adapted for various use cases, including location tracking which can be visually represented on maps.
+
+                                    Django Backend with REST API: At the backend, Django serves as the robust framework supporting the system, with the Django REST framework facilitating API interactions. These APIs are crucial for receiving data from the ESP32 devices and sending commands or information back to them.
+
+                                    Asynchronous HTTPS Requests on ESP32: To minimize latency in API communication, the ESP32 library is designed to handle HTTPS requests asynchronously. This approach reduces the delay in sending and receiving API requests, thereby enhancing the overall efficiency of the system.
+
+                                    Dynamic ESP32 Management: The system provides features for dynamically adding or removing ESP32 instances. This functionality is crucial for scaling the system and managing multiple devices simultaneously.
+
+                                    WebSocket Data Transmission: In addition to HTTPS, the ecosystem also supports data transmission through WebSockets. This feature is particularly useful for scenarios where continuous and real-time data streaming is required, such as in sensor monitoring applications.
+
+                                    This IoT ecosystem, developed from scratch, exemplifies a sophisticated blend of software and hardware integration. By combining the power of Django with custom C++ programming for the ESP32, the system offers a versatile and secure platform for various IoT applications. Its ability to handle different data types, including real-time location tracking, along with efficient communication protocols like HTTPS and WebSockets, makes it a robust solution for modern IoT challenges.
+
                                         <p>The technical stack employed in the realization of this project included Django, PostgreSQL, Django-Rest-Framework, ESP32, C++ and React.</p>
                                     <p><a class="more-link" href="https://fleetkaptan.up.railway.app" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/firmware_rfid_dynamic" target="_blank"><i class="fas fa-external-link-alt"></i>View Hardware Code</a></p>
@@ -621,10 +684,24 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>Baremetal RTOS in Stm32f070</a></h3>
-                                    <p class="mb-2">Created Baremetal RTOS for ARM corted M0 core , implemented Schedular</p>
-                                    <p>Implemented RTOS with, Roundrobin way , Cooprative way and Periodic Schedular </p>
-                                    <p>
-                                    <p> Implemented Semaphores </p>
+                                    <p class="mb-2">In this ambitious project, I developed a custom bare-metal RTOS tailored for the STM32F0711 board, which is based on the ARM Cortex M0+ architecture. This RTOS was uniquely implemented in three distinct scheduling methodologies: Round Robin, Cooperative, and Periodic Scheduler. Each of these implementations caters to different operational requirements, demonstrating the versatility of the system.
+
+                                        Round Robin Scheduling: In this mode, the RTOS allocates a fixed time slice to each task, rotating through them in a cyclic order. This approach ensures fair CPU time distribution among all tasks, suitable for systems where tasks have similar priority levels.
+                                        
+                                        Cooperative Scheduling: Under cooperative scheduling, tasks voluntarily yield control back to the scheduler, allowing other tasks to execute. This method provides more control to the individual tasks over their execution but requires well-designed task interaction to prevent issues like task starvation.
+                                        
+                                        Periodic Scheduler: The periodic scheduler is designed for tasks that need to run at regular intervals. This implementation is particularly useful for time-sensitive tasks that require consistent and predictable execution timing.
+                                        
+                                        Mutex Implementation: To manage access to shared resources, I have incorporated mutexes in the RTOS. These mutexes are essential for avoiding race conditions and ensuring data integrity when multiple tasks access the same resource.
+                                        
+                                        SysTick Handler for Task Switching: The core of the task management mechanism in this RTOS is the SysTick handler. This handler is responsible for task switching, leveraging the SysTick timer of the STM32F0711 board to trigger context switches at precise intervals.
+                                        
+                                        Context Switching with ARM Assembly: One of the critical aspects of this RTOS is the efficient handling of context switching. This process involves saving the current state of a task and restoring the state of the next task to be executed. To accomplish this, I used ARM assembly to manipulate the stack and registers, ensuring that each task’s context is preserved and restored accurately. This approach is crucial for maintaining the integrity of task execution and allowing seamless switches between tasks.
+                                        
+                                        Stack Management for Tasks: Alongside context switching, the RTOS also manages the stack space for each task. This management is vital to prevent stack overflows and to ensure that each task has sufficient stack memory for its execution.
+                                        
+                                        This RTOS project highlights the complexities of low-level programming and system design on ARM Cortex M0+ architecture. It demonstrates a deep understanding of real-time concepts and the intricacies of task scheduling, context switching, and resource management. The implementation of different scheduling algorithms along with mutexes makes this RTOS a robust and flexible solution for various real-time applications.</p>
+
                                     <p><a class="more-link" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank"><i class="fas fa-external-link-alt"></i>View Software Code</a></p>
                                 </div><!--//desc--> 
                             </br>                         
@@ -639,7 +716,7 @@
                                     <h3 class="title">Atonomus Car</h3>
                                     <p class="mb-2">The vehicle is equipped with the ability to automatically detect lane markings, objects, and obstacles. Furthermore, it is capable of taking appropriate actions to circumvent any detected obstacles and objects.</p>
                                     <p> Sensors are also installed to provide information pertaining to the weather conditions and the surrounding environment.</p>
-                                    <p>Tech stack:Tensorflow, OpenCV, Raspberry-PI, Arduino, Motor Drivers, Webcam</p>
+                                    <p>Tech stack:Tensorflow, OpenCV, Raspberry-PI, Arduino, Motor Drivers, Webcam, DHT11, MPU6050</p>
                                         
                                     <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
                                 </div><!--//desc-->                          
@@ -670,7 +747,7 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Web-meetup: Online Video Chat App</a></h3>
-                                    <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
+                                    <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. using django and WebRTC and sockets to handle live data and video Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
                                     <p> Tech stack: Django, Redis, Digital Ocean, Channels, WebRTC, Daphene, JS </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/videochat" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc-->                          
