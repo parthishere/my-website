@@ -707,11 +707,19 @@
                            
                             
                             <div class="item row hardproj">
-                                <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/nucleo-f070rb.webp' %}" alt="Smart glasses" />
+                                <a class="col-md-4 col-12" href="#" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.png' %}" alt="Smart IoT system" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
+                                    
                                     <h3 class="title"><a>Baremetal RTOS in Stm32f070</a></h3>
+
+
+                                    <button id="showDialogBtn7" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog7">
+                                        <form method="dialog"> 
                                     <p class="mb-2">In this ambitious project, I developed a custom bare-metal RTOS tailored for the STM32F0711 board, which is based on the ARM Cortex M0+ architecture. This RTOS was uniquely implemented in three distinct scheduling methodologies: Round Robin, Cooperative, and Periodic Scheduler. Each of these implementations caters to different operational requirements, demonstrating the versatility of the system.
 
                                         Round Robin Scheduling: In this mode, the RTOS allocates a fixed time slice to each task, rotating through them in a cyclic order. This approach ensures fair CPU time distribution among all tasks, suitable for systems where tasks have similar priority levels.
@@ -730,7 +738,11 @@
                                         
                                         This RTOS project highlights the complexities of low-level programming and system design on ARM Cortex M0+ architecture. It demonstrates a deep understanding of real-time concepts and the intricacies of task scheduling, context switching, and resource management. The implementation of different scheduling algorithms along with mutexes makes this RTOS a robust and flexible solution for various real-time applications.</p>
 
+                                        <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+
                                     <p><a class="more-link" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank"><i class="fas fa-external-link-alt"></i>View Software Code</a></p>
+                                </form>
+                            </dialog>
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
