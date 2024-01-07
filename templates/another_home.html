@@ -489,34 +489,55 @@
                                       </button>    
                                       <dialog id="favDialog2">
                                         <form method="dialog"> 
-                                    <p class="mb-2">Designed and implemented paddle controll with PS2 Keyboard, used 8 individual Dotmatrix display to show </p>
                                     <p> 
                                         This project presents the design and implementation of an interactive game system based on the
-                                        versatile 8051 microcontroller, demonstrating a blend of classic gaming concepts with modern embedded
-                                        system technologies. Central to the system is a high-resolution dot matrix display, constructed from eight
-                                        individual 8x32 dot matrix units to form a cohesive 16x32 pixel display area. This display serves as the
+                                        8051 microcontroller. Central to the system is a 16x32-resolution dot matrix display, constructed from eight
+                                        individual 8x8 dot matrix units to form a 16x32 pixel display area. This display serves as the
                                         primary interface for the game, showcasing dynamic visual elements and game interactions.
                                         <p>
-                                        In a nod to classic arcade games, the system incorporates a PS2 controller with a custom-designed
-                                        hardware interface. This interface leverages the interrupt capabilities of the 8051 microcontroller, ensuring
-                                        real-time responsiveness and accurate input recognition. The interface efficiently handles data latching
+                                        The system incorporates a PS2 controller with a custom-designed
+                                        hardware interface. which uses shiftresgisters to store the data and Interrupt unit which send interrupt when reading of 33bits are completed by hardware then the PS2 hardware sends data through IO expander and This interface leverages the interrupt capabilities of the 8051 microcontroller, ensuring
+                                        real-time responsiveness and input recognition. The interface efficiently handles data latching
                                         from the controller, translating player actions into on-screen movements seamlessly.
                                         <p>
-                                        A critical aspect of the game system is the scoring mechanism, realized through the use of shift
-                                        registers. These registers drive an LED-based scoreboard, providing players with a clear and immediate
-                                        visual feedback of their performance in the game. This feature adds a competitive edge and enhances
-                                        player engagement.
+                                        The scoring mechanism, made through the use of shift
+                                        registers. These registers drive an LED-based scoreboard, providing players with a
+                                        visual feedback of their performance in the game.
                                         <p>
-                                        The game logic, developed primarily assembly language, includes sophisticated algorithms for paddle
-                                        movement and ball dynamics. It ensures that the gameplay is challenging yet intuitive, adhering to the
+                                        The game logic, developed in assembly language, includes algorithms for paddle
+                                        movement and ball dynamics. It ensures that the gameplay is adhering to the
                                         physical constraints of the dot matrix display. Collision detection algorithms are implemented to facilitate
-                                        interactions between the ball and paddles, forming the core of the game’s mechanics.
+                                        interactions between the ball and paddles, also I have added some dynamicity to the game by adding faster ball movement after some amount of time to make game challanging.
                                         <p>
-                                        This project exemplifies the use of embedded systems in creating an engaging interactive experience. It
-                                        combines hardware proficiency, software innovation, and game design principles, resulting in a system that
-                                        is not only functionally robust but also entertaining. The development process highlighted the intricacies
-                                        of low-level programming and the effective management of hardware resources, offering valuable insights
-                                        into embedded system design and real-time control.
+                                        <p> I have also designed BMS with help of reference zener diode and some LM317 for voltage and current regulation.</p>
+                                
+
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                    <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1ADKPRw8MK4GQmMEpo7IxrXK6MbnVLku3" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
+                                    <p><a class="more-link" href="https://github.com/parthishere/Pong-in-C" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                                </dialog>
+                                </div><!--//desc--> 
+                            </br>                         
+                            </div><!--//item-->
+
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
+                                    <button id="showDialogBtn3" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog3">
+                                        <form method="dialog"> 
+                                    <p class="mb-2">Implemented 8051 based board with lots of functionality.</p>
+                                    <p> 
+                                        implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
+                                    
+                                        <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
                                 
                                     <p> Tech stack: C++, GTest </p>
 
@@ -534,30 +555,11 @@
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
-                                    <p class="mb-2">Implemented 8051 based board with lots of functionality.</p>
-                                    <p> 
-                                        implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
-                                    
-                                        <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
-                                
-                                    <p> Tech stack: C++, GTest </p>
-                                    
-                                    <p><a class="more-link" href="github.com/parthishere/" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
-                                </div><!--//desc--> 
-                            </br>                         
-                            </div><!--//item-->
-
-                            <div class="item row hardproj">
-                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="github.com/parthishere/" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
-                                    <button id="showDialogBtn3" class="btn btn-cta-primary">
+                                    <button id="showDialogBtn4" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
-                                      <dialog id="favDialog3">
+                                      <dialog id="favDialog4">
                                         <form method="dialog"> 
                                     <p class="mb-2">Simulated 6052 computer in the C++ that can run programs which sits in to virtual memory.</p>
                                      
@@ -612,43 +614,65 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://facelogup.herokuapp.com" target="_blank">LogUp - Attendance System with Decentralized Face Recognition</a></h3>
+
+                                    <button id="showDialogBtn5" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog5">
+                                        <form method="dialog"> 
+
                                     <p class="mb-2">
-                                    this decentralized attendance system uses facial recognition technology and Django framework. It's easy to use, accurate, and can be used in schools and industries. You only need a camera and internet connection to use it. The interface is customizable and provides real-time tracking, reporting, and analytics. It's scalable and easy to add new users, devices, and locations. It's a modern solution for attendance tracking!
+                                    this decentralized attendance system uses facial recognition technology and Django framework. It's easy to use, accurate, and can be used in schools and industries. You only need a camera and internet connection to use it. The interface is customizable and provides real-time tracking, reporting, and analytics. It's scalable and easy to add new users, devices, and locations. It's a modern solution for attendance tracking!</p>
 
-
-                                    Features
-local ip and gps detaction for the physical attendance
-Mass User creation with excel sheet
-Fully working teacher dashboard
-Lecture and session Management, Sessions can be seen from dashboard
-Download overall attendace, session attendance, lecture attendance
-User profile page
-user can search the lectures send request to teache for joining the lecture
-teacher can enable and disable the lecture according to need and that will create another session for the lecture
-lectue,session management tools
-search teacher and lecture in the same college
-(working) send message to contact the student or teacher
-teacher can take attendance and also change the attendance
-Why it is full (fool) proof
-it uses local ip and gps to determine the location of the student
-Teacher can randomly start the session and take attendace, also this session will automaticaly stop after some predefined time
-uses face recognition to check the student's avability
-student can't change the profile photo after updating it once / only teacher can change the photo
+                                    
+                                    <h4>Features</h4>
+                                    <ul>
+                                        <li>local ip and gps detaction for the physical attendance</li>
+                                        <li>Mass User creation with excel sheet</li>
+                                        <li>Fully working teacher dashboard</li>
+                                        <li>Lecture and session Management, Sessions can be seen from dashboard</li>
+                                        <li>Download overall attendace, session attendance, lecture attendance</li>
+                                        <li>User profile page</li>
+                                        <li>user can search the lectures send request to teache for joining the lecture</li>
+                                        <li>teacher can enable and disable the lecture according to need and that will create another session for the lecture</li>
+                                        <li>lectue,session management tools</li>
+                                        <li>search teacher and lecture in the same college</li>
+                                        <li>(working) send message to contact the student or teacher</li>
+                                        <li>teacher can take attendance and also change the attendance</li>
+                                    </ul>
+                                    <h4>Why it is full (fool) proof</h4>
+                                    <li>it uses local ip and gps to determine the location of the student</li>
+                                    <li>Teacher can randomly start the session and take attendace, also this session will automaticaly stop after some predefined time
+                                    uses face recognition to check the student's avability</li>
+                                    <li>student can't change the profile photo after updating it once / only teacher can change the photo</li>
                                     <p> 
                                         During my time in college(LD College of engineering), I used this website to mark attendance two to three times.</p>
                                     <p> Tech stack: Django, Tensorflow, OpenCV, AWS EC2, AWS S3, AJAX, JS, Redis,PostgreSQL, Celery, Channels </p>
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="https://facelogup.herokuapp.com" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/Login-With-Face-Recognition" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+
+                                </form>
+                            </dialog>
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
                             
+
+
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="#" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/esp-react.webp' %}" alt="Smart IoT system" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
+
+                                    <button id="showDialogBtn6" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog6">
+                                        <form method="dialog"> 
+
                                     <p class="mb-2"><p>In this project, an IoT platform was developed comprising a website for server-side rendering utilizing the Django framework and an ESP32/ESP8266 for client-side rendering. Additionally, this cloud API and an app  for communication with the server and an ESP32 was created in the python, Additionally I developed an library to enable communication between all aforementioned components. </p>
 
                                     In this innovative project, I have developed a comprehensive Internet of Things (IoT) ecosystem using Django and the Django REST framework. This ecosystem is designed to be seamlessly integrated with ESP32 microcontrollers, leveraging a custom library written in C++ for communication and data handling.
@@ -670,9 +694,13 @@ student can't change the profile photo after updating it once / only teacher can
                                     This IoT ecosystem, developed from scratch, exemplifies a sophisticated blend of software and hardware integration. By combining the power of Django with custom C++ programming for the ESP32, the system offers a versatile and secure platform for various IoT applications. Its ability to handle different data types, including real-time location tracking, along with efficient communication protocols like HTTPS and WebSockets, makes it a robust solution for modern IoT challenges.
 
                                         <p>The technical stack employed in the realization of this project included Django, PostgreSQL, Django-Rest-Framework, ESP32, C++ and React.</p>
+
+                                        <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="https://fleetkaptan.up.railway.app" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/firmware_rfid_dynamic" target="_blank"><i class="fas fa-external-link-alt"></i>View Hardware Code</a></p>
                                     <p><a class="more-link" href="https://github.com/parthishere/fleetKaptan" target="_blank"><i class="fas fa-external-link-alt"></i>View Software Code</a></p>
+                                </form>
+                            </dialog>
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
