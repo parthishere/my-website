@@ -479,7 +479,7 @@
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.jpg' %}" alt="Pong game" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Pong game with 8051 in Asseembly </a></h3>
@@ -524,7 +524,7 @@
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/board_front.jpg' %}" alt="ESD lab" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
@@ -746,6 +746,46 @@
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
+
+                            <div class="item row hardproj">
+                                <div class="col-md-4 col-12">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/frdm.png' %}" alt="KL25Z" />
+                                </div>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title">KL25Z Baremetal Drivers</h3>
+                                    <p class="mb-2">Developed KL25Z Arm cortex M0+ core drivers in baremetal C in MCUXpresso (IDE for NXP controllers)</p>
+                                    <p> IIn this project, I have successfully implemented a range of data structures and drivers in C, along with significant code optimizations and the development of a bare-metal OLED display driver. The project encompasses the following key components:
+
+                                        Data Structures Implementation:
+                                        
+                                        FIFO (First In First Out) Queue: Implemented using C, this data structure is essential for managing data in a sequential order, mirroring a queue-like behavior.
+                                        Circular Buffer: Also developed in C, the circular buffer efficiently handles data in a fixed-size storage, cycling through it without the need for shifting elements.
+                                        UART Driver Development:
+                                        
+                                        Created a driver for Universal Asynchronous Receiver-Transmitter (UART) communication. This driver forms the foundation for serial communication in the embedded system.
+                                        Using the UART driver, I developed a command processor for controlling an LED. This setup demonstrates the practical application of UART in device control.
+                                        PWM Drivers and Timers:
+                                        
+                                        Developed Pulse Width Modulation (PWM) drivers, crucial for controlling the duration of an electrical pulse, commonly used in various control applications.
+                                        Implemented timers to provide accurate time delays and event counting, essential for numerous embedded system functions.
+                                        DMA and DAC Integration:
+                                        
+                                        Integrated a Direct Memory Access (DMA) bare-metal driver, facilitating efficient data transfers without burdening the CPU.
+                                        Developed a Digital-to-Analog Converter (DAC) driver, capable of generating square, sine, and triangle waves. This functionality was further enhanced by reading the output using an Analog-to-Digital Converter (ADC) driver.
+                                        Code Optimization:
+                                        
+                                        Conducted optimization of existing C code to enhance execution speed. Initially, the code execution time was 400 milliseconds, which was significantly reduced to 82 milliseconds after optimization.
+                                        The performance improvement was partly achieved by integrating assembly language, demonstrating the effectiveness of low-level programming in optimization.
+                                        OLED Display Driver Development:
+                                        
+                                        Developed a bare-metal driver for a 128x64 OLED display, enabling it to show text and basic line graphics.
+                                        Created a Serial Peripheral Interface (SPI) driver to operate the OLED display and an MPU6050 gyroscope, showcasing the versatility of SPI in handling multiple devices.
+                                        The MPU6050 driver was developed from the ground up, including features like calibration for the gyroscope and accelerometer data, to ensure accurate measurements.</p>
+
+                                        https://drive.google.com/drive/folders/1PWSCHmzLou075VRnjMLo6NxIF7aWVAA5?usp=drive_link
+                                    <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
                             
                            
                              <div class="item row hardproj">
@@ -788,6 +828,27 @@
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Web-meetup: Online Video Chat App</a></h3>
                                     <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. using django and WebRTC and sockets to handle live data and video Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
+
+                                    Core Features:
+
+Screen Sharing: Allows participants to share their screen with others during a call, enhancing collaborative discussions and presentations.
+File Sharing: Enables users to easily share documents, images, and other files directly within the app, streamlining the process of information exchange.
+In-App Chat: Offers a built-in chat feature for text-based communication during video calls, adding an additional layer of interaction.
+
+
+Technical Stack:
+
+Django: Serves as the primary web framework, known for its simplicity and effectiveness in building high-quality web applications.
+Redis: Used as a session store and for caching, enhancing the app's performance and scalability.
+Digital Ocean: Provides cloud infrastructure services, ensuring robust and reliable hosting for the application.
+Channels: Extends Django to handle WebSockets, crucial for real-time features like chat and live video.
+WebRTC: Empowers the app with real-time communication capabilities, enabling high-quality video and audio calls directly in the web browser.
+Daphne: An ASGI server for Django, handling HTTP, HTTP2, and WebSocket protocols, essential for the app’s real-time functionality.
+JavaScript (JS): Adds interactivity and controls the client-side behavior of the application, vital for features like UI/UX, file sharing, and screen sharing.
+
+Future Integration Plans:
+
+Integration with LogUP Website: The intention is to integrate Web-meetup into the LogUP website, which focuses on attendance tracking and the facilitation of online lectures. This integration aims to create a unified platform that not only allows effective online meetings but also integrates seamlessly with educational and professional attendance systems.
                                     <p> Tech stack: Django, Redis, Digital Ocean, Channels, WebRTC, Daphene, JS </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/videochat" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </div><!--//desc-->                          
@@ -837,7 +898,7 @@
                                 
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">Event QR code generator</h3>
-                                    <p class="mb-2"> This system generates event passes based on the event data of the users, and sends an email to each of them. It is useful for an online pass system and can be further optimized. Users can upload a pass image and can also scan the pass on the website. </p>
+                                    <p class="mb-2"> This system generates event passes based on the event data of the users, and sends an email to each of them. It is useful for an online pass system and can be further optimized like I have integrated complex Model for the QR code to manage huge events Fests hosted in University and It is pretty scalable. Users can upload a custom pass image and can also scan the pass on the website when scanning the passes. </p>
                                     <p> This app was used in all of the last year events hosted in my college(LD college of engineering)</p>
                                     <p> Tech stack: Django, Ajax, Sockets, WebRTC </p>
                                     <p><a class="more-link" href="https://github.com/parthishere/qrcode" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
