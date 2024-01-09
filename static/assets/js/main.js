@@ -32,6 +32,9 @@ const showDialogBtn9 = document.getElementById("showDialogBtn9")
 const favDialog10 = document.getElementById("favDialog10")
 const showDialogBtn10 = document.getElementById("showDialogBtn10")
 
+const favDialog11 = document.getElementById("favDialog11")
+const showDialogBtn11 = document.getElementById("showDialogBtn11")
+
 
 showDialogBtn1.addEventListener("click", () => favDialog1.showModal())
 showDialogBtn2.addEventListener("click", () => favDialog2.showModal())
@@ -43,6 +46,7 @@ showDialogBtn7.addEventListener("click", () => favDialog7.showModal())
 showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
 showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
 showDialogBtn10.addEventListener("click", () => favDialog10.showModal())
+showDialogBtn11.addEventListener("click", () => favDialog11.showModal())
 
 
 
