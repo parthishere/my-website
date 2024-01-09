@@ -479,7 +479,7 @@
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.jpg' %}" alt="Pong game" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Pong game with 8051 in Asseembly </a></h3>
@@ -526,25 +526,140 @@
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/board_front.jpg' %}" alt="ESD lab" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/board_front.webp' %}" alt="ESD lab" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
+                                    <p>
+
+
+                            Introduced to 8051 and ARM processors through assemblers and simulators/debuggers.
+                            Learned Atmel AT16V8C SPLD design using WinCUPL/WinSim suite.
+                            Integrated NVRAM, LED status indicators, and AT89C51RC2 processor for in-circuit programming.
+                            Developed assembly programs for I/O operations and Interrupt Service Routines (ISRs).
+                            Focused on RS-232 circuit design and ARM development tools.
+                            Set up and programmed 8051 device drivers for serial communication and external XRAM.
+                            Developed C programs using the SDCC compiler, focusing on hardware initialization.
+                            Explored ARM architecture, UART communication, and PWM signal generation on the STM32 board.
+                            Integrated serial EEPROM and LCD into hardware, developing bit-banged and memory-mapped I/O interfaces.
+                            Wrote device drivers and user interface programs in assembly and C.
+
+                                    </p>
                                     <button id="showDialogBtn3" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
                                       <dialog id="favDialog3">
                                         <form method="dialog"> 
                                     <p class="mb-2">Implemented 8051 based board with lots of functionality.</p>
-                                    <p> 
-                                        implemented all the register and memory unit, alu to simulate 6052, and all the Instruction with the same op code to run the simulated version of asm in the code</p>
+
+                                    <p>
+                                        <h3>Lab 1: Introduction to Microcontroller Systems and Basic Hardware Development</h3>
+
+
+<b>Objective:</b>
+Lab 1 served as an introductory platform for foundational concepts in embedded systems, focusing on:
+<ul>
+<li>Familiarization with assemblers and simulators/debuggers for 8051 and ARM processors.
+<li>Learning the WinCUPL/WinSim design suite for Atmel AT16V8C SPLD.</li>
+<li>Planning and implementing a development board layout.</li>
+<li>Gaining initial experience in schematic capture and soldering techniques.</li>
+</ul>
+<br>
+<b>Approach:</b>
+The lab was divided into three main parts:
+
+<ul>
+<li>Part 1: Centered around basic programming using the 8051 assembler and simulation tools, setting up the development environment.</li>
+<li>Part 2: Focused on the layout and initial assembly of the development board, including power supply and reset circuitry.</li>
+<li>Part 3: Dedicated to finalizing the hardware setup and ensuring all components were correctly soldered and functioning.</li>
+</ul>
+
+
+</p>
+
+<p>
+    <h3>Lab 2: NVRAM Integration and Serial Communication in Embedded Systems</h3>
+
+
+<b>Objective:</b>
+Lab 2 was designed to advance our understanding and skills in embedded system design, focusing on memory integration and serial communication. Key tasks included:
+<p>
+<ul>
+
+<li>Incorporating decode logic, non-volatile RAM (NVRAM), and a status LED into existing hardware.</li>
+<li>Programming and testing NVRAM for both code storage and, later, as standard SRAM for data storage.</li>
+<li>Developing assembly programs for I/O operations and learning to write Interrupt Service Routines </li>(ISRs).
+<li>Utilizing device programmers for efficient code storage.</li>
+<li>Leveraging logic analyzers for detailed state and timing analysis.</li>
+<li>Integrating the AT89C51RC2 processor for in-circuit programming.</li>
+<li>Continuing exploration of ARM architecture and development boards.</li>
+</ul>
+</p>
+<b>Approach and Implementation:</b>
+The lab was structured in two parts, each focusing on different elements and processors:
+<ul>
+<li>Part 1: Involved basic setup with the C501 processor, where we developed an assembly program containing a main loop and an ISR to control an LED's blinking rate.</li>
+<li>Part 2: Advanced to using the Atmel AT89C51RC2 processor, emphasizing RS-232 circuit design and in-circuit programming. Additionally, we explored ARM development tools and wrote programs for LED control on ARM boards.</li>
+</ul>
+</p>
+
+<p> 
+    <h3>Lab 3: Serial Communication and XRAM Utilization in Embedded Systems</h3>
+
+<b>Objective:</b>
+The primary goal of this lab was to deepen understanding and practical skills in configuring and utilizing serial communication and external memory in embedded systems. Specific focus was placed on:
+<ul>
+<li>Setting up and writing device drivers for 8051 serial communication.</li>
+<li>Utilizing both internal and external XRAM, particularly with NVSRAM.</li>
+<li>Developing C programs using the SDCC compiler and ensuring proper hardware initialization.</li>
+<li>Expanding knowledge on ARM architecture and its development tools.</li>
+</ul>
+<b>Approach:</b>
+The lab was structured into three main parts, each with distinct objectives and deadlines:
+<ul>
+<li>Part 1: Focused on basic setup and configuration, including using NVSRAM for extended memory and integrating PAULMON2 monitor program.</li>
+<li>Part 2: Advanced towards programming the processor, including setting up UART communication and generating a PWM signal on the STM32 board. Emphasis was on handling various buffer sizes and managing heap space efficiently.</li>
+<li>Part 3: Aimed at demonstrating additional ARM functionalities and implementing a 'virtual' debug port</li>
+</ul>
+</p>
                                     
-                                        <p>Implemented instructions LDA, LDX/Y, STA, STX/Y, JMP, RTS, JSR, BEQ, CMP, TAX, TAY, NOP to run the given code in the simulator.</p>
-                                
-                                    <p> Tech stack: C++, GTest </p>
+
+<p>
+    <h3>Lab 4: Advanced Interface and User Experience Design</h3>
+
+<b>Objective:</b>
+Lab 4 in Embedded System Design course offers an in-depth exploration into advanced hardware interfacing and user interface development, focusing on:
+<ul>
+<li>Integrating a serial EEPROM and an LCD into the hardware setup.</li>
+<li>Developing bit-banged interfaces for EEPROM and memory-mapped I/O interfaces for the LCD.</li>
+<li>Creating device drivers and writing assembly and C programs for user interaction.</li>
+<li>Enhancing knowledge and experience in code integration and embedded C, including the use of interrupts.</li>
+<li>Continuing exploration of the ARM architecture.</li>
+</ul>
+<b>Lab Structure:</b>
+<ul>
+<li><b>EEPROM Integration</b>: I successfully added a serial EEPROM to my hardware and created a bit-banged interface. This involved careful reading of relevant guides and datasheets, followed by designing and implementing an effective connection to the EEPROM through unused port pins. My approach ensured efficient use of processor address space.</li>
+
+<li><b>LCD Implementation</b>: The addition of an LCD to my hardware was a significant step. I developed a memory-mapped I/O interface for the LCD, leveraging my C programming skills to enable interaction with the LCD as a memory-mapped peripheral. This task required a thorough understanding of the LCD’s data sheets and the creation of a reliable physical interface for the LCD on my board.</li>
+
+<li><b>Software Development</b>: I wrote device drivers for both the EEPROM and LCD. This involved coding in both assembly and C languages. I focused on creating a user interface and various user tasks, demonstrating my ability to handle complex programming requirements.</li>
+
+<li><b>Code Integration and Embedded C</b> : A major part of this lab was integrating the various code modules into a single, cohesive program. I gained valuable experience in handling interrupts and using embedded C in a real-world context.</li>
+
+<li><b>ARM Architecture Learning</b>: Continuously throughout the lab, I explored and applied aspects of the ARM architecture, which enhanced my understanding of different processor architectures.</li>
+
+<li><b>User Interface Development</b>: An important aspect of my work was ensuring that the user interface was intuitive and robust. I implemented features like EEPROM data writing/reading, LCD displays, and custom character creation, paying attention to handling user input efficiently and elegantly.</li>
+
+<li><b>Testing and Debugging</b>: I used tools like logic analyzers and oscilloscopes to validate the functionality of my interfaces, ensuring that the timing and data transfers were accurate and reliable.</li>
+</ul>
+
+Send me email for any codes or implementations
+</p>
+                                    
+                                        
 
                                     <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
-                                    <p><a class="more-link" href="github.com/parthishere/" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                    
                                 </form>
                                 
                                 </dialog>
@@ -606,9 +721,50 @@
                             </br>                         
                             </div><!--//item-->
 
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="https://github.com/parthishere/16Bit-HDL-CPU_Simulation" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/nand2tertris.webp' %}" alt="16 bit CPU using HDL" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://github.com/parthishere/16Bit-HDL-CPU_Simulation" target="_blank">Simulated 16 bit CPU using HDL</a></h3>
+                                    <p class="mb-2">DevMedia is a social media platform specifically designed for developers. Users can share their projects, images and threads with others.</p>
+                                    <p> In this project, I embarked on the ambitious task of designing a 16-bit CPU from the ground up, leveraging the concepts and tools provided in the NAND 2 Tetris course. The entire development process was conducted in HDL (Hardware Description Language), demonstrating a deep understanding of fundamental hardware principles and digital logic design.
+
+                                        CPU Design and Implementation:
+                                        
+                                        The CPU was meticulously architected to be a 16-bit processor, capable of handling a more extensive range of computations and operations compared to its 8-bit counterparts. This design choice was crucial for running more complex programs.
+                                        All the essential logic gates and CPU elements, including ALU (Arithmetic Logic Unit), registers, and control units, were constructed in HDL. This process involved defining the behavior of each component and ensuring their correct integration within the CPU architecture.
+                                        Simulation and Testing:
+                                        
+                                        The functionality of the CPU was rigorously tested and simulated using a course-specific simulator. This simulator provided a platform to validate the design, test instruction execution, and debug any issues in the CPU's logic.
+                                        Running Complex Programs:
+                                        
+                                        The CPU was capable of running complex and computationally demanding programs, such as Pong and Space Invaders. This capability was a significant achievement, demonstrating the processor's efficacy and robustness.
+                                        A virtual screen was simulated through software to display the output of these programs, providing a visual interface to interact with and observe the CPU's operation in real-time.
+                                        Operating System Integration (JackOS):
+                                        
+                                        The CPU was integrated with an operating system, JackOS, which was provided by the course instructor. This OS played a crucial role in managing the CPU's resources, handling processes, and facilitating the execution of programs.
+                                        The integration of JackOS showcased the CPU's ability to work with an operating system, further emphasizing its practicality and real-world applicability.
+                                        The development of this 16-bit CPU in HDL not only demonstrates a thorough grasp of digital logic and computer architecture but also highlights the practical application of these skills in creating a functional processor. The ability to run graphic-intensive programs like Pong and Space Invaders underscores the CPU's performance and the effectiveness of its design and implementation.
+                                        
+                                        </p>
+                                        <p><a class="more-link" href="https://www.nand2tetris.org" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Course</a></p>
+                                        <p><a class="more-link" href="https://github.com/parthishere/16Bit-HDL-CPU_Simulation" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
                             
 
-
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="https://devmediaonapi.herokuapp.com" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/discovery.webp' %}" alt="social media for programmers" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://devmediaonapi.herokuapp.com" target="_blank">Drivers for STM32F4</a></h3>
+                                    <p class="mb-2">Developed Bare-metal Drivers for STM32F411 (ARM cortex M4 core) like DMA, DAC Watchdog, PWM, UART, etc.</p>
+                                        <p><a class="more-link" href="https://devmediaonapi.herokuapp.com" target="_blank"><i class="fas fa-external-link-alt"></i>Visit Website</a></p>
+                                        <p><a class="more-link" href="https://github.com/parthishere/Social-Media-Clone" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
 
 
 
