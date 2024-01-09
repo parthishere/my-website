@@ -382,11 +382,11 @@
                                 <p> The website was developed utilizing the Django framework, which enabled me to construct the backend in a way that provided API routes for the frontend, allowing for seamless communication and functionality.</p>
                             </div><!--//item-->
 
-                            {% comment %} <div class="item software">
+                             <div class="item software">
                                 <h3 class="title">Back-end Developer - <span class="place"><a href="#">Purple & Cream</a></span> <span class="year">(2019)</span></h3>
                                 <p>I have designed and developed a website that is similar to Stackoverflow, but made for the film industry. The website allows users to ask and answer questions related to the film industry, as well as share knowledge and resources. The website also includes features such as voting, commenting, and user profiles sending chats to other users. </p>
                                 <p>After the completion of the website design and development, I successfully deployed the website on the web.</p>
-                            </div><!--//item--> {% endcomment %}
+                            </div><!--//item--> 
                         </div>
                         </div>
                         </div><!--//content-->  
@@ -416,7 +416,7 @@
                                 </div>
                                 
                                 <h3 class="title mb-3"><a href="" target="_blank">8-bit CPU</a></h3>
-                                    
+                                    <p> Developed a transistor-transistor logic CPU capable of executing basic programs like the Fibonacci series, addition, and subtraction. Integrated essential components including Program Counter, ALU, Control Unit, LCD output register, Register/Instruction Register, Clock, Instruction Decoder, 16-byte RAM, and Address Decoder. Core processing facilitated by Program Counter and ALU, with Control Unit and Instruction Decoder managing instruction flow. LCD displays bus state; RAM supports dual modes (Running and Programming) for manual instruction input. Control unit built with EEPROMs for instruction modification and includes 16 control signals for diverse operations. Designed an Arduino-nano based EEPROM programmer for control unit customization. </p>
                                   
                                     <button id="showDialogBtn1" class="btn btn-cta-primary">
                                         Show Details
@@ -483,7 +483,9 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Pong game with 8051 in Asseembly </a></h3>
-
+                                    <p>
+                                        Designed an pong game system using the 8051 microcontroller, featuring a 16x32 pixel dot matrix display composed of eight 8x8 units. Integrated a custom PS2 controller interface using shift registers and an IO expander. Developed a scoring mechanism with shift registers driving an LED scoreboard. Programmed game logic in assembly language, made algorithms for paddle movement, ball dynamics, and collision detection. Added dynamic ball movement to increase game challenge over time. Also designed a Battery Management System using a reference Zener diode and LM317 for voltage and current regulation.
+                                    </p>
                                     <button id="showDialogBtn2" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
@@ -551,11 +553,14 @@
                             </div><!--//item-->
 
                             <div class="item row hardproj">
-                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
+                                <a class="col-md-4 col-12" href="https://github.com/parthishere/6052-emulator" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="github.com/parthishere/" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
+                                    <h3 class="title"><a href="https://github.com/parthishere/6052-emulator" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
+                                    <p>
+                                        Developed a 6052 computer simulator in C++ with virtual memory to execute assembly-like programs. Implemented the complete 6052 instruction set, including operations like LDA, JMP, BEQ, and CMP, mirroring actual assembly language opcodes. Constructed a virtual memory structure using C++ unions, accurately emulating the 6052 computer's memory model. Ensured precise instruction execution and addressing modes, with processor status flag modifications. Validated functionality and accuracy of instructions, ALU, and memory with Google Test suite in C++.
+                                    </p>
                                     <button id="showDialogBtn4" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
@@ -593,7 +598,7 @@
                                 
                                     <p> Tech stack: C++, GTest </p>
                                     <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
-                                    <p><a class="more-link" href="github.com/parthishere/" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                    <p><a class="more-link" href="https://github.com/parthishere/6052-emulator" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
                                 </form>
                                 
                             </dialog>
@@ -614,7 +619,9 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://facelogup.herokuapp.com" target="_blank">LogUp - Attendance System with Decentralized Face Recognition</a></h3>
-
+                                    <p>
+                                        Developed a facial recognition-based decentralized attendance system using Django, designed for schools and industries, requiring only a camera and internet. Features include local IP and GPS detection for physical attendance verification, mass user creation via Excel, and a comprehensive teacher dashboard for lecture and session management. The system supports real-time tracking, reporting, analytics, and is scalable for new users, devices, and locations. Implemented with technologies like Django, TensorFlow, OpenCV, AWS (EC2, S3), AJAX, JavaScript, Redis, PostgreSQL, Celery, and Channels.
+                                    </p>
                                     <button id="showDialogBtn5" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
@@ -661,12 +668,14 @@
 
 
                             <div class="item row hardproj">
-                                <a class="col-md-4 col-12" href="#" target="_blank">
+                                <a class="col-md-4 col-12" href="https://github.com/parthishere/fleetKaptan" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/esp-react.webp' %}" alt="Smart IoT system" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
-
+                                    <p>
+                                        Developed an IoT ecosystem using Django and custom C++ library for ESP32, enhancing data communication and network efficiency. Implemented HTTPS/WebSocket for secure, real-time data exchange. Enabled versatile data handling from digital signals to GPS tracking. Utilized Django REST for backend API interactions, with asynchronous HTTPS requests on ESP32 for reduced latency. Introduced dynamic ESP32 device management for scalable system expansion. Achieved robust software-hardware integration for diverse IoT application
+                                    </p>
                                     <button id="showDialogBtn6" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
@@ -707,14 +716,16 @@
                            
                             
                             <div class="item row hardproj">
-                                <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.png' %}" alt="Smart IoT system" />
+                                <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.png' %}" alt="RTOS baremetal" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     
                                     <h3 class="title"><a>Baremetal RTOS in Stm32f070</a></h3>
 
-
+                                    <p>
+                                        Developed a custom Real-Time Operating System (RTOS) for STM32F0711 (ARM Cortex M0+ architecture), featuring Round Robin, Cooperative, and Periodic scheduling methodologies. Implemented mutexes for resource management and a SysTick handler for precise task switching. Utilized ARM assembly for efficient context switching, preserving task state integrity. Managed task stack space to prevent overflows, ensuring reliable task execution. Demonstrated expertise in low-level programming, real-time concepts, and flexible task scheduling for diverse real-time applications.
+                                    </p>
                                     <button id="showDialogBtn7" class="btn btn-cta-primary">
                                         Show Details
                                       </button>    
@@ -753,8 +764,18 @@
                                 </div>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">KL25Z Baremetal Drivers</h3>
+                                    
+                                    <p>
+                                        Developed core drivers for KL25Z ARM Cortex M0+ in bare-metal C using MCUXpresso, including FIFO and Circular Buffer data structures for efficient sequential data management. Implemented UART drivers for serial communication and LED control, along with PWM drivers and timers for precise control in embedded systems. Integrated DMA for efficient data transfers and developed a DAC driver for wave generation, enhancing performance with assembly language optimization (execution time reduced from 400ms to 82ms). Created an OLED display driver for text and graphics, and an SPI driver for managing OLED and MPU6050 gyroscope. Developed an MPU6050 driver with advanced calibration for gyroscope and accelerometer data.
+                                    </p>
+                                    <button id="showDialogBtn8" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog8">
+                                        <form method="dialog"> 
                                     <p class="mb-2">Developed KL25Z Arm cortex M0+ core drivers in baremetal C in MCUXpresso (IDE for NXP controllers)</p>
-                                    <p> IIn this project, I have successfully implemented a range of data structures and drivers in C, along with significant code optimizations and the development of a bare-metal OLED display driver. The project encompasses the following key components:
+
+                                    <p> In this group of projects, I have successfully implemented a range of data structures and drivers in C, along with significant code optimizations and the development of a bare-metal OLED display driver. The project encompasses the following key components:
 
                                         Data Structures Implementation:
                                         
@@ -782,8 +803,11 @@
                                         Created a Serial Peripheral Interface (SPI) driver to operate the OLED display and an MPU6050 gyroscope, showcasing the versatility of SPI in handling multiple devices.
                                         The MPU6050 driver was developed from the ground up, including features like calibration for the gyroscope and accelerometer data, to ensure accurate measurements.</p>
 
-                                        https://drive.google.com/drive/folders/1PWSCHmzLou075VRnjMLo6NxIF7aWVAA5?usp=drive_link
-                                    <p><i class="fas fa-external-link-alt"></i> Closed Source</p>
+                                        <p>Throw me email for any of the code ! </p>
+                                        <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                    <p> <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/folders/1PWSCHmzLou075VRnjMLo6NxIF7aWVAA5?usp=drive_link" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br></p>
+                                </form>
+                            </dialog>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
                             
@@ -827,30 +851,41 @@
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Web-meetup: Online Video Chat App</a></h3>
+                                    <p>Developed a video call application with Django, integrating WebRTC and sockets for real-time data and video handling. Features include screen sharing for collaborative work, file sharing for easy information exchange, and in-app chat for text communication. Utilized Django with Redis for enhanced performance and scalability, and Digital Ocean for robust hosting. Extended Django with Channels for WebSocket handling, crucial for live chat and video, and Daphne as an ASGI server for protocol management. Planned future integration with the LogUP website for attendance tracking and online lectures, aiming to create a unified platform for online meetings and educational/professional systems.</p>
+
+                                    <button id="showDialogBtn9" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog9">
+                                        <form method="dialog"> 
+
                                     <p class="mb-2">This project is a video call application that includes basic features such as screen sharing, file sharing and in-app chat. using django and WebRTC and sockets to handle live data and video Additionally, I plan to integrate this video chat app into the LogUP website for attendance tracking and conducting online lectures.</p>
 
                                     Core Features:
 
-Screen Sharing: Allows participants to share their screen with others during a call, enhancing collaborative discussions and presentations.
-File Sharing: Enables users to easily share documents, images, and other files directly within the app, streamlining the process of information exchange.
-In-App Chat: Offers a built-in chat feature for text-based communication during video calls, adding an additional layer of interaction.
+                                    Screen Sharing: Allows participants to share their screen with others during a call, enhancing collaborative discussions and presentations.
+                                    File Sharing: Enables users to easily share documents, images, and other files directly within the app, streamlining the process of information exchange.
+                                    In-App Chat: Offers a built-in chat feature for text-based communication during video calls, adding an additional layer of interaction.
 
 
-Technical Stack:
+                                    Technical Stack:
 
-Django: Serves as the primary web framework, known for its simplicity and effectiveness in building high-quality web applications.
-Redis: Used as a session store and for caching, enhancing the app's performance and scalability.
-Digital Ocean: Provides cloud infrastructure services, ensuring robust and reliable hosting for the application.
-Channels: Extends Django to handle WebSockets, crucial for real-time features like chat and live video.
-WebRTC: Empowers the app with real-time communication capabilities, enabling high-quality video and audio calls directly in the web browser.
-Daphne: An ASGI server for Django, handling HTTP, HTTP2, and WebSocket protocols, essential for the app’s real-time functionality.
-JavaScript (JS): Adds interactivity and controls the client-side behavior of the application, vital for features like UI/UX, file sharing, and screen sharing.
+                                    Django: Serves as the primary web framework, known for its simplicity and effectiveness in building high-quality web applications.
+                                    Redis: Used as a session store and for caching, enhancing the app's performance and scalability.
+                                    Digital Ocean: Provides cloud infrastructure services, ensuring robust and reliable hosting for the application.
+                                    Channels: Extends Django to handle WebSockets, crucial for real-time features like chat and live video.
+                                    WebRTC: Empowers the app with real-time communication capabilities, enabling high-quality video and audio calls directly in the web browser.
+                                    Daphne: An ASGI server for Django, handling HTTP, HTTP2, and WebSocket protocols, essential for the app’s real-time functionality.
+                                    JavaScript (JS): Adds interactivity and controls the client-side behavior of the application, vital for features like UI/UX, file sharing, and screen sharing.
 
-Future Integration Plans:
+                                    Future Integration Plans:
 
-Integration with LogUP Website: The intention is to integrate Web-meetup into the LogUP website, which focuses on attendance tracking and the facilitation of online lectures. This integration aims to create a unified platform that not only allows effective online meetings but also integrates seamlessly with educational and professional attendance systems.
+                                    Integration with LogUP Website: The intention is to integrate Web-meetup into the LogUP website, which focuses on attendance tracking and the facilitation of online lectures. This integration aims to create a unified platform that not only allows effective online meetings but also integrates seamlessly with educational and professional attendance systems.
                                     <p> Tech stack: Django, Redis, Digital Ocean, Channels, WebRTC, Daphene, JS </p>
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="https://github.com/parthishere/videochat" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                    </form>
+                                </dialog>
                                 </div><!--//desc-->                          
                             </div><!--//item-->        
                            
@@ -898,10 +933,46 @@ Integration with LogUP Website: The intention is to integrate Web-meetup into th
                                 
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">Event QR code generator</h3>
-                                    <p class="mb-2"> This system generates event passes based on the event data of the users, and sends an email to each of them. It is useful for an online pass system and can be further optimized like I have integrated complex Model for the QR code to manage huge events Fests hosted in University and It is pretty scalable. Users can upload a custom pass image and can also scan the pass on the website when scanning the passes. </p>
+                                    <p>This system generates event passes based on the event data of the users, and sends an email to each of them. It is useful for an online pass system and can be further optimized like I have integrated complex Model for the QR code to manage huge events Fests hosted in University and It is pretty scalable. Users can upload a custom pass image and can also scan the pass on the website when scanning the passes. </p>
+                                    <button id="showDialogBtn10" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog10">
+                                        <form method="dialog"> 
+
+                                    <p class="mb-2"> This project involved developing a comprehensive system for generating and distributing event passes, primarily designed to streamline the process for large-scale events like university fests. The system's functionality and technical implementation are as follows:
+
+                                        Event Pass Generation:
+                                        
+                                        The system automatically generates personalized event passes based on the provided user data. This process includes creating a unique identifier for each attendee, which is crucial for managing large crowds and ensuring event security.
+                                        QR Code Integration:
+                                        
+                                        A complex model for QR codes has been integrated into each pass. This feature is especially useful for handling high volumes of attendees, as it allows for quick and efficient verification at entry points. The QR codes contain encrypted data about the attendee, enhancing the security and efficiency of the check-in process.
+                                        Custom Pass Design and Upload:
+                                        
+                                        Users have the flexibility to upload custom designs for their passes. This feature adds a personalized touch to the event experience and caters to the specific branding or thematic needs of different events.
+                                        Email Distribution:
+                                        
+                                        Once the passes are generated, the system automatically sends them to attendees via email. This electronic distribution method is not only environmentally friendly but also ensures that attendees receive their passes promptly and securely.
+                                        Pass Scanning and Verification:
+                                        
+                                        The website includes a functionality for scanning passes. Attendees can have their QR code-based passes scanned directly from their mobile devices, streamlining the entry process. This scanning system is integrated into the website for ease of access and use during the event.
+                                        Use Case and Scalability:
+                                        
+                                        The system was successfully deployed for all events hosted last year at LD College of Engineering, demonstrating its effectiveness and scalability. Its ability to handle large numbers of attendees and multiple events simultaneously showcases its robustness.
+                                        Technology Stack:
+                                        
+                                        The system is built using Django, which provides a solid and flexible backend framework.
+                                        Ajax is used for asynchronous data communication, enhancing the responsiveness of the web application.
+                                        Sockets are implemented for real-time communication, crucial for instant pass verification and data updates.
+                                        WebRTC is utilized for the pass scanning feature, enabling real-time video capture for QR code scanning directly from the website.
+                                        This event pass system represents a significant advancement in managing and conducting large-scale events. Its integration of QR codes, custom pass design, and efficient distribution and verification mechanisms make it a versatile and user-friendly solution. The successful implementation at a university level underscores its potential for broader applications in various event management scenarios. </p>
                                     <p> This app was used in all of the last year events hosted in my college(LD college of engineering)</p>
                                     <p> Tech stack: Django, Ajax, Sockets, WebRTC </p>
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
                                     <p><a class="more-link" href="https://github.com/parthishere/qrcode" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                    </form>
+                                </dialog>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
 
@@ -977,7 +1048,7 @@ Integration with LogUP Website: The intention is to integrate Web-meetup into th
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Ahmedabad, India</li>
+                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Boulder, Colorado, US</li>
                                 <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:parthishere1234@gmail.com">parthishere1234@gmail.com</a></li>
                                 <li><i class="fas fa fa-phone"></i><span class="sr-only">Phone:</span><a href="tel:+919408970311">+1 303-548-9344</a></li>
                             </ul>
@@ -994,7 +1065,7 @@ Integration with LogUP Website: The intention is to integrate Web-meetup into th
                             <div class="skillset">
                                
                                 <div class="item">
-                                    <h3 class="level-title">Embedded C, C &amp; C++<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with Embedded C since 4-5 years and createed outstanding projects in it"><i class="fas fa-info-circle"></i>Expert</span></h3>
+                                    <h3 class="level-title">Embedded C, C, Assembly (ARM, AVR, 8051, 6502) &amp; C++<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with Embedded C since 4-5 years and createed outstanding projects in it"><i class="fas fa-info-circle"></i>Expert</span></h3>
 
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 96%" aria-valuenow="96"  aria-valuemin="0" aria-valuemax="96"></div>
@@ -1089,7 +1160,7 @@ Integration with LogUP Website: The intention is to integrate Web-meetup into th
                         <div class="content">
                             <div class="item">
                                 <blockquote class="quote">                                  
-                                    <p><i class="fas fa-quote-left"></i>An excellent partner, developer and friend. We are working together since 2 years, participating in several positions in the Software Development field and side projects.</p>
+                                    <p><i class="fas fa-quote-left"></i>An excellent partner, developer and friend. We are working together since 4 years, participating in several positions in the Software Development field and side projects.</p>
                                     <p>He is creative, innovative and quite a rational thinker.</p>
                                 </blockquote>                
                                 <p class="source"><span class="name"><a href='https://www.linkedin.com/in/deepmakadiya/'>Deep Makadia</a></span><br /><span class="title">Colleague</span></p>                                                             

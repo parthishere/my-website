@@ -23,11 +23,14 @@ const showDialogBtn6 = document.getElementById("showDialogBtn6")
 const favDialog7 = document.getElementById("favDialog7")
 const showDialogBtn7 = document.getElementById("showDialogBtn7")
 
-// const favDialog8 = document.getElementById("favDialog8")
-// const showDialogBtn8 = document.getElementById("showDialogBtn8")
+const favDialog8 = document.getElementById("favDialog8")
+const showDialogBtn8 = document.getElementById("showDialogBtn8")
 
-// const favDialog9 = document.getElementById("favDialog9")
-// const showDialogBtn9 = document.getElementById("showDialogBtn9")
+const favDialog9 = document.getElementById("favDialog9")
+const showDialogBtn9 = document.getElementById("showDialogBtn9")
+
+const favDialog10 = document.getElementById("favDialog10")
+const showDialogBtn10 = document.getElementById("showDialogBtn10")
 
 
 showDialogBtn1.addEventListener("click", () => favDialog1.showModal())
@@ -37,8 +40,9 @@ showDialogBtn4.addEventListener("click", () => favDialog4.showModal())
 showDialogBtn5.addEventListener("click", () => favDialog5.showModal())
 showDialogBtn6.addEventListener("click", () => favDialog6.showModal())
 showDialogBtn7.addEventListener("click", () => favDialog7.showModal())
-// showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
-// showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
+showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
+showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
+showDialogBtn10.addEventListener("click", () => favDialog10.showModal())
 
 
 
