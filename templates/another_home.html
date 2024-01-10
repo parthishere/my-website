@@ -885,7 +885,7 @@ Send me email for any codes or implementations
                             
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.png' %}" alt="RTOS baremetal" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     
@@ -901,21 +901,20 @@ Send me email for any codes or implementations
                                         <form method="dialog"> 
                                     <p class="mb-2">In this project, I developed a custom bare-metal RTOS made for the STM32F0711 board, which is based on the ARM Cortex M0+ architecture. This RTOS was implemented in three distinct scheduling methodologies: Round Robin, Cooperative, and Periodic Scheduler. Each of these implementations caters to different operational requirements.
 
-                                        Round Robin Scheduling: In this mode, the RTOS allocates a fixed time slice to each task, rotating through them in a cyclic order. This approach ensures fair CPU time distribution among all tasks, suitable for systems where tasks have similar priority levels.
+                                        <p><b>Round Robin Scheduling:</b> In this mode, the RTOS allocates a fixed time slice to each task, rotating through them in a cyclic order. This approach ensures fair CPU time distribution among all tasks, suitable for systems where tasks have similar priority levels.</p>
                                         
-                                        Cooperative Scheduling: Under cooperative scheduling, tasks voluntarily yield control back to the scheduler, allowing other tasks to execute. This method provides more control to the individual tasks over their execution but requires well-designed task interaction to prevent issues like task starvation.
+                                        <p><b>Cooperative Scheduling:</b> Under cooperative scheduling, tasks voluntarily yield control back to the scheduler, allowing other tasks to execute. This method provides more control to the individual tasks over their execution but requires well-designed task interaction to prevent issues like task starvation.</p>
                                         
-                                        Periodic Scheduler: The periodic scheduler is designed for tasks that need to run at regular intervals. This implementation is particularly useful for time-sensitive tasks that require consistent and predictable execution timing.
+                                        <p><b>Periodic Scheduler:</b> The periodic scheduler is designed for tasks that need to run at regular intervals. This implementation is particularly useful for time-sensitive tasks that require consistent and predictable execution timing.</p>
                                         
-                                        Mutex Implementation: To manage access to shared resources, I have incorporated mutexes in the RTOS. These mutexes are essential for avoiding race conditions and ensuring data integrity when multiple tasks access the same resource.
+                                        <p><b>Mutex Implementation:</b> To manage access to shared resources, I have incorporated mutexes in the RTOS. These mutexes are essential for avoiding race conditions and ensuring data integrity when multiple tasks access the same resource.</p>
                                         
-                                        SysTick Handler for Task Switching: The core of the task management mechanism in this RTOS is the SysTick handler. This handler is responsible for task switching, leveraging the SysTick timer of the STM32F0711 board to trigger context switches at precise intervals.
+                                        <p><b>SysTick Handler for Task Switching:</b> The core of the task management mechanism in this RTOS is the SysTick handler. This handler is responsible for task switching, leveraging the SysTick timer of the STM32F0711 board to trigger context switches at precise intervals.</p>
                                         
-                                        Context Switching with ARM Assembly: One of the critical aspects of this RTOS is the efficient handling of context switching. This process involves saving the current state of a task and restoring the state of the next task to be executed. To accomplish this, I used ARM assembly to manipulate the stack and registers, ensuring that each task’s context is preserved and restored accurately. This approach is crucial for maintaining the integrity of task execution and allowing seamless switches between tasks.
+                                        <p><b>Context Switching with ARM Assembly:</b> One of the critical aspects of this RTOS is the efficient handling of context switching. This process involves saving the current state of a task and restoring the state of the next task to be executed. To accomplish this, I used ARM assembly to manipulate the stack and registers, ensuring that each task’s context is preserved and restored accurately. This approach is crucial for maintaining the integrity of task execution and allowing seamless switches between tasks.</p>
                                         
-                                        Stack Management for Tasks: Alongside context switching, the RTOS also manages the stack space for each task. This management is vital to prevent stack overflows and to ensure that each task has sufficient stack memory for its execution.
+                                        <p><b>Stack Management for Tasks:</b> Alongside context switching, the RTOS also manages the stack space for each task. This management is vital to prevent stack overflows and to ensure that each task has sufficient stack memory for its execution.</p>
                                         
-                                        This RTOS project highlights the complexities of low-level programming and system design on ARM Cortex M0+ architecture. It demonstrates a deep understanding of real-time concepts and the intricacies of task scheduling, context switching, and resource management. The implementation of different scheduling algorithms along with mutexes makes this RTOS a robust and flexible solution for various real-time applications.</p>
 
                                         <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
 
