@@ -32,8 +32,15 @@ const showDialogBtn9 = document.getElementById("showDialogBtn9")
 const favDialog10 = document.getElementById("favDialog10")
 const showDialogBtn10 = document.getElementById("showDialogBtn10")
 
+// const pcbcontentDialog = document.getElementById("pcbcontentDialog")
+// const pcblabShowButtonID = document.getElementById("pcblabShowButtonID")
+
+
 const favDialog11 = document.getElementById("favDialog11")
 const showDialogBtn11 = document.getElementById("showDialogBtn11")
+
+const favDialog12 = document.getElementById("favDialog12")
+const showDialogBtn12 = document.getElementById("showDialogBtn12")
 
 
 showDialogBtn1.addEventListener("click", () => favDialog1.showModal())
@@ -47,6 +54,8 @@ showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
 showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
 showDialogBtn10.addEventListener("click", () => favDialog10.showModal())
 showDialogBtn11.addEventListener("click", () => favDialog11.showModal())
+showDialogBtn12.addEventListener("click", () => favDialog12.showModal())
+// pcblabShowButtonID.addEventListener("click", () => pcbcontentDialog.showModal())
 
 
 

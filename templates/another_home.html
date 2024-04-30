@@ -312,11 +312,11 @@
                         <h2 class="heading">About Me</h2>
                         <div class="content">
                             <p> 
-                                I am an MS student at <a href="https://www.colorado.edu">CU Boulder</a>, I have been learning embedded development for 4 years including developing drivers for I2C, Uart, USB and other sensors like gyro and accelerometer, Strong in problem solving, high level & low level system design. Additionally, I've gained knowledge in embedded systems, real-time operating systems, and I'm currently exploring low-power embedded systems.</p>
+                                Hi there! I'm an MS student at <a href="https://www.colorado.edu">CU Boulder</a>, and I've been tinkering with embedded systems for the past four years, I have been learning embedded development for 4 years I've had the opportunity to work on various projects that involved creating drivers for different communication protocols like BLE, PS2, and USB. I excel in problem-solving and have a strong foundation in embedded systems and real-time operating systems. Currently, I am expanding my knowledge in the domain of low-power embedded systems to create energy-efficient solutions.</p>
 
-                            <p>I've created software projects that tackle real-world problems with a logical programming approach. I've also taken part in hackathons and hardware-related ideathons. I'm enthusiastic about the chance to collaborate with you.</p>
+                            <p> I have developed software projects that address real-world challenges by employing a logical and systematic programming approach. I have actively participated in hackathons and hardware-related ideathons.</p>
                             
-                            <p>A guy who loves to understand all things.<p>
+                            <p> At the end of the day, I'm just a guy who loves to understand how things work.<p>
                          
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -337,6 +337,18 @@
                             
                             <div class="timeline">
                             <div class="isotope">
+
+                            {% comment %} <div class="item hardware">
+                                <h3 class="title">BIOS Firmware Engineer, Intern <span class="place"><a href="https://www.amd.com/en.html">Advanced Micro Devices(AMD)</a></span> <span class="year">(May 2024 - Auhust 2024)</span></h3>
+                                <p>As an firmware and hardware developer I have designed IoT part of charger from entirely from the ground up</p>
+                                <ul>
+                                    <li>designed the printed circuit boards (PCBs) and contributed to the manufacturing process of the chargers</li>
+                                    <li>Managed and hosted servers within the AWS (Amazon Web Services) environment. Additionally, I established communication between the chargers and the AWS server using the OCPP and MQTT protocols</li>
+                                    <li>Developed custom drivers to integrate with other peripherals like touch LCD, Neoway GSM/GPS module</li>
+                                    </ul>
+                                <p> Establish wireless communication between multiple ESPs to keep track of people counter that communicates with cloud, to help in Hygiene Monitor at Airports
+                            </div><!--//item--> {% endcomment %}
+
                             <div class="item hardware">
                                 <h3 class="title">Embedded Developer - <span class="place"><a href="https://www.gridenpower.com">Griden Power - An EV Charger Company</a></span> <span class="year">(Sept 2022 - May 2023)</span></h3>
                                 <p>As an firmware and hardware developer I have designed IoT part of charger from entirely from the ground up</p>
@@ -523,6 +535,162 @@
                                 </div><!--//desc--> 
                             </br>                         
                             </div><!--//item-->
+
+
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Prectical PCB Design Labs</a></h3>
+                                    <p>
+                                        <ul>
+                                            <li>In the practical PCB design labs, I gained hands-on experience in various aspects of electronic design and debugging. I learned about ground bounce, a phenomenon that can cause signal integrity issues, and explored techniques to minimize its impact. I performed measurements of inrush and steady-state currents, which are crucial for designing reliable power supply systems. I also worked on designing and implementing astable vibrators, a type of oscillator circuit.</li>
+                                            <li>Throughout the labs, I focused on creating multi-layer PCBs while adhering to acceptable EMI (Electromagnetic Interference) standards. I gained experience in reading and analyzing commercial boards, identifying sources of noise, and implementing strategies to reduce noise and improve overall performance. </li>
+                                            <li>Additionally, I delved into essentials for ensuring signal integrity in high-speed designs. I became proficient in using various debugging tools, such as oscilloscopes, logic analyzers, multimeters, and function generators, to troubleshoot and optimize hardware designs. </li>
+                                        </ul>
+                                    </p>
+                                    <button id="showDialogBtn12" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog12">
+                                        <form method="dialog"> 
+                                         
+                                            <div class="desc col-md-8 col-12">
+                                                <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Atable multivibrator</a></h3>
+                                                <ul>
+                                                    <li> In this project, I designed and built a PCB featuring a 555 timer configured as an astable multivibrator. The primary goal was to create a circuit that could generate a slow, adjustable output signal with a target frequency of 500Hz and a 50% duty cycle. To achieve this, I incorporated a potentiometer to control the duty cycle, allowing for a range of approximately 10% to 90%. The circuit design also included strategically placed decoupling capacitors to minimize switching noise and ensure a stable power supply to the 555 timer IC.</li>
+                                                    <li>Throughout the project, I conducted various measurements and analyses to assess the circuit's performance. I examined the output waveforms, rise and fall times, and noise levels using an oscilloscope. I also calculated the Thevenin resistance of the circuit by measuring voltages with and without a load resistance. I designed and learned valuable lessons in the process. </li>
+                                                   <li>Link: <a href="https://parthishere.com">Report and Photos</a>
+                                                </ul>
+                                                
+                                            </div>
+                                        
+
+                                        
+                                            
+                                            <div class="desc col-md-8 col-12">
+                                                <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Good Design practices</a></h3>
+                                                <ul>
+                                                    <li>In this project, I designed and developed a PCB that demonstrates the impact of good and bad layout practices on the performance of a circuit. The board features a 555 timer configured as an astable multivibrator, generating a 500 Hz signal with a 66% duty cycle. The 555 timer's output is connected to two hex inverter ICs, one laid out using good design practices and the other using suboptimal techniques.</li>
+                                            <li>The primary objective of this project was to analyze and compare the switching noise and signal integrity between the good and bad layouts. The good layout incorporated a continuous ground plane, short traces, and decoupling capacitors placed close to the ICs. In contrast, the bad layout lacked a ground plane, had longer traces, and placed the decoupling capacitors far from the ICs. Through measurements and analysis using an oscilloscope, I observed significant differences in noise levels and signal rise and fall times between the two layouts.</li>
+                                            <li>The project highlighted the importance of proper PCB layout techniques in minimizing noise and improving signal integrity. The good layout exhibited lower switching noise on both the "Quiet High" and "Quiet Low" pins compared to the bad layout. The rise and fall times of the signals were also faster in the good layout, indicating better signal quality. This project demonstrated my ability to design and analyze PCBs, understand the impact of layout on circuit performance, and apply best practices to mitigate noise and enhance signal integrity.</li>
+                                            <li>Link: <a href="https://parthishere.com">Report and Photos</a>
+                                                   
+                                                </ul>
+                                                
+                                            </div>
+                                       
+                                        
+
+                                        
+                                            
+                                            <div class="desc col-md-8 col-12">
+                                                <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Golder Arduino</a></h3>
+                                                <ul>
+                                                    <li> In this project, I designed and developed a custom Arduino-compatible board called the Golden Arduino, with the goal of improving performance, reducing noise, and enhancing features compared to commercial Arduino boards. The project involved careful consideration of schematic design, component selection, and PCB layout optimization to achieve the desired objectives.</li>
+                                            <li>The Golden Arduino board demonstrated reliable functionality across various aspects, including continuous ground plane, same form factor as commercial Arduino(little smaller infact), short return path via vias close to switching pins , power supply stability, Analog reference stability, boot-loading capability, code execution, and communication interfaces such as ICSP programming, serial communication, I2C, SPI, analog input, and digital output. Significant noise reduction, ranging from 10% to 20%, was observed compared to commercial Arduino boards, highlighting the effectiveness of the design techniques employed, such as proper component placement, ground plane optimization, and decoupling capacitor usage.</li>
+                                            <li>Link: <a href="https://parthishere.com">Report and Photos</a>
+                                                   
+                                                </ul>
+                                                
+                                            </div>
+                                       
+                                        
+                                            
+                                            <div class="desc col-md-8 col-12">
+                                                <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Instrument Droid</a></h3>
+                                                <ul>
+                                                    <li>In this project, I designed and developed a custom instrument called the "Instrument Droid" to characterize various voltage sources and regulators by measuring their Thevenin equivalent parameters. The Instrument Droid is capable of sweeping the load current and measuring the corresponding output voltages to determine the Thevenin voltage (VTH) and Thevenin resistance (RTH) of the voltage source under test.</li>
+                                             <li>  The Instrument Droid incorporates an Arduino microcontroller, a digital-to-analog converter (DAC) to control the load current, an analog-to-digital converter (ADC) to measure voltages, an op-amp to drive the MOSFET load, and a MOSFET acting as a voltage-controlled current source. The system employs differential voltage measurement techniques and a pulsed current approach to manage power dissipation and ensure accurate measurements.</li>
+                                            <li>To validate the Instrument Droid's performance, known voltage sources such as a function generator and a bench power supply with a known series resistor were characterized. The measured Thevenin parameters closely matched the expected values, confirming the instrument's accuracy. Subsequently, various unknown voltage sources, including wall warts, batteries, and other common laboratory sources, were characterized. The Instrument Droid successfully determined their Thevenin parameters, providing valuable insights into their behavior under varying load conditions.</li>
+                                            <li>I also incorporated all the good layout practices and created 4 layer board, and type C footprint.</li>
+                                            <li>Link: <a href="https://parthishere.com">Report and Photos</a>
+                                                </ul>
+                                                
+                                            </div>
+
+                                            <div class="desc col-md-8 col-12">
+                                                <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Other Reports:</a></h3>
+                                                <ul>
+                                                    <li><h4 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Inrush and Steady state current Measurement</a></h4></li>
+                                             <li>  <h4 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Inrush and Steady state current Measurement</a></h4></li>
+                                            <li><h4 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Inrush and Steady state current Measurement</a></h4></li>
+                                            <li><h4 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Inrush and Steady state current Measurement</a></h4></li>
+                                            <li>Link: <a href="https://parthishere.com">Report and Photos</a>
+                                                </ul>
+                                                
+                                            </div>
+                                        
+                                        <p>
+                                
+
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                    <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1ADKPRw8MK4GQmMEpo7IxrXK6MbnVLku3" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
+                                    <p><a class="more-link" href="https://github.com/parthishere/Pong-in-C" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                                </dialog>
+                                </div><!--//desc--> 
+                            </br>                         
+                            </div><!--//item-->
+
+{% comment %} 
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Practical PCB design Labs and borards</a></h3>
+                                    <p>
+                                        <ul>
+                                            <li>In the practical PCB design labs, I gained hands-on experience in various aspects of electronic design and debugging. I learned about ground bounce, a phenomenon that can cause signal integrity issues, and explored techniques to minimize its impact. I performed measurements of inrush and steady-state currents, which are crucial for designing reliable power supply systems. I also worked on designing and implementing astable vibrators, a type of oscillator circuit.</li>
+                                            <li>Throughout the labs, I focused on creating multi-layer PCBs while adhering to acceptable EMI (Electromagnetic Interference) standards. I gained experience in reading and analyzing commercial boards, identifying sources of noise, and implementing strategies to reduce noise and improve overall performance. </li>
+                                            <li>Additionally, I delved into essentials for ensuring signal integrity in high-speed designs. I became proficient in using various debugging tools, such as oscilloscopes, logic analyzers, multimeters, and function generators, to troubleshoot and optimize hardware designs. </li>
+                                        </ul>
+                                        
+
+                                        
+                                        Through these practical labs, I developed a deep understanding of signal integrity principles and acquired valuable skills in PCB design, debugging, and noise reduction techniques.
+                                    </p>
+                                    <button id="pcblabShowButtonID" class="btn btn-cta-primary">
+                                        Show Details
+                                    </button>    
+                                      <dialog id="pcbcontentDialog">
+                                        <form method="dialog"> 
+                                    <p> 
+                                        In this project, I designed and built a PCB featuring a 555 timer configured as an astable multivibrator. The primary goal was to create a circuit that could generate a slow, adjustable output signal with a target frequency of 500Hz and a 50% duty cycle. To achieve this, I incorporated a potentiometer to control the duty cycle, allowing for a range of approximately 10% to 90%. The circuit design also included strategically placed decoupling capacitors to minimize switching noise and ensure a stable power supply to the 555 timer IC.
+
+Throughout the project, I conducted various measurements and analyses to assess the circuit's performance. I examined the output waveforms, rise and fall times, and noise levels using an oscilloscope. I also calculated the Thevenin resistance of the circuit by measuring voltages with and without a load resistance. While I encountered some challenges due to component availability, I adapted my design and learned valuable lessons in the process. This project showcased my skills in PCB design, component selection, risk management, and troubleshooting, highlighting my ability to apply theoretical knowledge to practical applications.
+
+
+                                        <p>
+                                        In this project, I designed and developed a custom Arduino-compatible board called the Golden Arduino, with the goal of improving performance, reducing noise, and enhancing features compared to commercial Arduino boards. The project involved careful consideration of schematic design, component selection, and PCB layout optimization to achieve the desired objectives.
+                                        The Golden Arduino board demonstrated reliable functionality across various aspects, including power supply stability, boot-loading capability, code execution, and communication interfaces such as ICSP programming, serial communication, I2C, SPI, analog input, and digital output. Significant noise reduction, ranging from 10% to 20%, was observed compared to commercial Arduino boards, highlighting the effectiveness of the design techniques employed, such as proper component placement, ground plane optimization, and decoupling capacitor usage.
+                                        Throughout the project, I encountered challenges and learning opportunities. A hard error was identified in the pinout configuration of the ICSP header and the microcontroller's D13 and D8 pins, emphasizing the importance of meticulous review and verification of schematic and pinout documentation. This project showcased my ability to apply design principles, testing methodologies, and problem-solving skills to create a high-quality, performance-optimized Arduino-compatible board. It serves as a valuable learning experience in embedded systems development and demonstrates my proficiency in schematic design, PCB layout, and hardware debugging.
+                                        <p>
+                                            In this project, I designed and developed a PCB that demonstrates the impact of good and bad layout practices on the performance of a circuit. The board features a 555 timer configured as an astable multivibrator, generating a 500 Hz signal with a 66% duty cycle. The 555 timer's output is connected to two hex inverter ICs, one laid out using good design practices and the other using suboptimal techniques.
+                                            The primary objective of this project was to analyze and compare the switching noise and signal integrity between the good and bad layouts. The good layout incorporated a continuous ground plane, short traces, and decoupling capacitors placed close to the ICs. In contrast, the bad layout lacked a ground plane, had longer traces, and placed the decoupling capacitors far from the ICs. Through measurements and analysis using an oscilloscope, I observed significant differences in noise levels and signal rise and fall times between the two layouts.
+                                            The project highlighted the importance of proper PCB layout techniques in minimizing noise and improving signal integrity. The good layout exhibited lower switching noise on both the "Quiet High" and "Quiet Low" pins compared to the bad layout. The rise and fall times of the signals were also faster in the good layout, indicating better signal quality. This project demonstrated my ability to design and analyze PCBs, understand the impact of layout on circuit performance, and apply best practices to mitigate noise and enhance signal integrity.
+                                        <p>
+                                            In this project, I designed and developed a custom instrument called the "Instrument Droid" to characterize various voltage sources and regulators by measuring their Thevenin equivalent parameters. The Instrument Droid is capable of sweeping the load current and measuring the corresponding output voltages to determine the Thevenin voltage (VTH) and Thevenin resistance (RTH) of the voltage source under test.
+                                            The Instrument Droid incorporates an Arduino microcontroller, a digital-to-analog converter (DAC) to control the load current, an analog-to-digital converter (ADC) to measure voltages, an op-amp to drive the MOSFET load, and a MOSFET acting as a voltage-controlled current source. The system employs differential voltage measurement techniques and a pulsed current approach to manage power dissipation and ensure accurate measurements.
+                                            To validate the Instrument Droid's performance, known voltage sources such as a function generator and a bench power supply with a known series resistor were characterized. The measured Thevenin parameters closely matched the expected values, confirming the instrument's accuracy. Subsequently, various unknown voltage sources, including wall warts, batteries, and other common laboratory sources, were characterized. The Instrument Droid successfully determined their Thevenin parameters, providing valuable insights into their behavior under varying load conditions.
+                                        <p>
+                                        <p> I have also designed BMS with help of reference zener diode and some LM317 for voltage and current regulation.</p>
+                                
+
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                    <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1ADKPRw8MK4GQmMEpo7IxrXK6MbnVLku3" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
+                                    <p><a class="more-link" href="https://github.com/parthishere/Pong-in-C" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                                </dialog>
+                                </div><!--//desc--> 
+                            </br>                         
+                            </div><!--//item--> {% endcomment %}
+
+
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
