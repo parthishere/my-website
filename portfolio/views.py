@@ -16,7 +16,7 @@ from .models import *
 
 
 # from .forms import ContactForm
-def another_home(request):
+def home(request):
     context = {}
     projects = Project.objects.all()
     Softwear.objects.all()
@@ -36,7 +36,27 @@ def another_home(request):
         mail.send()
         messages.success(request, "Mail Sent Successfully")
         return redirect('portfolio:a-home')
-    return render(request, 'another_home.html', context)
+    return render(request, 'portfolio/home.html', context)
+
+def about(request):
+    context = {}
+    return render(request, 'portfolio/about.html', context)
+
+def resume(request):
+    context = {}
+    return render(request, 'portfolio/resume.html', context)
+
+def project(request):
+    context = {}
+    return render(request, 'portfolio/project.html', context)
+
+def projectDetail(request):
+    context = {}
+    return render(request, 'portfolio/home.html', context)
+
+def contact(request):
+    context = {}
+    return render(request, 'portfolio/contact.html', context)
 
 def cmd_home(request):
     context = {}

@@ -4,18 +4,7 @@ from django.db.models.signals import pre_save, post_save
 from django.shortcuts import reverse
 
 
-# #-----------------------------------------------------------------------
 
-class Progress(models.Model):
-    name = models.CharField(max_length=100, blank=True, null=True)
-    progress = models.IntegerField(blank=True, null=True)
-    progress_char = models.CharField(max_length=100)
-
-    class Meta():
-        ordering = ['-id']
-
-    def __str__(self):
-        return self.name + ": " + str(self.progress)
 
 
 class Image(models.Model):
@@ -24,8 +13,6 @@ class Image(models.Model):
 
     def __str__(self):
         return self.pk
-
-# #-----------------------------------------------------------------------
 
 
 class ContactModel(models.Model):
@@ -40,23 +27,18 @@ class ContactModel(models.Model):
     def __str__(self):
         return self.email
 
-# #-----------------------------------------------------------------------
 
 
-class Softwear(models.Model):
-    softwear = models.CharField(max_length=100, blank=True, null=True)
-    progress = models.ForeignKey(
-        Progress, on_delete=models.SET_NULL, null=True)
-    img = models.ForeignKey(Image, on_delete=models.CASCADE)
-    small_skill = models.BooleanField(default=True)
+class Skills(models.Model):
+    name = models.CharField(max_length=100, blank=True, null=True)
+    percent = models.IntegerField()
 
     class Meta():
         ordering = ['-id']
 
     def __str__(self):
-        return self.softwear
+        return self.name
 
-# -----------------------------------------------------------------------
 
 
 class Project(models.Model):
@@ -70,10 +52,7 @@ class Project(models.Model):
     hosted_link = models.URLField()
     extra_description_link = models.URLField()
     github_link = models.URLField()
-    progress = models.ForeignKey(
-        Progress, on_delete=models.SET_NULL, null=True)
-    tools = models.ManyToManyField(
-        Softwear, related_name='sw_projects', blank=True)
+    
     small_project = models.BooleanField(default=False)
 
     class Meta():
@@ -83,44 +62,41 @@ class Project(models.Model):
         return self.name
 
 
-class WorkExperiance(models.Model):
-    position = models.CharField(max_length=50, blank=True, null=True)
-    company = models.CharField(max_length=100)
-    company_type = models.CharField(max_length=100)
-    date_of_join = models.DateField(null=True)
-    date_on_finish = models.DateField(null=True, blank=True)
 
 
 class Testimonial(models.Model):
     name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='testimonials')
+    
 # -----------------------------------------------------------------------
 
 
-class AdminModel(models.Model):
-    """ User Profile Model """
+
+class About(models.Model):
+
+    description = models.TextField()
     dob = models.DateField(auto_now_add=True)
-    phone_no = models.IntegerField()
-    softwears = models.ManyToManyField(Softwear)
-    about = models.TextField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to='profiles/', null=True, blank=True)
+    website = models.URLField()
+    phone = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    age = models.IntegerField()
     degree = models.CharField(max_length=100)
-    age = models.IntegerField(blank=False, null=False)
-    city = models.CharField(max_length=50)
-    cerificates = models.TextField(null=True, blank=True)
-    projects = models.ManyToManyField(Project, blank=True)
-    intrests = models.TextField(null=True, blank=True)
+    email = models.EmailField()
+    about = models.TextField()
+    
+    project_worked_on = models.IntegerField()
+    skill = models.ManyToManyField(Skills)
+    
 
     class Meta:
-        ordering = ['-id']
+        verbose_name = ("")
+        verbose_name_plural = ("s")
 
     def __str__(self):
-        ''' Representation of instances '''
-        return str(f"email:{self.user.email}  id: {self.pk}")
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("_detail", kwargs={"pk": self.pk})
 
 
-def progress_post_save_reciever(sender, instance, created, *args, **kwargs):
-    if created:
-        value = instance.progess
-
-
-post_save.connect(progress_post_save_reciever, sender=Progress)
