@@ -19,7 +19,7 @@ from .models import *
 def home(request):
     context = {}
     projects = Project.objects.all()
-    Softwear.objects.all()
+    Skills.objects.all()
     contact_form = ContactForm(request.POST or None)
     context['form'] = contact_form
 
