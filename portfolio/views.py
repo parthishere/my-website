@@ -91,7 +91,7 @@ def change_another(request):
 
 
 def download_pdf(request):
-    filename = 'portfolio/parth_resume.pdf'
+    filename = 'portfolio/Parth_Thakkar.pdf'
     wrapper = FileWrapper(open(filename, 'rb'))
     response = HttpResponse(
         wrapper, content_type=mimetypes.guess_type(filename)[0])
