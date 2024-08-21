@@ -32,6 +32,13 @@ const showDialogBtn9 = document.getElementById("showDialogBtn9")
 const favDialog10 = document.getElementById("favDialog10")
 const showDialogBtn10 = document.getElementById("showDialogBtn10")
 
+
+const rtosFinalProjectDialog = document.getElementById("rtosFinalProjectDialog")
+const showRtosFinalProjectBtn = document.getElementById("showRtosFinalProjectBtn")
+
+const IotFinalProjectDialog = document.getElementById("IotFinalProjectDialog")
+const showIotFinalProjectBtn = document.getElementById("showIotFinalProjectBtn")
+
 // const pcbcontentDialog = document.getElementById("pcbcontentDialog")
 // const pcblabShowButtonID = document.getElementById("pcblabShowButtonID")
 
@@ -55,6 +62,8 @@ showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
 showDialogBtn10.addEventListener("click", () => favDialog10.showModal())
 showDialogBtn11.addEventListener("click", () => favDialog11.showModal())
 showDialogBtn12.addEventListener("click", () => favDialog12.showModal())
+showRtosFinalProjectBtn.addEventListener("click", () => rtosFinalProjectDialog.showModal())
+showIotFinalProjectBtn.addEventListener("click", () => IotFinalProjectDialog.showModal())
 // pcblabShowButtonID.addEventListener("click", () => pcbcontentDialog.showModal())
 
 
