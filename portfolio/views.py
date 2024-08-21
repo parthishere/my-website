@@ -48,11 +48,11 @@ def resume(request):
 
 def project(request):
     context = {}
-    return render(request, 'portfolio/project.html', context)
+    return render(request, 'portfolio/services.html', context)
 
-def projectDetail(request):
+def projectDetail(request, pk=None):
     context = {}
-    return render(request, 'portfolio/home.html', context)
+    return render(request, 'portfolio/services-details.html', context)
 
 def contact(request):
     context = {}
