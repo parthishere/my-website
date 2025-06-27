@@ -36,6 +36,9 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="{% static "assets/css/styles.css" %}">
     
+    <!-- Enhanced Glassmorphism CSS -->
+    <link rel="stylesheet" href="{% static "css/enhanced-glassmorphism.css" %}">
+    
     <style>
         #myBtn {
             display: none; /* Hidden by default */
@@ -82,38 +85,39 @@
             margin: 0 auto;
             margin-bottom: 60px;
             text-align: center;
-            border-bottom: 1px solid #54ba4e;
+            background: var(--glass-bg-dark);
+            backdrop-filter: var(--glass-backdrop);
+            -webkit-backdrop-filter: var(--glass-backdrop);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1rem;
           }
           .filters2 {
             list-style: none;
             margin: 0 auto;
             margin-bottom: 60px;
             text-align: center;
-            border-bottom: 1px solid #54ba4e;
+            /* Enhanced styles applied via CSS file */
           }
     
           .filters .type {
-            margin-right: 30px;
+            margin-right: 15px;
             list-style: none;
             display: inline-block;
-            padding: 8px 15px;
+            padding: 8px 20px;
             color: #8a8a8a;
             cursor: pointer;
             font-size: 14px;
             text-transform: uppercase;
             font-weight: 500;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           }
     
           .filters2 .type {
-            margin-right: 30px;
-            list-style: none;
-            display: inline-block;
-            padding: 8px 15px;
-            color: #8a8a8a;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-            font-weight: 500;
+            /* Enhanced styles applied via CSS file */
           }
     
           .filters .type:last-child {
@@ -123,22 +127,24 @@
             margin-right: 0;
           }
     
+          .filters .type:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+          }
+
           .filters .type.active {
-            color: #54ba4e;
-            {% comment %} border-bottom: 2px solid #54ba4e; {% endcomment %}
+            background: var(--primary-green) !important;
+            color: white !important;
+            box-shadow: 0 4px 16px rgba(84, 186, 78, 0.3);
           }
           .filters2 .type.active {
-            color: #54ba4e;
-            {% comment %} border-bottom: 2px solid #54ba4e; {% endcomment %}
+            /* Enhanced styles applied via CSS file */
           }
     
           .timeline {
-            border-left: 3px solid  #54ba4e;
-            border-bottom-right-radius: 2px;
-            border-top-right-radius: 2px;
+            /* Enhanced timeline styles applied via CSS file */
             position: relative;
-            padding: 0 30px;
-            margin-left: 280px;
           }
           .timeline .item {
             position: relative;
@@ -254,6 +260,13 @@
 </head> 
 
 <body>
+    <!-- Animation Toggle Button -->
+    <div class="animation-toggle" id="animationToggle">
+        <i class="fas fa-magic"></i>
+        <span>Animations</span>
+        <input type="checkbox" id="animationCheckbox" checked>
+    </div>
+
 {% comment %} logo, typo, add logo, add image, chnage image {% endcomment %}
     {% if messages %}
     
@@ -295,7 +308,7 @@
 	                <a class="btn btn-cta-primary" href="#contactSection" target="_self"><i class="fas fa-paper-plane"></i> Contact Me</a>        
 
 
-                    <a class="btn btn-cta-primary" href="{% url 'portfolio:pdf' %}" target="_self"><i class="fas fa-file-download"></i> Downlaod CV</a>        
+                    <a class="btn btn-cta-primary" href="{% url 'portfolio:download_pdf' %}" target="_self"><i class="fas fa-file-download"></i> Download CV</a>        
 
 	            </div><!--//col-->
 	        </div><!--//row-->         
@@ -333,74 +346,182 @@
                             <li class="type" data-filter=".software">Software</li>
                         </ul><!--//filters-->
 
-                        <div class="content ">
-                            
-                            <div class="timeline">
-                            <div class="isotope">
+                        <div class="content">
+                            <div class="timeline-container">
+                                <div class="timeline-line"></div>
+                                
+                                <div class="timeline-item hardware">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">May 2024 - August 2024</div>
+                                        <h3 class="timeline-title">BIOS Firmware Engineer, Intern</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://www.amd.com/en.html">Advanced Micro Devices (AMD)</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>As a firmware and hardware developer, I designed IoT components for chargers from the ground up:</p>
+                                            <ul>
+                                                <li>Designed printed circuit boards (PCBs) and contributed to the manufacturing process of chargers</li>
+                                                <li>Managed and hosted servers within AWS environment, establishing communication between chargers and AWS server using OCPP and MQTT protocols</li>
+                                                <li>Developed custom drivers to integrate with peripherals like touch LCD and Neoway GSM/GPS modules</li>
+                                                <li>Established wireless communication between multiple ESPs for people counter tracking with cloud integration for hygiene monitoring at airports</li>
+                                            </ul>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(255, 153, 0, 0.1); color: #FF9900;">
+                                                <i class="fab fa-aws"></i> AWS
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(0, 89, 156, 0.1); color: #00599C;">
+                                                <i class="fab fa-cuttlefish"></i> C/C++
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: #54ba4e;">
+                                                <i class="fas fa-microchip"></i> IoT
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            {% comment %} <div class="item hardware">
-                                <h3 class="title">BIOS Firmware Engineer, Intern <span class="place"><a href="https://www.amd.com/en.html">Advanced Micro Devices(AMD)</a></span> <span class="year">(May 2024 - Auhust 2024)</span></h3>
-                                <p>As an firmware and hardware developer I have designed IoT part of charger from entirely from the ground up</p>
-                                <ul>
-                                    <li>designed the printed circuit boards (PCBs) and contributed to the manufacturing process of the chargers</li>
-                                    <li>Managed and hosted servers within the AWS (Amazon Web Services) environment. Additionally, I established communication between the chargers and the AWS server using the OCPP and MQTT protocols</li>
-                                    <li>Developed custom drivers to integrate with other peripherals like touch LCD, Neoway GSM/GPS module</li>
-                                    </ul>
-                                <p> Establish wireless communication between multiple ESPs to keep track of people counter that communicates with cloud, to help in Hygiene Monitor at Airports
-                            </div><!--//item--> {% endcomment %}
+                                <div class="timeline-item hardware">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">Sept 2022 - May 2023</div>
+                                        <h3 class="timeline-title">Embedded Developer, Intern</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://www.gridenpower.com">Griden Power - EV Charger Company</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>As a firmware and hardware developer, I designed IoT components for chargers from the ground up:</p>
+                                            <ul>
+                                                <li>Designed printed circuit boards (PCBs) and contributed to the manufacturing process of chargers</li>
+                                                <li>Managed and hosted servers within AWS environment, establishing communication between chargers and AWS server using OCPP and MQTT protocols</li>
+                                                <li>Developed custom drivers to integrate with peripherals like touch LCD and Neoway GSM/GPS modules</li>
+                                                <li>Established wireless communication between multiple ESPs for people counter tracking with cloud integration</li>
+                                            </ul>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(255, 153, 0, 0.1); color: #FF9900;">
+                                                <i class="fab fa-aws"></i> AWS
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(0, 89, 156, 0.1); color: #00599C;">
+                                                <i class="fab fa-cuttlefish"></i> C/C++
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: #54ba4e;">
+                                                <i class="fas fa-microchip"></i> Embedded
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="item hardware">
-                                <h3 class="title">Embedded Developer, Intern - <span class="place"><a href="https://www.gridenpower.com">Griden Power - An EV Charger Company</a></span> <span class="year">(Sept 2022 - May 2023)</span></h3>
-                                <p>As an firmware and hardware developer I have designed IoT part of charger from entirely from the ground up</p>
-                                <ul>
-                                    <li>designed the printed circuit boards (PCBs) and contributed to the manufacturing process of the chargers</li>
-                                    <li>Managed and hosted servers within the AWS (Amazon Web Services) environment. Additionally, I established communication between the chargers and the AWS server using the OCPP and MQTT protocols</li>
-                                    <li>Developed custom drivers to integrate with other peripherals like touch LCD, Neoway GSM/GPS module</li>
-                                  </ul>
-                                <p> Establish wireless communication between multiple ESPs to keep track of people counter that communicates with cloud, to help in Hygiene Monitor at Airports
-                            </div><!--//item-->
+                                <div class="timeline-item hardware">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">Oct 2022 - August 2023</div>
+                                        <h3 class="timeline-title">Firmware Developer, Intern</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://www.sgligis.com">Scan Point Geomatics - Indian Geomatics Company</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>Helped in developing a driver for a custom UHF-RFID board, enabling effective read/write operations over extended distances:</p>
+                                            <ul>
+                                                <li>Enhanced the driver by incorporating algorithms that improved overall performance</li>
+                                                <li>Designed and manufactured full-fledged product, including PCB and 3D printing</li>
+                                                <li>Worked on Custom UHF reader, ESP32, and touch screen integration</li>
+                                            </ul>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(0, 89, 156, 0.1); color: #00599C;">
+                                                <i class="fab fa-cuttlefish"></i> C/C++
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: #54ba4e;">
+                                                <i class="fas fa-microchip"></i> ESP32
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(255, 193, 7, 0.1); color: #FFC107;">
+                                                <i class="fas fa-broadcast-tower"></i> RFID
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="item hardware">
-                                <h3 class="title">Firmware Developer, Intern - <span class="place"><a href="https://www.sgligis.com">Scan point geomatics - Indian Geomatics Comapy</a></span> <span class="year">(Oct 2022 - August 2023)</span></h3>
-                                <p>Helped in developing a driver for a custom UHF-RFID board, enabling it to effectively read and write RFIDs over extended distances</p>
-                                <ul>
-                                    <li>Enhanced the driver by incorporating algorithms that improved its overall performance</li>
-                                    <li>Designed and Manufactured full fledge product, including PCB and 3D printing </li>
-                                    <li>Worked on Custom UHF reader, ESP32, Touch screen </li>
-                                  </ul>
-                            </div><!--//item-->
+                                <div class="timeline-item software">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2021</div>
+                                        <h3 class="timeline-title">Python Developer</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://citrus.tech">Citrus Tech</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>Developed a market making bot for the cryptocurrency CITRUS using Python to stabilize the coin's market by providing liquidity and mitigating volatility.</p>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(55, 118, 171, 0.1); color: #3776AB;">
+                                                <i class="fab fa-python"></i> Python
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(255, 193, 7, 0.1); color: #FFC107;">
+                                                <i class="fab fa-bitcoin"></i> Crypto
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="item software">
-                                <h3 class="title">Python Developer - <span class="place"><a href="https://citrus.tech"></a></span> <span class="year">(2021)</span></h3>
-                                <p>I have developed a market making bot for the cryptocurrency CITRUS, utilizing the programming language Python, with the purpose of stabilizing the coin's market by providing liquidity and mitigating volatility.</p>
-                                <p> Also developed fronted to manage the configuration and managing the cryprobot to stay within the specified range.
-                                </ul>
-                            </div><!--//item-->
+                                <div class="timeline-item hardware">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">March 2019 - Sept 2019</div>
+                                        <h3 class="timeline-title">Hardware Team Member</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://roboconldce.web.app">Club Robocon</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>Created baremetal drivers for robot that represented LD college in DD Robocon India:</p>
+                                            <ul>
+                                                <li>Developed drivers for ATmega328p including I2C, UART, SPI, Rotary Encoder, PID/Motor Driver, USB, LCD</li>
+                                                <li>Worked on different boards and software like STM32 and Raspberry Pi</li>
+                                                <li>Simulated robot paths for competition in MATLAB and calculated PID for motors</li>
+                                            </ul>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(0, 89, 156, 0.1); color: #00599C;">
+                                                <i class="fab fa-cuttlefish"></i> C/C++
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(255, 193, 7, 0.1); color: #FFC107;">
+                                                <i class="fas fa-calculator"></i> MATLAB
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: #54ba4e;">
+                                                <i class="fas fa-microchip"></i> Embedded
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="item hardware">
-                                <h3 class="title">Hardware Team - <span class="place"><a href="https://roboconldce.web.app">Club Robocon</a></span> <span class="year">(March 2019 - Sept 2019)</span></h3>
-                                <p>I created baremetal drivers for robot that represented LD college in DD robocon India </p>
-                                <ul>
-                                    <li>developed drivers for atmega328p for example: I2C, UART, SPI, Rotery Encoder, PID/Motor Driver, USB, LCD</li>
-                                    <li>Worked on different boards and softwares like stm32 and rpi and simulated path that will robot take in the compitition in MATLAB, calculated PID for motor in MATLAB</li>
-                                    <li> techstack: Microchip Studio, Proteus, Matlab
-                                  </ul>
-                            
-                            </div><!--//item-->
-                            
-                            <div class="item software">
-                                <h3 class="title">Backend Developer - <span class="place"><a href="https://www.lakshyafestldce.com">Lakshya Fest 2020, LDCE</a></span> <span class="year">(2019 - 2020)</span></h3>
-                                <p>I have successfully created and implemented swift API routes for Lakshya Techfest 2020. This included deploying and thoroughly testing the website to ensure it functioned optimally.</p>
-                                <p> The website was developed utilizing the Django framework, which enabled me to construct the backend in a way that provided API routes for the frontend, allowing for seamless communication and functionality.</p>
-                            </div><!--//item-->
-
-                             <div class="item software">
-                                <h3 class="title">Back-end Developer - <span class="place"><a href="#">Purple & Cream</a></span> <span class="year">(2019)</span></h3>
-                                <p>I have designed and developed a website that is similar to Stackoverflow, but made for the film industry. The website allows users to ask and answer questions related to the film industry, as well as share knowledge and resources. The website also includes features such as voting, commenting, and user profiles sending chats to other users. </p>
-                                <p>After the completion of the website design and development, I successfully deployed the website on the web.</p>
-                            </div><!--//item--> 
-                        </div>
-                        </div>
+                                <div class="timeline-item software">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-arrow"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2019 - 2020</div>
+                                        <h3 class="timeline-title">Backend Developer</h3>
+                                        <div class="timeline-company">
+                                            <a href="https://www.lakshyafestldce.com">Lakshya Fest 2020, LDCE</a>
+                                        </div>
+                                        <div class="timeline-description">
+                                            <p>Successfully created and implemented swift API routes for Lakshya Techfest 2020, including deployment and thorough testing to ensure optimal website functionality.</p>
+                                        </div>
+                                        <div class="timeline-tech-stack">
+                                            <div class="badge-tech" style="background: rgba(255, 69, 0, 0.1); color: #FF4500;">
+                                                <i class="fab fa-swift"></i> Swift
+                                            </div>
+                                            <div class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: #54ba4e;">
+                                                <i class="fas fa-server"></i> API
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--//timeline-container-->
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -427,7 +548,17 @@
                                     </a>
                                 </div>
                                 
-                                <h3 class="title mb-3"><a href="" target="_blank">8-bit CPU</a></h3>
+                                <h3 class="title mb-3">
+                                    <a href="" target="_blank">8-bit CPU</a>
+                                    <span class="tech-badges ms-2">
+                                        <span class="badge-tech" style="background: var(--primary-green-light); color: var(--primary-green); border: 1px solid var(--primary-green-border);">
+                                            <i class="fas fa-microchip"></i> Digital Logic
+                                        </span>
+                                        <span class="badge-tech" style="background: rgba(0, 89, 156, 0.1); color: #00599C; border: 1px solid rgba(0, 89, 156, 0.2);">
+                                            <i class="fas fa-memory"></i> TTL
+                                        </span>
+                                    </span>
+                                </h3>
                                     <p> Developed a transistor-transistor logic CPU capable of executing basic programs like the Fibonacci series, addition, and subtraction. Integrated essential components including Program Counter, ALU, Control Unit, LCD output register, Register/Instruction Register, Clock, Instruction Decoder, 16-byte RAM, and Address Decoder. Core processing facilitated by Program Counter and ALU, with Control Unit and Instruction Decoder managing instruction flow. LCD displays bus state; RAM supports dual modes (Running and Programming) for manual instruction input. Control unit built with EEPROMs for instruction modification and includes 16 control signals for diverse operations. Designed an Arduino-nano based EEPROM programmer for control unit customization. </p>
                                   
                                     <button id="showDialogBtn1" class="btn btn-cta-primary">
@@ -1392,7 +1523,93 @@ Send me email for any codes or implementations
                             
                         </div>
                             
+                            <!-- Enhanced Markdown Projects Section -->
+                            {% if md_projects %}
+                            <hr style="margin: 3rem 0; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <h3 style="color: var(--primary-green); margin-bottom: 2rem;">
+                                <i class="fas fa-star"></i> Featured Software Projects
+                            </h3>
                             
+                            {% for project in md_projects %}
+                            <div class="item softproj featured-md-project" data-project-id="{{ forloop.counter }}">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <h3 class="title">
+                                            {{ project.name }}
+                                            {% if project.tech_stack.primary_language %}
+                                            <span class="badge-tech" style="background: var(--primary-green-light); color: var(--primary-green); border: 1px solid var(--primary-green-border); margin-left: 1rem;">
+                                                <i class="fas fa-code"></i> {{ project.tech_stack.primary_language }}
+                                            </span>
+                                            {% endif %}
+                                        </h3>
+                                        <div class="project-summary">
+                                            {{ project.html_content|truncatewords:25|safe }}
+                                        </div>
+                                        {% if project.tech_stack.technologies %}
+                                        <div class="tech-badges mt-2">
+                                            {% for tech in project.tech_stack.technologies|slice:":4" %}
+                                            <span class="badge-tech" style="background: rgba(84, 186, 78, 0.1); color: {{ tech.color }}; border: 1px solid rgba(84, 186, 78, 0.2);">
+                                                <i class="{{ tech.icon }}"></i> {{ tech.name }}
+                                            </span>
+                                            {% endfor %}
+                                            {% if project.tech_stack.technologies|length > 4 %}
+                                            <span class="badge-tech" style="background: rgba(255, 255, 255, 0.1); color: #666;">
+                                                +{{ project.tech_stack.technologies|length|add:"-4" }} more
+                                            </span>
+                                            {% endif %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <button class="btn btn-cta-primary" onclick="showProjectDialog('md-project-{{ forloop.counter }}')">
+                                            <i class="fas fa-info-circle"></i> View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Enhanced Project Dialog -->
+                                <dialog id="md-project-{{ forloop.counter }}" class="project-dialog">
+                                    <form method="dialog">
+                                        <div class="dialog-header">
+                                            <h2>{{ project.name }}</h2>
+                                            <button type="submit" class="close-btn" aria-label="Close">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <div class="dialog-content">
+                                            {% if project.tech_stack.technologies %}
+                                            <div class="tech-stack-section mb-4">
+                                                <h4><i class="fas fa-tools"></i> Technology Stack</h4>
+                                                <div class="tech-grid">
+                                                    {% for tech in project.tech_stack.technologies %}
+                                                    <div class="tech-item-large">
+                                                        <i class="{{ tech.icon }}" style="color: {{ tech.color }}; font-size: 1.5rem;"></i>
+                                                        <span>{{ tech.name }}</span>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            
+                                            <div class="project-details">
+                                                {{ project.html_content|safe }}
+                                            </div>
+                                            
+                                            <div class="project-actions mt-4">
+                                                <a href="#" class="btn btn-cta-primary me-2">
+                                                    <i class="fab fa-github"></i> View Code
+                                                </a>
+                                                <a href="#" class="btn btn-cta-secondary">
+                                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </dialog>
+                            </div><!--//item-->
+                            {% endfor %}
+                            {% endif %}
+                            <!-- End Enhanced Markdown Projects Section -->
                             
                             <a class="btn btn-cta-secondary" href="https://www.github.com/parthishere">More on GitHub <i class="fas fa-chevron-right pt-1"></i></a>
                         
@@ -1424,7 +1641,7 @@ Send me email for any codes or implementations
             <div class="secondary col-lg-4 col-12">
                  <aside class="info aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading sr-only">Basic Information</h2>
+                        <h2 class="heading">Basic Information</h2>
                         <div class="content">
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Boulder, Colorado, US</li>
@@ -1444,7 +1661,13 @@ Send me email for any codes or implementations
                             <div class="skillset">
                                
                                 <div class="item">
-                                    <h3 class="level-title">Embedded C, C, Assembly (ARM, AVR, 8051, 6502) &amp; C++<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with Embedded C since 4-5 years and createed outstanding projects in it"><i class="fas fa-info-circle"></i>Expert</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon cpp"><i class="fab fa-cuttlefish"></i></span>
+                                        Embedded C, C, Assembly (ARM, AVR, 8051, 6502) &amp; C++
+                                        <span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with Embedded C since 4-5 years and created outstanding projects in it">
+                                            <i class="fas fa-info-circle"></i>Expert
+                                        </span>
+                                    </h3>
 
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 96%" aria-valuenow="96"  aria-valuemin="0" aria-valuemax="96"></div>
@@ -1452,7 +1675,13 @@ Send me email for any codes or implementations
                                 </div><!--//item-->
 
                                 <div class="item">
-                                    <h3 class="level-title">Python &amp; Django<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with django and python from 1st year, developing technologies from standalone application.Also coompleted project on python and IOT using some automation"><i class="fas fa-info-circle"></i>Expert</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon python"><i class="fab fa-python"></i></span>
+                                        Python &amp; Django
+                                        <span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="I've been working with django and python from 1st year, developing technologies from standalone application.Also completed project on python and IOT using some automation">
+                                            <i class="fas fa-info-circle"></i>Expert
+                                        </span>
+                                    </h3>
 
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 96%" aria-valuenow="96"  aria-valuemin="0" aria-valuemax="96"></div>
@@ -1460,22 +1689,39 @@ Send me email for any codes or implementations
                                 </div><!--//item-->
 
                                 <div class="item">
-                                    <h3 class="level-title">Micro python, Assambly, HDL<span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="Have created projects in the language"><i class="fas fa-info-circle"></i>PRO</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon"><i class="fas fa-microchip"></i></span>
+                                        Micro python, Assembly, HDL
+                                        <span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="Have created projects in the language">
+                                            <i class="fas fa-info-circle"></i>PRO
+                                        </span>
+                                    </h3>
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 86%" aria-valuenow="86"  aria-valuemin="0" aria-valuemax="96"></div>
 									</div><!--//level-bar-->                                  
                                 </div><!--//item-->
                                 
                                 <div class="item">
-                                    <h3 class="level-title">Javascript &amp; jQuery<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="Javacript is must for the webdeveloper, and that is it"><i class="fas fa-info-circle"></i>Expert</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon js"><i class="fab fa-js-square"></i></span>
+                                        Javascript &amp; jQuery
+                                        <span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="Javascript is must for the web developer, and that is it">
+                                            <i class="fas fa-info-circle"></i>Expert
+                                        </span>
+                                    </h3>
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 94%" aria-valuenow="94"  aria-valuemin="0" aria-valuemax="94"></div>
 									</div><!--//level-bar-->                                   
                                 </div><!--//item-->
                                 
                                 <div class="item">
-                                    
-                                    <h3 class="level-title">Linux Administration, Shell scripting<span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="I am using linux as my main systems for 4 years">Pro</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon"><i class="fab fa-linux"></i></span>
+                                        Linux Administration, Shell scripting
+                                        <span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="I am using linux as my main systems for 4 years">
+                                            <i class="fas fa-info-circle"></i>Pro
+                                        </span>
+                                    </h3>
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 86%" aria-valuenow="60"  aria-valuemin="0" aria-valuemax="96"></div>
 									</div><!--//level-bar-->                                  
@@ -1483,7 +1729,13 @@ Send me email for any codes or implementations
 
 
                                 <div class="item">
-                                    <h3 class="level-title">VHDL, Matlab<span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="Matlab was must in my batchlor's">Pro</span></h3>
+                                    <h3 class="level-title">
+                                        <span class="tech-icon"><i class="fas fa-code"></i></span>
+                                        VHDL, Matlab
+                                        <span class="level-label" data-bs-toggle="tooltip" data-placement="left" title="Matlab was must in my bachelor's">
+                                            <i class="fas fa-info-circle"></i>Pro
+                                        </span>
+                                    </h3>
                                     <div class="level-bar progress">
 									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 86%" aria-valuenow="86"  aria-valuemin="0" aria-valuemax="96"></div>
 									</div><!--//level-bar-->                                  
@@ -1679,7 +1931,133 @@ Send me email for any codes or implementations
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
     <script type="text/javascript" src="{% static 'assets/plugins/github-activity/src/github-activity.js' %}"></script>
     <!-- custom js -->
-    <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>            
+    <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
+    
+    <!-- Enhanced Project Dialog JavaScript -->
+    <script>
+        function showProjectDialog(dialogId) {
+            const dialog = document.getElementById(dialogId);
+            if (dialog) {
+                dialog.showModal();
+                
+                // Add backdrop blur effect
+                document.body.style.overflow = 'hidden';
+                
+                // Add animation class
+                dialog.classList.add('dialog-show');
+                
+                // Handle close button
+                const closeBtn = dialog.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        dialog.close();
+                    });
+                }
+                
+                // Handle backdrop click
+                dialog.addEventListener('click', (e) => {
+                    if (e.target === dialog) {
+                        dialog.close();
+                    }
+                });
+                
+                // Handle dialog close
+                dialog.addEventListener('close', () => {
+                    document.body.style.overflow = '';
+                    dialog.classList.remove('dialog-show');
+                });
+            }
+        }
+        
+        // Handle existing dialog buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle existing showDialogBtn buttons
+            const dialogButtons = document.querySelectorAll('[id^="showDialogBtn"]');
+            dialogButtons.forEach(button => {
+                const dialogId = button.id.replace('showDialogBtn', 'favDialog');
+                button.addEventListener('click', () => {
+                    const dialog = document.getElementById(dialogId);
+                    if (dialog) {
+                        dialog.showModal();
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Handle close for existing dialogs
+                        const confirmBtn = dialog.querySelector('#confirmBtn');
+                        if (confirmBtn) {
+                            confirmBtn.addEventListener('click', () => {
+                                dialog.close();
+                                document.body.style.overflow = '';
+                            });
+                        }
+                        
+                        dialog.addEventListener('close', () => {
+                            document.body.style.overflow = '';
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- Modern Design Switch Button -->
+    <div id="modernDesignBtn" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000;">
+        <a href="{% url 'portfolio:modern-home' %}" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-size: 14px;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.3)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'">
+            <i class="fas fa-sparkles"></i>
+            Try Modern Design
+        </a>
+    </div>
+
+    <script>
+        // Animation Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationToggle = document.getElementById('animationToggle');
+            const animationCheckbox = document.getElementById('animationCheckbox');
+            const body = document.body;
+            
+            // Check for saved preference or default to animations enabled
+            const animationsEnabled = localStorage.getItem('animationsEnabled') !== 'false';
+            animationCheckbox.checked = animationsEnabled;
+            
+            if (!animationsEnabled) {
+                body.classList.add('no-animations');
+            }
+            
+            // Toggle animations when checkbox changes
+            animationCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    body.classList.remove('no-animations');
+                    localStorage.setItem('animationsEnabled', 'true');
+                } else {
+                    body.classList.add('no-animations');
+                    localStorage.setItem('animationsEnabled', 'false');
+                }
+            });
+            
+            // Also allow clicking the entire toggle area
+            animationToggle.addEventListener('click', function(e) {
+                if (e.target !== animationCheckbox) {
+                    animationCheckbox.checked = !animationCheckbox.checked;
+                    animationCheckbox.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+    </script>           
 </body>
 </html> 
 

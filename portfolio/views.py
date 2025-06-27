@@ -13,14 +13,25 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 
 from .models import *
+from .utils import get_all_projects, get_all_experiences, load_markdown_content
 
 
 # from .forms import ContactForm
 def another_home(request):
     context = {}
-    projects = Project.objects.all()
-    Softwear.objects.all()
+    
+    # Get projects from both database and markdown files
+    db_projects = Project.objects.all()
+    md_projects = get_all_projects()
+    md_experiences = get_all_experiences()
+    
+    software_skills = Softwear.objects.all()
     contact_form = ContactForm(request.POST or None)
+    
+    context['db_projects'] = db_projects
+    context['md_projects'] = md_projects
+    context['md_experiences'] = md_experiences
+    context['software_skills'] = software_skills
     context['form'] = contact_form
 
     if request.POST and contact_form.is_valid():
@@ -88,6 +99,38 @@ def change_theme(request):
 
 def change_another(request):
     return redirect('portfolio:a-home')
+
+
+def modern_home(request):
+    context = {}
+    
+    # Get projects from both database and markdown files
+    db_projects = Project.objects.all()
+    md_projects = get_all_projects()
+    md_experiences = get_all_experiences()
+    
+    software_skills = Softwear.objects.all()
+    contact_form = ContactForm(request.POST or None)
+    
+    context['db_projects'] = db_projects
+    context['md_projects'] = md_projects
+    context['md_experiences'] = md_experiences
+    context['software_skills'] = software_skills
+    context['form'] = contact_form
+
+    if request.POST and contact_form.is_valid():
+        contact = contact_form.save()
+        template = render_to_string('email_template.html', {
+                                    'name': contact.name, 'email': contact.email, "message": contact.text, 'title': contact.title if contact.title else None})
+        subject = f"{contact.name} Contacted you for Query !"
+        message = template
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['parthishere1234@gmail.com',]
+        mail = EmailMessage(subject, message, email_from, recipient_list)
+        mail.send()
+        messages.success(request, "Mail Sent Successfully")
+        return redirect('portfolio:modern-home')
+    return render(request, 'modern_home.html', context)
 
 
 def download_pdf(request):
