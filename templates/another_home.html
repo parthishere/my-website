@@ -338,9 +338,16 @@
 
                 <section class="experience section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Work Experience</h2>
+                        <div class="experience-header">
+                            <h2 class="heading">Work Experience</h2>
+                            <button class="filter-toggle d-md-none" id="filterToggle" aria-label="Toggle filters">
+                                <i class="fas fa-filter"></i>
+                                <span>Filters</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
 
-                        <ul id="filters" class="filters clearfix">
+                        <ul id="filters" class="filters clearfix collapsible-filters">
                             <li class="type active" data-filter="*">All</li>
                             <li class="type" data-filter=".hardware">Hardware</li>
                             <li class="type" data-filter=".software">Software</li>
@@ -2000,26 +2007,19 @@ Send me email for any codes or implementations
     </script>
     
     <!-- Modern Design Switch Button -->
-    <div id="modernDesignBtn" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000;">
-        <a href="{% url 'portfolio:modern-home' %}" style="
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            font-size: 14px;
-        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.3)'" 
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'">
+    <!-- Bottom Navigation -->
+    <div class="bottom-navigation">
+        <a href="{% url 'portfolio:home' %}" class="nav-link" title="Classic View">
+            <i class="fas fa-home"></i>
+            <span>Classic</span>
+        </a>
+        <a href="{% url 'portfolio:modern-home' %}" class="nav-link" title="Modern Design">
             <i class="fas fa-sparkles"></i>
-            Try Modern Design
+            <span>Modern</span>
+        </a>
+        <a href="{% url 'portfolio:c-home' %}" class="nav-link" title="Terminal View">
+            <i class="fas fa-terminal"></i>
+            <span>Terminal</span>
         </a>
     </div>
 
@@ -2056,6 +2056,51 @@ Send me email for any codes or implementations
                     animationCheckbox.dispatchEvent(new Event('change'));
                 }
             });
+
+            // Filter Toggle Functionality for Mobile
+            const filterToggle = document.getElementById('filterToggle');
+            const filters = document.getElementById('filters');
+            
+            if (filterToggle && filters) {
+                // Ensure filters start hidden on mobile
+                if (window.innerWidth <= 768) {
+                    filters.classList.remove('show');
+                    filterToggle.classList.remove('active');
+                }
+                
+                filterToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    filters.classList.toggle('show');
+                });
+                
+                // Auto-hide filters when a filter is selected on mobile
+                const filterItems = filters.querySelectorAll('.type');
+                filterItems.forEach(function(item) {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            setTimeout(function() {
+                                filterToggle.classList.remove('active');
+                                filters.classList.remove('show');
+                            }, 300);
+                        }
+                    });
+                });
+                
+                // Handle window resize to ensure proper state
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        filterToggle.classList.remove('active');
+                        filters.classList.remove('show');
+                    } else {
+                        // On mobile, ensure filters are hidden by default
+                        if (!filterToggle.classList.contains('active')) {
+                            filters.classList.remove('show');
+                        }
+                    }
+                });
+            }
         });
     </script>           
 </body>
