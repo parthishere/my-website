@@ -1906,20 +1906,12 @@ Send me email for any codes or implementations
             
                     <!--Grid column-->
                     <div class="col-md-9 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" action="{% url 'portfolio:home' %}" method="POST">
+                        <form id="contact-form" name="contact-form" action="{% url 'portfolio:a-home' %}" method="POST">
                             {% csrf_token %}
                             <th>
-                            {{ form.name.as_p }}
-                            {{ form.email.as_p }}
-                            {{ form.title.as_p }}
-                            {{ form.text.as_p }}
+                            {{form.as_p}}
                             </th>
-                            <div class="row">
-                                <div class="col-12 mb-3">
-                                    <label for="{{ form.captcha.id_for_label }}">{{ form.captcha.label }}:</label>
-                                    {{ form.captcha }}
-                                </div>
-                            </div>
+                        
                             <div class="text-center text-md-left">
                             <button type="submit" class="btn btn-success"> Send </button>
                             </div>

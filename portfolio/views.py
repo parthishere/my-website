@@ -34,21 +34,27 @@ def another_home(request):
     context['software_skills'] = software_skills
     context['form'] = contact_form
 
+    
     if request.POST and contact_form.is_valid():
-        print("nothing")
-        contact = contact_form.save()
-        template = render_to_string('email_template.html', {
-                                    'name': contact.name, 'email': contact.email, "message": contact.text, 'title': contact.title if contact.title else None})
-        subject = f"{contact.name} Contacted you for Query !"
-        message = template
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['parthishere1234@gmail.com',]
-        mail = EmailMessage(subject, message, email_from, recipient_list)
-        mail.send()
-        messages.success(request, "Mail Sent Successfully")
-        return redirect('portfolio:a-home')
+        if(settings.EMAIL_ENABLE):
+            print("nothing")
+            contact = contact_form.save()
+            template = render_to_string('email_template.html', {
+                                        'name': contact.name, 'email': contact.email, "message": contact.text, 'title': contact.title if contact.title else None})
+            subject = f"{contact.name} Contacted you for Query !"
+            message = template
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['parthishere1234@gmail.com',]
+            mail = EmailMessage(subject, message, email_from, recipient_list)
+            mail.send()
+            messages.success(request, "Mail Sent Successfully")
+            return redirect('portfolio:a-home')
+        else:
+            messages.error(request, "Email is disabled, please manually send email to parthishere1234@gmail.com!")
+            return redirect('portfolio:a-home')
     elif request.POST:
         messages.error(request, "Please complete the captcha verification to send your message.")
+        return redirect('portfolio:a-home')
     return render(request, 'another_home.html', context)
 
 def cmd_home(request):
