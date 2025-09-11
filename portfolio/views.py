@@ -47,6 +47,8 @@ def another_home(request):
         mail.send()
         messages.success(request, "Mail Sent Successfully")
         return redirect('portfolio:a-home')
+    elif request.POST:
+        messages.error(request, "Please complete the captcha verification to send your message.")
     return render(request, 'another_home.html', context)
 
 def cmd_home(request):

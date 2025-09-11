@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
 
     'storages',
+    'captcha',  # django-simple-captcha
 
     "portfolio",
 ]

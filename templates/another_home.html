@@ -243,12 +243,7 @@
 </head> 
 
 <body>
-    <!-- Animation Toggle Button -->
-    <div class="animation-toggle" id="animationToggle">
-        <i class="fas fa-magic"></i>
-        <span>Animations</span>
-        <input type="checkbox" id="animationCheckbox" checked>
-    </div>
+
 
 {% comment %} logo, typo, add logo, add image, chnage image {% endcomment %}
     {% if messages %}
@@ -1914,8 +1909,17 @@ Send me email for any codes or implementations
                         <form id="contact-form" name="contact-form" action="{% url 'portfolio:home' %}" method="POST">
                             {% csrf_token %}
                             <th>
-                            {{ form.as_p }}
+                            {{ form.name.as_p }}
+                            {{ form.email.as_p }}
+                            {{ form.title.as_p }}
+                            {{ form.text.as_p }}
                             </th>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label for="{{ form.captcha.id_for_label }}">{{ form.captcha.label }}:</label>
+                                    {{ form.captcha }}
+                                </div>
+                            </div>
                             <div class="text-center text-md-left">
                             <button type="submit" class="btn btn-success"> Send </button>
                             </div>
@@ -1966,12 +1970,6 @@ Send me email for any codes or implementations
 | |_) / _` | '__| __| '_ \    | | | '_ \ / _` | |/ / |/ / _` | '__|
 |  __/ (_| | |  | |_| | | |   | | | | | | (_| |   <|   < (_| | |   
 |_|   \__,_|_|   \__|_| |_|   |_| |_| |_|\__,_|_|\_\_|\_\__,_|_    </pre>
-                <div class="footer-theme-section mb-3">
-                    <a href="{% url 'portfolio:change-theme' %}" class="theme-switch-btn">
-                        <i class="fas fa-palette"></i>
-                        <span>Switch Theme</span>
-                    </a>
-                </div>
                 <small class="copyright">Copyright <i class="fas fa-copyright"></i> by <a href="https://parththakkar.studio" target="_blank">Parth Thakkar</a> </small>
         </div><!--//container-->
     </footer><!--//footer-->

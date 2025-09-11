@@ -26,6 +26,7 @@ favicon_view = RedirectView.as_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls', namespace='portfolio')),
+    path('captcha/', include('captcha.urls')),  # Add captcha URLs
     path("favicon.ico", favicon_view),
 
 ]
