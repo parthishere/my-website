@@ -10,8 +10,17 @@
     <meta name="description" content="Parth Thakkar's Website">
     <meta name="author" content="Parth Thakkar">   
     
-    <link rel="shortcut icon" href="{% static "images/remove-bg.png" %}">  
-    
+    <link rel="shortcut icon" href="{% static "images/remove-bg.png" %}">
+
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
     
@@ -23,12 +32,12 @@
     
     <!-- github calendar css -->
     <link rel="stylesheet" href="{% static "assets/plugins/github-calendar/dist/github-calendar-responsive.css" %}">
-    <!-- github activity css -->  
+    <!-- github activity css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script type="text/javascript" src="{% static 'plugins/imagesloaded.pkgd.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src="{% static 'plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
     
 
     <link rel="stylesheet" href="{% static 'assets/plugins/github-activity/src/github-activity.css' %}">
@@ -262,7 +271,7 @@
         <div class="container">     
 	        <div class="row align-items-center">
 			    <div class="col">         
-		            <img class="profile-image img-fluid float-start rounded-circle" src="{% static 'images/profile-another-new.webp' %}" alt="profile image" />
+		            <img class="profile-image img-fluid float-start rounded-circle" src="{% static 'images/profile-another-new.webp' %}" alt="profile image" loading="eager" />
 		            <div class="profile-content">
 		                <h1 class="name">Parth Thakkar</h1>
                         {% comment %} <sup>&ltngl&gt </sup> {% endcomment %}
@@ -591,7 +600,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
                                 
                                 <div class="featured-image has-ribbon">
                                     <a href="" target="_blank">
-                                    <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/cpu.webp' %}" alt="CPU from logic gate" />
+                                    <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/cpu.webp' %}" alt="CPU from logic gate" />
                                     </a>
                                 </div>
                                 
@@ -669,7 +678,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Pong game with 8051 in Asseembly </a></h3>
@@ -719,7 +728,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
                             
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     
@@ -761,7 +770,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     
@@ -804,7 +813,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/pcb.webp' %}" alt="Pong game" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/pcb.webp' %}" alt="Pong game" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/PCB-design" target="_blank">Practical PCB Design Labs</a></h3>
@@ -911,7 +920,7 @@ Providing technical mentorship to 25+ students, including debugging complex hard
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/board_front.webp' %}" alt="ESD lab" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/board_front.webp' %}" alt="ESD lab" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="github.com/parthishere/" target="_blank">Embedded Systems Design Labs</a></h3>
@@ -1058,7 +1067,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/6052-emulator" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/6052_emulator.webp' %}" alt="C++ Simulator" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/6052-emulator" target="_blank">Simulator in C++ for 6052 Computer</a></h3>
@@ -1112,7 +1121,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/16Bit-HDL-CPU_Simulation" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/nand2tertris.webp' %}" alt="16 bit CPU using HDL" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/nand2tertris.webp' %}" alt="16 bit CPU using HDL" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/16Bit-HDL-CPU_Simulation" target="_blank">Simulated 16 bit CPU using HDL</a></h3>
@@ -1157,7 +1166,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://devmediaonapi.herokuapp.com" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/discovery.webp' %}" alt="social media for programmers" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/discovery.webp' %}" alt="social media for programmers" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://devmediaonapi.herokuapp.com" target="_blank">Drivers for STM32F4</a></h3>
@@ -1172,7 +1181,7 @@ Send me email for any codes or implementations
                             
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://facelogup.herokuapp.com" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/facelogup.webp' %}" alt="Login With Face" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/facelogup.webp' %}" alt="Login With Face" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://facelogup.herokuapp.com" target="_blank">LogUp - Attendance System with Decentralized Face Recognition</a></h3>
@@ -1226,7 +1235,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/fleetKaptan" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/esp-react.webp' %}" alt="Smart IoT system" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/esp-react.webp' %}" alt="Smart IoT system" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a>IoT Ecosystem from Scratch</a></h3>
@@ -1274,7 +1283,7 @@ Send me email for any codes or implementations
                             
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/RTOS-from-scratch" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/rtos.webp' %}" alt="RTOS baremetal" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     
@@ -1316,7 +1325,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <div class="col-md-4 col-12">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/frdm.webp' %}" alt="KL25Z" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/frdm.webp' %}" alt="KL25Z" />
                                 </div>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">KL25Z Baremetal Drivers</h3>
@@ -1370,7 +1379,7 @@ Send me email for any codes or implementations
                            
                              <div class="item row hardproj">
                                 <div class="col-md-4 col-12">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/project2.webp' %}" alt="Autonomus Car" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/project2.webp' %}" alt="Autonomus Car" />
                                 </div>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title">Atonomus Car</h3>
@@ -1384,7 +1393,7 @@ Send me email for any codes or implementations
 
                             <div class="item row hardproj">
                                 <div class="col-md-4 col-12">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/soldier_strap.webp' %}" alt="" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/soldier_strap.webp' %}" alt="" />
                                 </div>
                                 <div class="desc col-md-8 col-12">  
                                     <h3 class="title"> Soldier Starp</h3>
@@ -1403,7 +1412,7 @@ Send me email for any codes or implementations
 
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/videochat" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/vidchat.webp' %}" alt="video call app" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/vidchat.webp' %}" alt="video call app" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/parthishere/videochat" target="_blank">Web-meetup: Online Video Chat App</a></h3>
@@ -1450,7 +1459,7 @@ Send me email for any codes or implementations
 
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://devmediaonapi.herokuapp.com" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/devmedia.webp' %}" alt="social media for programmers" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/devmedia.webp' %}" alt="social media for programmers" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://devmediaonapi.herokuapp.com" target="_blank">DevMedia - Social Media Platform for Developers (Backend)</a></h3>
@@ -1467,7 +1476,7 @@ Send me email for any codes or implementations
 
                             <div class="item row softproj">
                                 <a class="col-md-4 col-12" href="https://notesonhand.netlify.app" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/keeponnote.webp' %}" alt="project name" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/keeponnote.webp' %}" alt="project name" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://notesonhand.netlify.app" target="_blank">KeeponNote - Notes Websites</a></h3>
@@ -1485,7 +1494,7 @@ Send me email for any codes or implementations
                             <div class="item row softwproj">
                                 
                                 <a class="col-md-4 col-12" href="https://github.com/parthishere/qrcode" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{% static 'images/portfolio/download.webp' %}" alt="" />
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/download.webp' %}" alt="" />
                                 </a>
                                 
                                 <div class="desc col-md-8 col-12">
@@ -1703,8 +1712,7 @@ Send me email for any codes or implementations
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Skills</h2>
                         <div class="content">
-                            <p class="intro">
-                            
+
                             <div class="skillset">
                                
                                 <div class="item">

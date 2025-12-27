@@ -41,43 +41,61 @@ def load_markdown_content(content_type, filename):
     }
 
 def get_all_projects():
-    """Get all project markdown files"""
+    """Get all project markdown files, sorted by date"""
     projects_dir = os.path.join(settings.BASE_DIR, 'content', 'projects')
     if not os.path.exists(projects_dir):
         return []
-    
+
     projects = []
     for filename in os.listdir(projects_dir):
         if filename.endswith('.md'):
             project_name = filename[:-3]  # Remove .md extension
             content = load_markdown_content('projects', project_name)
             if content:
+                # Extract title from metadata or use filename
+                metadata = content.get('metadata', {})
+                title = metadata.get('title', [project_name.replace('-', ' ').title()])[0] if metadata.get('title') else project_name.replace('-', ' ').title()
+
                 projects.append({
                     'slug': project_name,
-                    'name': project_name.replace('-', ' ').title(),
+                    'name': title,
                     **content
                 })
-    
-    return projects
+
+    # Sort by date (newest first) if date metadata exists
+    projects.sort(key=lambda x: x.get('metadata', {}).get('date', [''])[0], reverse=True)
+
+    # Move featured projects to top
+    featured = [p for p in projects if 'featured' in p.get('metadata', {}) and p['metadata']['featured'][0].lower() == 'true']
+    non_featured = [p for p in projects if p not in featured]
+
+    return featured + non_featured
 
 def get_all_experiences():
-    """Get all experience markdown files"""
+    """Get all experience markdown files, sorted by date"""
     experiences_dir = os.path.join(settings.BASE_DIR, 'content', 'experiences')
     if not os.path.exists(experiences_dir):
         return []
-    
+
     experiences = []
     for filename in os.listdir(experiences_dir):
         if filename.endswith('.md'):
             experience_name = filename[:-3]  # Remove .md extension
             content = load_markdown_content('experiences', experience_name)
             if content:
+                # Extract title from metadata or use filename
+                metadata = content.get('metadata', {})
+                title = metadata.get('title', [experience_name.replace('-', ' ').title()])[0] if metadata.get('title') else experience_name.replace('-', ' ').title()
+
                 experiences.append({
                     'slug': experience_name,
-                    'name': experience_name.replace('-', ' ').title(),
+                    'name': title,
                     **content
                 })
-    
+
+    # Sort by date (newest first)
+    experiences.sort(key=lambda x: x.get('metadata', {}).get('date', [''])[0], reverse=True)
+
     return experiences
 
 def extract_tech_stack(content):

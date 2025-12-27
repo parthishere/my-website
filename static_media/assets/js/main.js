@@ -2,8 +2,72 @@
 mybutton = document.getElementById("myBtn");
 themebutton = document.getElementById("themeChange");
 
-console.log(mybutton);
-console.log(themebutton);
+const favDialog1 = document.getElementById("favDialog1")
+const showDialogBtn1 = document.getElementById("showDialogBtn1")
+
+const favDialog2 = document.getElementById("favDialog2")
+const showDialogBtn = document.getElementById("showDialogBtn2")
+
+const favDialog3 = document.getElementById("favDialog3")
+const showDialogBtn3 = document.getElementById("showDialogBtn3")
+
+const favDialog4 = document.getElementById("favDialog4")
+const showDialogBtn4 = document.getElementById("showDialogBtn4")
+
+const favDialog5 = document.getElementById("favDialog5")
+const showDialogBtn5 = document.getElementById("showDialogBtn5")
+
+const favDialog6 = document.getElementById("favDialog6")
+const showDialogBtn6 = document.getElementById("showDialogBtn6")
+
+const favDialog7 = document.getElementById("favDialog7")
+const showDialogBtn7 = document.getElementById("showDialogBtn7")
+
+const favDialog8 = document.getElementById("favDialog8")
+const showDialogBtn8 = document.getElementById("showDialogBtn8")
+
+const favDialog9 = document.getElementById("favDialog9")
+const showDialogBtn9 = document.getElementById("showDialogBtn9")
+
+const favDialog10 = document.getElementById("favDialog10")
+const showDialogBtn10 = document.getElementById("showDialogBtn10")
+
+
+const rtosFinalProjectDialog = document.getElementById("rtosFinalProjectDialog")
+const showRtosFinalProjectBtn = document.getElementById("showRtosFinalProjectBtn")
+
+const IotFinalProjectDialog = document.getElementById("IotFinalProjectDialog")
+const showIotFinalProjectBtn = document.getElementById("showIotFinalProjectBtn")
+
+// const pcbcontentDialog = document.getElementById("pcbcontentDialog")
+// const pcblabShowButtonID = document.getElementById("pcblabShowButtonID")
+
+
+const favDialog11 = document.getElementById("favDialog11")
+const showDialogBtn11 = document.getElementById("showDialogBtn11")
+
+const favDialog12 = document.getElementById("favDialog12")
+const showDialogBtn12 = document.getElementById("showDialogBtn12")
+
+
+showDialogBtn1.addEventListener("click", () => favDialog1.showModal())
+showDialogBtn2.addEventListener("click", () => favDialog2.showModal())
+showDialogBtn3.addEventListener("click", () => favDialog3.showModal())
+showDialogBtn4.addEventListener("click", () => favDialog4.showModal())
+showDialogBtn5.addEventListener("click", () => favDialog5.showModal())
+showDialogBtn6.addEventListener("click", () => favDialog6.showModal())
+showDialogBtn7.addEventListener("click", () => favDialog7.showModal())
+showDialogBtn8.addEventListener("click", () => favDialog8.showModal())
+showDialogBtn9.addEventListener("click", () => favDialog9.showModal())
+showDialogBtn10.addEventListener("click", () => favDialog10.showModal())
+showDialogBtn11.addEventListener("click", () => favDialog11.showModal())
+showDialogBtn12.addEventListener("click", () => favDialog12.showModal())
+showRtosFinalProjectBtn.addEventListener("click", () => rtosFinalProjectDialog.showModal())
+showIotFinalProjectBtn.addEventListener("click", () => IotFinalProjectDialog.showModal())
+// pcblabShowButtonID.addEventListener("click", () => pcbcontentDialog.showModal())
+
+
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -115,13 +179,41 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	);
 	rss.render();
 
-    
+
     /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    new GitHubCalendar("#github-graph", "parthishere", { responsive: true });
-    
-    
+    try {
+        if (typeof GitHubCalendar !== 'undefined') {
+            new GitHubCalendar("#github-graph", "parthishere", {
+                responsive: true,
+                tooltips: true,
+                global_stats: false
+            });
+        } else {
+            console.warn('GitHubCalendar is not loaded');
+            document.querySelector("#github-graph").innerHTML = '<p style="padding: 20px; text-align: center;">GitHub calendar could not be loaded</p>';
+        }
+    } catch (error) {
+        console.error('Error loading GitHub calendar:', error);
+        document.querySelector("#github-graph").innerHTML = '<p style="padding: 20px; text-align: center;">Visit <a href="https://github.com/parthishere" target="_blank">GitHub Profile</a></p>';
+    }
+
+
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
-    GitHubActivity.feed({ username: "parthishere", selector: "#ghfeed" });
+    try {
+        if (typeof GitHubActivity !== 'undefined') {
+            GitHubActivity.feed({
+                username: "parthishere",
+                selector: "#ghfeed",
+                limit: 20
+            });
+        } else {
+            console.warn('GitHubActivity is not loaded');
+            document.querySelector("#ghfeed").innerHTML = '<p style="padding: 20px; text-align: center;">GitHub activity could not be loaded</p>';
+        }
+    } catch (error) {
+        console.error('Error loading GitHub activity:', error);
+        document.querySelector("#ghfeed").innerHTML = '<p style="padding: 20px; text-align: center;">Visit <a href="https://github.com/parthishere?tab=activity" target="_blank">GitHub Activity</a></p>';
+    }
 
 
 

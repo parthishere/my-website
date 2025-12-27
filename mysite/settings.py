@@ -69,15 +69,28 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+
+# Template configuration with conditional caching
+TEMPLATE_LOADERS = [
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+]
+
+# Enable cached template loader in production
+if DEBUG == 'False':
+    TEMPLATE_LOADERS = [
+        ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),
+    ]
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATE_DIR,],
-        'APP_DIRS': True,
+        'APP_DIRS': DEBUG != 'False',  # Only use APP_DIRS in development
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -88,6 +101,10 @@ TEMPLATES = [
         },
     },
 ]
+
+# Add loaders only in production (when APP_DIRS is False)
+if DEBUG == 'False':
+    TEMPLATES[0]['OPTIONS']['loaders'] = TEMPLATE_LOADERS
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -102,6 +119,16 @@ DATABASES = {
     }
 }
 
+# Caching Configuration
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'portfolio-cache',
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -112,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+    },  
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
@@ -145,7 +172,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400'
+    'CacheControl': 'max-age=31536000, immutable'
 }
 AWS_LOCATION = 'media'
 AWS_QUERYSTRING_AUTH = False
@@ -177,3 +204,21 @@ EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# Performance Optimizations
+# Security headers
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Connection pooling
+CONN_MAX_AGE = 600
+
+# Session optimization
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_CACHE_ALIAS = 'default'
+
+# Static files caching with Whitenoise
+WHITENOISE_MAX_AGE = 31536000
+WHITENOISE_IMMUTABLE_FILE_TEST = lambda path, url: True
+
