@@ -676,6 +676,54 @@ Providing technical mentorship to 25+ students, including debugging complex hard
                             <hr class="divider" />        
                             </div><!--//item-->
 
+
+                            <div class="item row hardproj">
+                                <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/splitkeyboard.webp' %}" alt="Pong game" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://github.com/parthishere/Pong-in-C" target="_blank">Split Wireless BLE Keyboard </a></h3>
+                                    <p>
+                                        Designed an pong game system using the 8051 microcontroller, featuring a 16x32 pixel dot matrix display composed of eight 8x8 units. Integrated a custom PS2 controller interface using shift registers and an IO expander. Developed a scoring mechanism with shift registers driving an LED scoreboard. Programmed game logic in assembly language, made algorithms for paddle movement, ball dynamics, and collision detection. Added dynamic ball movement to increase game challenge over time. Also designed a Battery Management System using a reference Zener diode and LM317 for voltage and current regulation.
+                                    </p>
+                                    <button id="showDialogBtn2" class="btn btn-cta-primary">
+                                        Show Details
+                                      </button>    
+                                      <dialog id="favDialog2">
+                                        <form method="dialog"> 
+                                    <p> 
+                                        This project presents the design and implementation of an interactive game system based on the
+                                        8051 microcontroller. Central to the system is a 16x32-resolution dot matrix display, constructed from eight
+                                        individual 8x8 dot matrix units to form a 16x32 pixel display area. This display serves as the
+                                        primary interface for the game, showcasing dynamic visual elements and game interactions.
+                                        <p>
+                                        The system incorporates a PS2 controller with a custom-designed
+                                        hardware interface. which uses shiftresgisters to store the data and Interrupt unit which send interrupt when reading of 33bits are completed by hardware then the PS2 hardware sends data through IO expander and This interface leverages the interrupt capabilities of the 8051 microcontroller, ensuring
+                                        real-time responsiveness and input recognition. The interface efficiently handles data latching
+                                        from the controller, translating player actions into on-screen movements seamlessly.
+                                        <p>
+                                        The scoring mechanism, made through the use of shift
+                                        registers. These registers drive an LED-based scoreboard, providing players with a
+                                        visual feedback of their performance in the game.
+                                        <p>
+                                        The game logic, developed in assembly language, includes algorithms for paddle
+                                        movement and ball dynamics. It ensures that the gameplay is adhering to the
+                                        physical constraints of the dot matrix display. Collision detection algorithms are implemented to facilitate
+                                        interactions between the ball and paddles, also I have added some dynamicity to the game by adding faster ball movement after some amount of time to make game challanging.
+                                        <p>
+                                        <p> I have also designed BMS with help of reference zener diode and some LM317 for voltage and current regulation.</p>
+                                
+
+                                    <button id="confirmBtn" class="btn btn-cta-secondary btn-danger">Close</button>
+                                    <a class="btn btn-cta-secondary" href="https://drive.google.com/drive/u/0/folders/1ADKPRw8MK4GQmMEpo7IxrXK6MbnVLku3" target="_blank"><i class="fas fa-thumbs-up"></i> See some Work I've Done..!</a> <br>
+                                    <p><a class="more-link" href="https://github.com/parthishere/Pong-in-C" target="_blank"><i class="fas fa-external-link-alt"></i>View Code</a></p>
+                                </form>
+                                
+                                </dialog>
+                                </div><!--//desc--> 
+                            </br>                         
+                            </div><!--//item-->
+
                             <div class="item row hardproj">
                                 <a class="col-md-4 col-12" href="github.com/parthishere/" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" loading="lazy" decoding="async" src="{% static 'images/portfolio/overview.webp' %}" alt="Pong game" />

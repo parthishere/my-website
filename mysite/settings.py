@@ -35,8 +35,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DEBUG']
 
-ALLOWED_HOSTS = ['django-server-production-417d.up.railway.app',
-                 '127.0.0.1', 'parththakkar.herokuapp.com', "parththakkar.studio",]
+ALLOWED_HOSTS = ['parth.up.railway.app',
+                 '127.0.0.1', 'parth.github.io', "parththakkar.studio",]
 
 CSRF_TRUSTED_ORIGINS = ['https://parththakkar.studio']
 # 123pih
